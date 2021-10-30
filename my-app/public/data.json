@@ -1,0 +1,63 @@
+[
+    {
+      "name": "Group Package Tour",
+      "description": [
+        "Cruises",
+        "Entrance fees to attractions",
+        "Tickets for entry to events or attractions",
+        "Insurance"
+      ],
+      "img": "https://i.ibb.co/pv4vWKL/photo-1533587851505-d119e13fa0d7-ixlib-rb-1-2.jpg"
+    },
+    {
+      "name": "Purchase Ticket",
+      "description": [
+        "International Flight Ticket",
+        "Internationl Bus Service",
+        "Domestic Train and Launch Ticket"
+      ],
+      "img": "https://i.ibb.co/gVqsjbv/man-sitting-with-laptop-computer-with-application-search-air-ticket-screen-in-room.jpg"
+    },
+    {
+      "name": "Honemoon Package",
+      "description": [
+        "Luxurious sea-facing resorts",
+        "Diving, surfing, snorkelling, jet skiing and parasailing.",
+        "Nightclubs and beach parties",
+        "Underwater world off the archipelago",
+        ""
+      ],
+      "img": "https://i.ibb.co/x6LWGKX/5e7348fc3c9d0.jpg"
+    },
+    {
+      "name": "Hotel Reservation",
+      "description": [
+        "Spa",
+        "Semi open & outdoor restaurant",
+        "Car parking",
+        "Disable rooms & Interconnecting rooms.",
+        "24 Hour security."
+      ],
+      "img": "https://i.ibb.co/9Vktt6V/young-happy-couple-reception-smiling-receptionist-hotel-reservation-holiday-flat-vector-concept-9512.jpg"
+    },
+    {
+      "name": "Passport and Visa Consultancy",
+      "description": [
+        "Legal Information",
+        "Document Arrangement",
+        "Make Process Easy",
+        "Travel, Study and Business Visas"
+      ],
+      "img": "https://i.ibb.co/X83pDrT/2021-02-19-092741490-IT-consultancies-anticipating-corona-passport-in-Denmark-spot.jpg"
+    },
+    {
+      "name": "Family Package Tour",
+      "description": [
+        "Relaxing leisure days on the beaches",
+        "Meet the people here and gain an understanding of their culture",
+        "opportunity to live in a luxurious villa right on the edge of the sands",
+        ""
+      ],
+      "img": "https://i.ibb.co/X83pDrT/2021-02-19-092741490-IT-consultancies-anticipating-corona-passport-in-Denmark-spot.jpg"
+    }
+  ]

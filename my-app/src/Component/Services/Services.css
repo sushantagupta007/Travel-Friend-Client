@@ -1,0 +1,12 @@
+.customGrid{
+    display:grid; 
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+   
+}
+
+#newsContainer li {
+    list-style-type:circle;
+    margin-left:10px;
+    
+}
