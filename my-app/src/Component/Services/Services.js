@@ -10,11 +10,11 @@ const Services = () => {
         console.log("clicked")
     }
     useEffect(()=>{
-        fetch('/data.json')
-        .then(res=>res.json())
-        .then(data=>{
-            setServices(data)
-            console.log(data)
+        fetch('http://localhost:5000/Services')
+            .then(res=>res.json())
+            .then(data=>{
+                setServices(data)
+                console.log(data)
         })
 
     },[])
