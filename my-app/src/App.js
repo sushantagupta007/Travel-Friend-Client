@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Header from './Component/Header/Header'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -19,7 +19,9 @@ import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
 import AuthProvider from './Context/AuthProvider';
 import Services from './Component/Services/Services';
 import Registration from './Component/Registration/Registration';
-import Research from './Component/Research/Research';
+
+import ServiceCard from './Component/ServiceCard/ServiceCard';
+import ManageOrder from './Component/ManageOrder/ManageOrder';
 
 function App() {
   return (
@@ -27,6 +29,9 @@ function App() {
     <BrowserRouter>
       <Header></Header>
       <Switch>
+        <Route exact path="/">
+          <Home></Home>
+        </Route>
         <Route path="/home">
           <Home></Home>
         </Route>
@@ -36,11 +41,14 @@ function App() {
         <Route path="/Login">
             <Login></Login>
         </Route>
+        <PrivateRoute path="/Manageorder">
+          <ManageOrder></ManageOrder>
+         </PrivateRoute> 
         <PrivateRoute path="/Myorder">
           <Myorder></Myorder>
         </PrivateRoute>
        
-        <Route path="/Registration">
+        <Route path="/Registration" exact component={ServiceCard}>
           <Registration></Registration>
         </Route>
       </Switch>

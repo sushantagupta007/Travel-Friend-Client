@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 
 import './Registration.css'
@@ -65,7 +65,7 @@ const Registration = () => {
                 <div className="row border mt-5 p-3">
                     <h4>Important Link</h4>
                    <ul id="newsContainer">
-                       <li> <a className=""href="https://www.epassport.gov.bd/landing">E-Passport Bangladesh</a> </li>
+                       <li> <a href="https://www.epassport.gov.bd/landing">E-Passport Bangladesh</a> </li>
                        <li> <a href="https://www.gov.uk/world/organisations/british-high-commission-dhaka"> British Highcommissioner </a> </li>
                        <li> <a href="https://bd.usembassy.gov/"> US Embassay </a> </li>
                        <li> <a href="http://www.bhutan.gov.bt/foreigner/embassies.php"> Bhutan Embassay</a> </li>
@@ -82,7 +82,7 @@ const Registration = () => {
                         </div>
                         <div className="col-8 border">
                             <address>
-                                <a href="#">Mrs Smith 71 Cherry Court SOUTHAMPTON SO53 5PD UK </a>
+                                <a href="www.facebook.com">Mrs Smith 71 Cherry Court SOUTHAMPTON SO53 5PD UK </a>
                             </address>
                         </div>
                     </div>
@@ -92,7 +92,7 @@ const Registration = () => {
                         </div>
                         <div className="col-8 border">
                             <address>
-                                <a href="#">Mrs Smith 71 Cherry Court SOUTHAMPTON SO53 5PD UK </a>
+                                <a href="www.facebook.com">Mrs Smith 71 Cherry Court SOUTHAMPTON SO53 5PD UK </a>
                             </address>
                         </div>
                     </div>
@@ -102,7 +102,7 @@ const Registration = () => {
                         </div>
                         <div className="col-8 border">
                             <address>
-                                <a href="#">Mrs Smith 71 Cherry Court SOUTHAMPTON SO53 5PD UK </a>
+                                <a href="www.facebook.com">Mrs Smith 71 Cherry Court SOUTHAMPTON SO53 5PD UK </a>
                             </address>
                         </div>
                     </div>
@@ -112,7 +112,7 @@ const Registration = () => {
                         </div>
                         <div className="col-8 border">
                             <address>
-                                <a href="#">Mrs Smith 71 Cherry Court SOUTHAMPTON SO53 5PD UK </a>
+                                <a href="www.facebook.com">Mrs Smith 71 Cherry Court SOUTHAMPTON SO53 5PD UK </a>
                             </address>
                         </div>
                     </div>
@@ -122,7 +122,7 @@ const Registration = () => {
                         </div>
                         <div className="col-8 border">
                             <address>
-                                <a href="#">Mrs Smith 71 Cherry Court SOUTHAMPTON SO53 5PD UK </a>
+                                <a href="www.facebook.com">Mrs Smith 71 Cherry Court SOUTHAMPTON SO53 5PD UK </a>
                             </address>
                         </div>
                     </div>
@@ -132,7 +132,7 @@ const Registration = () => {
                         </div>
                         <div className="col-8 border ">
                             <address>
-                                <a href="#">Mrs Smith 71 Cherry Court SOUTHAMPTON SO53 5PD UK </a>
+                                <a href="www.facebook.com">Mrs Smith 71 Cherry Court SOUTHAMPTON SO53 5PD UK </a>
                             </address>
                         </div>
                     </div>

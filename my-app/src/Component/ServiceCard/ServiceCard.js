@@ -1,28 +1,33 @@
 import React from 'react';
-import { Card,Button } from 'react-bootstrap';
 import './ServiceCard.css'
-import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
+
 
 const ServiceCard = (props) => {
-    const history = useHistory(); 
+    
+    const {img,name,description}= props.service
 
-    const handleClick = (id) =>{
-        history.push(
-            {pathname:'/Myorder', 
-            state:{id}
+    console.log(props.service); 
+
+    const handlePostData = () =>{
+        fetch('https://radiant-everglades-28341.herokuapp.com/Manageorder',{
+            method:'POST',
+            headers:{
+                "content-type":"application/json"
+            },
+            body:JSON.stringify(props.service)
         })
-        console.log(id)
+
+        console.log(props.id); 
     }
-    const {description,img,name} = props.service
-    console.log(img)
-    console.log(description)
+   
     return (
-        <div id="cardImage" className="card" style={{width: '25rem'}}>
+        <div id="cardImage" className="card" style={{width: '20rem'}}>
         <img src={img} className="customImage card-img-top" alt="..."/>
         <div className="card-body">
             <h4 className="card-title">{name}</h4>
             <div>{description.map((item)=><ul><li>{item}</li></ul>)}</div>
-            <button onClick={()=>handleClick(props)}type="button" className="btn btn-danger">Book Now</button>
+            <Link to="/Myorder"> <button onClick={handlePostData} className="btn btn-danger"> Book {name }</button> </Link>
         </div>
         </div>
     );

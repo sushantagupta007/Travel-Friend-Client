@@ -1,0 +1,18 @@
+.customGrid{
+    display:grid; 
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+}
+
+.clientImage{
+    width:100px;
+    height:100px; 
+    border-radius: 50%;
+}
+
+
+.serviceGrid{
+    display:grid; 
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+}

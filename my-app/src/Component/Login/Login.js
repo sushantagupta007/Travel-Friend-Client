@@ -1,5 +1,5 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
+
 import './Login.css'
 import { Link } from 'react-router-dom';
 import useAuth from './../../Hooks/useAuth';
@@ -18,7 +18,7 @@ const Login = () => {
     console.log('came from', location.state?.from)
     
     console.log(location.state)
-
+    console.log(user)
     const handleGoogle =() =>{
         googleSignIn()
         .then((result) => {

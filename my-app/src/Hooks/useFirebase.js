@@ -36,13 +36,15 @@ const useFirebase = () =>{
             } else {
               setUser({})
             }
+            setIsloading(false)
           });
     },[auth])
     return{
         user,
         googleSignIn, 
         googleLogOut,
-        error
+        error,
+        isloading
     }
 }
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Container, NavLink, Row } from 'react-bootstrap';
+// 
 import './Services.css'
 import ServiceCard from './../ServiceCard/ServiceCard';
 const Services = () => {
@@ -10,7 +10,7 @@ const Services = () => {
         console.log("clicked")
     }
     useEffect(()=>{
-        fetch('http://localhost:5000/Services')
+        fetch('https://radiant-everglades-28341.herokuapp.com/Services')
             .then(res=>res.json())
             .then(data=>{
                 setServices(data)
@@ -25,7 +25,7 @@ const Services = () => {
             <div className="col-lg-9 col-sm-12">
                 <h1 className="text-center"> Our Services </h1>
                 <div className="row customGrid">
-                {services.map((service)=><ServiceCard service={service}></ServiceCard>)}
+                {services.map((service)=><ServiceCard key={service._id} id={service._id} service={service}></ServiceCard>)}
                 </div>
             </div>
             
@@ -61,7 +61,7 @@ const Services = () => {
                         </div>
                         <div className="col-8 border">
                             <address>
-                                <a href="#">Mrs Smith 71 Cherry Court SOUTHAMPTON SO53 5PD UK </a>
+                                <a href="www.facebook.com">Mrs Smith 71 Cherry Court SOUTHAMPTON SO53 5PD UK </a>
                             </address>
                         </div>
                     </div>
@@ -71,7 +71,7 @@ const Services = () => {
                         </div>
                         <div className="col-8 border">
                             <address>
-                                <a href="#">Mrs Smith 71 Cherry Court SOUTHAMPTON SO53 5PD UK </a>
+                                <a href="www.facebook.com">Mrs Smith 71 Cherry Court SOUTHAMPTON SO53 5PD UK </a>
                             </address>
                         </div>
                     </div>
@@ -81,7 +81,7 @@ const Services = () => {
                         </div>
                         <div className="col-8 border">
                             <address>
-                                <a href="#">Mrs Smith 71 Cherry Court SOUTHAMPTON SO53 5PD UK </a>
+                                <a href="www.facebook.com">Mrs Smith 71 Cherry Court SOUTHAMPTON SO53 5PD UK </a>
                             </address>
                         </div>
                     </div>
@@ -91,7 +91,7 @@ const Services = () => {
                         </div>
                         <div className="col-8 border">
                             <address>
-                                <a href="#">Mrs Smith 71 Cherry Court SOUTHAMPTON SO53 5PD UK </a>
+                                <a href="www.facebook.com">Mrs Smith 71 Cherry Court SOUTHAMPTON SO53 5PD UK </a>
                             </address>
                         </div>
                     </div>
@@ -101,7 +101,7 @@ const Services = () => {
                         </div>
                         <div className="col-8 border">
                             <address>
-                                <a href="#">Mrs Smith 71 Cherry Court SOUTHAMPTON SO53 5PD UK </a>
+                                <a href="www.facebook.com">Mrs Smith 71 Cherry Court SOUTHAMPTON SO53 5PD UK </a>
                             </address>
                         </div>
                     </div>
@@ -111,7 +111,7 @@ const Services = () => {
                         </div>
                         <div className="col-8 border ">
                             <address>
-                                <a href="#">Mrs Smith 71 Cherry Court SOUTHAMPTON SO53 5PD UK </a>
+                                <a href="www.facebook.com">Mrs Smith 71 Cherry Court SOUTHAMPTON SO53 5PD UK </a>
                             </address>
                         </div>
                     </div>
