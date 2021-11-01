@@ -22,10 +22,12 @@ const Services = () => {
 
         <div className="container-fluid border">
         <div className="row">
-            <div className="col-lg-9 col-sm-12">
+            <div className="col-lg-9 col-sm-12 ">
                 <h1 className="text-center"> Our Services </h1>
-                <div className="row customGrid">
-                {services.map((service)=><ServiceCard key={service._id} id={service._id} service={service}></ServiceCard>)}
+                <div className="row customGrid" id="responsiveGrid">
+                    <div> {services.map((service)=><ServiceCard key={service._id} id={service._id} service={service}></ServiceCard>)}</div>
+
+                
                 </div>
             </div>
             

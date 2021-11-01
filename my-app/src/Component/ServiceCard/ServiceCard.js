@@ -26,8 +26,8 @@ const ServiceCard = (props) => {
         <img src={img} className="customImage card-img-top" alt="..."/>
         <div className="card-body">
             <h4 className="card-title">{name}</h4>
-            <div>{description.map((item)=><ul><li>{item}</li></ul>)}</div>
-            <Link to="/Myorder"> <button onClick={handlePostData} className="btn btn-danger"> Book {name }</button> </Link>
+            <div>{description.map((item)=><ul key={item.name}><li key={item.name}>{item}</li></ul>)}</div>
+            <Link to={`/Myorder/${props.id}`}> <button onClick={handlePostData} className="btn btn-danger"> Book {name }</button> </Link>
         </div>
         </div>
     );

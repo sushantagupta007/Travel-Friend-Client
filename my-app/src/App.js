@@ -44,7 +44,7 @@ function App() {
         <PrivateRoute path="/Manageorder">
           <ManageOrder></ManageOrder>
          </PrivateRoute> 
-        <PrivateRoute path="/Myorder">
+        <PrivateRoute path="/Myorder/:id">
           <Myorder></Myorder>
         </PrivateRoute>
        

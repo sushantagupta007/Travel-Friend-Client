@@ -9,3 +9,12 @@
     margin-left:10px;
     
 }
+
+
+@media only screen and (max-width: 425px) {
+    #responsiveGrid{
+        display:grid;
+        grid-template-columns: repeat(12,1fr)
+    }
+  }
+

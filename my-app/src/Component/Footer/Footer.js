@@ -6,16 +6,16 @@ import { Link } from 'react-router-dom';
 class Footer extends Component {
     render() {
         return (
-            <div>
+            
                 <Container fluid className="bg-dark text-white">
                     <Row className="mt-3">
-                        <Col className="d-flex flex-column p-4" sm={4}>
+                        <Col className="d-flex flex-column p-4" lg ={4} sm={4}>
                             <h4> Travel Friend</h4>
                             <p className="text-info">
                             Travelfriend is designed for people who don't like to travel alone. ... Join our community and meet successful people from all over the ...
                             </p>
                         </Col>
-                        <Col className="d-flex flex-column p-4" sm={4}>
+                        <Col className="d-flex flex-column p-4" lg ={4} sm={4}>
                             <h4> Quick Links</h4>
                                 <Link to="/Home"> Home</Link>
                                 <Link to="/Services"> Services</Link>
@@ -25,7 +25,7 @@ class Footer extends Component {
 
                                 <a href="https://www.wikipedia.org/"> Important Links</a>
                         </Col>
-                        <Col className="d-flex flex-column p-4 justify-content-evenly align-items-center" sm={4}>
+                        <Col className="d-flex flex-column p-4 justify-content-evenly align-items-center" lg ={4} sm={4}>
                             <h4> Contact</h4>
                             
                             <div className="text-info d-flex flex-column">
@@ -52,7 +52,7 @@ class Footer extends Component {
                         <p>CopyRight@travelfriend</p>
                     </Row>
                 </Container>
-            </div>
+            
         );
     }
 }

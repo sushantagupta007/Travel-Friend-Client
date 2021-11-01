@@ -37,7 +37,7 @@ const ManageOrder = () => {
         }
         console.log(id)
 
-        fetch(`http://localhost:5000/Manageorder?id=${id}`,{
+        fetch(`https://radiant-everglades-28341.herokuapp.com/Manageorder?id=${id}`,{
             method:'DELETE'
         })
         .then(res=>res.json())
