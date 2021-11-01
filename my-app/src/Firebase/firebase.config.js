@@ -1,9 +1,9 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyCTBJLVuV4necK5AuHr14oh6wDbo6159hA",
-  authDomain: "travel-agent-81e15.firebaseapp.com",
-  projectId: "travel-agent-81e15",
-  storageBucket: "travel-agent-81e15.appspot.com",
-  messagingSenderId: "641006254508",
-  appId: "1:641006254508:web:e377ac0cb940a70939a209"
+  apiKey: REACT_APP_FIREBASE-APIKEY,
+  authDomain: REACT_APP_FIREBASE-AUTHDOMAIN,
+  projectId: REACT_APP_FIREBASE-PROJECTID,
+  storageBucket: REACT_APP_FIREBASE-STORAGEBUCKET,
+  messagingSenderId: REACT_APP_FIREBASE-MESSAGINGSENDERID,
+  appId: REACT_APP_FIREBASE-APPID
 }
   export default firebaseConfig
