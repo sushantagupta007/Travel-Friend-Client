@@ -1,5 +1,5 @@
 
-Website: Trave Freind
+Website: Travel Friend
 
 
 Features:
