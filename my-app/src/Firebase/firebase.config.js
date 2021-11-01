@@ -5,6 +5,5 @@ const firebaseConfig = {
   storageBucket: "travel-agent-81e15.appspot.com",
   messagingSenderId: "641006254508",
   appId: "1:641006254508:web:e377ac0cb940a70939a209"
-  };
-
+}
   export default firebaseConfig
