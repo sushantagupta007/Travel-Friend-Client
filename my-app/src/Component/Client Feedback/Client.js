@@ -19,11 +19,9 @@ const Client = () => {
     return (
         <div className="container">
             <h1 className="text-center"> Client's Feedback </h1>
-            <div className="row serviceGrid">
-            
+            <div className="row serviceGrid d-flex justify-content-center align-items-center" id="responsiveGrid">
                 {clients.map((client)=><ClientIndividual  client={client}></ClientIndividual>)}  
             </div>
-              
         </div>
     
     );

@@ -16,3 +16,11 @@
     grid-template-columns: repeat(3,1fr);
     grid-gap: 10px;
 }
+
+
+@media only screen and (max-width: 425px) {
+    #responsiveGrid{
+        display:grid;
+        grid-template-columns: repeat(12,1fr)
+    }
+  }

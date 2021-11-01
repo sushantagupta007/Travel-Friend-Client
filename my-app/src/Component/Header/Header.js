@@ -19,7 +19,8 @@ const Header = () => {
                 {user.email? <NavLink as={Link} className="me-4" to="/Myorder">My Order</NavLink>: ""}
                 
                 <NavLink as={Link} className="me-4" to="/Blog">Blog</NavLink>
-                <NavLink as={Link} className="me-4" to="/Manageorder">Manage Order </NavLink>
+                {user.email? <NavLink as={Link} className="me-4" to="/Manageorder">Manage Order </NavLink>:""}
+                
                 {user.email? <NavLink to="/Myorder">Mr {user.displayName} </NavLink> :""}
                 {user.email? 
                     <button onClick={googleLogOut}className="btn btn-secondary"> Logout</button> :
