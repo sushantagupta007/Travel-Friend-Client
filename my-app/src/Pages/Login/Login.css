@@ -1,0 +1,9 @@
+@media only screen and (max-width: 425px) {
+    .customDisplay{
+        display:flex;
+        flex-direction: column;
+    }
+    .customMargin{
+        margin: 10px 0; 
+    }
+  }

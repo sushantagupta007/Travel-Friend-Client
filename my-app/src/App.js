@@ -1,67 +1,70 @@
 
 import './App.css';
-import Header from './Component/Header/Header'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React from "react";
-
+import Home from './Pages/Home/Home/Home';
 import {
-  BrowserRouter,
+
+  BrowserRouter as Router,
   Switch,
   Route,
-  
-
 } from "react-router-dom";
+import Blog from './Pages/Blog/Blog';
 
-import Home from './Component/Shared/Home';
-import Login from './Component/Login/Login';
-import Myorder from './Component/Myorder/Myorder';
-import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
-import AuthProvider from './Context/AuthProvider';
-import Services from './Component/Services/Services';
-import Registration from './Component/Registration/Registration';
 
-import ServiceCard from './Component/ServiceCard/ServiceCard';
-import ManageOrder from './Component/ManageOrder/ManageOrder';
+import Navigation from './Pages/Home/Navigation/Navigation';
+import Login from './Pages/Login/Login';
+import AuthProvider from './Context/AuthProvide';
+import Services from './Pages/Home/Services/Services';
+import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
+
+import ManageMyorder from './Pages/ManageMyOrder/ManageMyOrder';
+
+import Placeorder from './Pages/Placeorder/Placeorder';
+import Addnewservice from './Pages/Addnewservice/Addnewservice';
+import ManageAllorders from './Pages/ManageAllorders/ManageAllorders';
 
 function App() {
   return (
-    <AuthProvider>
-    <BrowserRouter>
-      <Header></Header>
-      <Switch>
-        <Route exact path="/">
-          <Home></Home>
-        </Route>
-        <Route path="/home">
-          <Home></Home>
-        </Route>
-        <Route path="/Services">
-          <Services></Services>
-         </Route> 
-        <Route path="/Login">
-            <Login></Login>
-        </Route>
-        <PrivateRoute path="/Manageorder">
-          <ManageOrder></ManageOrder>
-         </PrivateRoute> 
-        <PrivateRoute path="/Myorder/:id">
-          <Myorder></Myorder>
+<AuthProvider>
+<Router>
+    <Navigation></Navigation>
+    <Switch>
+      <Route path="/home">
+        <Home></Home>
+      </Route>
+      <Route path="/blog">
+        <Blog />
+      </Route>
+      <Route path="/services"> 
+        <Services></Services>
+      </Route>
+      <PrivateRoute path="/manageallorders">
+        <ManageAllorders></ManageAllorders>
+      </PrivateRoute>
+      <PrivateRoute path="/addnewservice">
+        <Addnewservice></Addnewservice>
+      </PrivateRoute>
+      <PrivateRoute path="/managemyorder/">
+        <ManageMyorder></ManageMyorder>
+      </PrivateRoute>
+      <PrivateRoute path="/placeorder">
+        <Placeorder></Placeorder>
         </PrivateRoute>
-       
-        <Route path="/Registration" exact component={ServiceCard}>
-          <Registration></Registration>
-        </Route>
-      </Switch>
-    </BrowserRouter>
-    </AuthProvider>
-    
-      
-      
-      
+      <PrivateRoute path="/placeorder/:_id">
+        <Placeorder></Placeorder>
+      </PrivateRoute>
+      <Route path="/login"> 
+        <Login></Login>
+      </Route>
+      <Route path="/">
+        <Home />
+      </Route>
+    </Switch>
+</Router>
+</AuthProvider>    
+  
     
   );
 }
-
-
 
 export default App;
