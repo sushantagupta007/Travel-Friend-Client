@@ -6,12 +6,14 @@ import useAuth from './../../Hooks/useAuth';
 
 const ManageMyorder = () => {
     const {user} = useAuth(); 
+    const [orders,setOrder] = useState([])
     const [myorder,setmyorder] = useState([]); 
     let i=1; 
     useEffect(()=>{
         fetch('http://localhost:5000/managemyorder')
         .then(res=>res.json())
         .then(data=>{
+            setOrder(data)
             const filtereddata = data.filter(item=>item.email===user.email)
             setmyorder(filtereddata); 
             
@@ -19,27 +21,26 @@ const ManageMyorder = () => {
         })
     },[])
     
-    // const handleDecline=(id)=>{
-    //     const permission = prompt("Do you want to delte")
-    //     if(permission==='ok'|| permission==='yes'){
-    //         fetch(`http://localhost:5000/managemyorder/${id}`,{
-    //         method:'DELETE',
-    //     })
-    //     .then(res=>res.json())
-    //     .then(data=>{
-    //         if(data.deletedCount>0){
-    //             const remainingUsers = orders.filter(order=>order._id!==id)
-    //             setmyorder(remainingUsers)
-    //             alert("Deleted Successfully")
-    //         }
-    //     })
-    //     }
-    //     else{
-    //         return
-    //     }
+    const handleDecline=(id)=>{
+        const permission = prompt("Do you want to delte")
+        if(permission==='ok'|| permission==='yes'){
+            fetch(`http://localhost:5000/managemyorder/${id}`,{
+            method:'DELETE',
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            if(data.deletedCount>0){
+                const remainingUsers = orders.filter(order=>order._id!==id)
+                setOrder(remainingUsers)
+                alert("Deleted Successfully")
+            }
+        })
+        }
+        else{
+            return
+        }
         
-        
-    // }
+    }
 
     return (        
     <div className="border w-75 mx-auto mt-4 bg-light p-4"> 
@@ -53,6 +54,7 @@ const ManageMyorder = () => {
             <th scope="col">User Name</th>
             <th scope="col">User Email</th>
             <th scope="col">User Date</th>
+            <th scope="col">Delete</th>
             
             
             </tr>
@@ -66,7 +68,7 @@ const ManageMyorder = () => {
                         <td>{order.email}</td>
                         <td>{order.date}</td>
                         
-                        {/* <td> <button onClick={()=>handleDecline(order._id)}type="button" className="btn btn-danger">Delete</button></td> */}
+                        <td> <button onClick={()=>handleDecline(order._id)}type="button" className="btn btn-danger">Delete</button></td>
                     </tr>)
             }
             
