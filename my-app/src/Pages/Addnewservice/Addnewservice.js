@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 const Addnewservice = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {  
-        fetch(`http://localhost:5000/Services`,{
+        fetch(`https://radiant-everglades-28341.herokuapp.com/Services`,{
                 method:'POST',
                 headers:{"content-type":"application/json"},
                 body:JSON.stringify(data)

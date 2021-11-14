@@ -45,7 +45,7 @@ const ClientFeed = () => {
         const [clients,setClients] = useState([]); 
 
         useEffect(()=>{
-            fetch('http://localhost:5000/Clients')
+            fetch('https://radiant-everglades-28341.herokuapp.com/Clients')
                 .then(res=>res.json())
                 .then(data=>{
                     setClients(data)

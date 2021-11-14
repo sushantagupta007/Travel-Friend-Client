@@ -18,7 +18,7 @@ const Placeorder = () => {
         console.log(_id)
         
     const onSubmit = data => {  
-        fetch(`http://localhost:5000/placeorder`,{
+        fetch(`https://radiant-everglades-28341.herokuapp.com/placeorder`,{
                 method:'POST',
                 headers:{"content-type":"application/json"},
                 body:JSON.stringify(data)

@@ -13,7 +13,7 @@ const ManageAllorder = () => {
 
     const {user} = useAuth(); 
     const [orders,setOrder] = useState([]); 
-    const admin = 'sushanta.gupta007@gmail.com'
+    const admin = 'admin@gmail.com'
     const [singleOrder,setSingleOrder]= useState([]); 
     
     
@@ -23,7 +23,7 @@ const ManageAllorder = () => {
 
     let i=1; 
     useEffect(()=>{
-        fetch('http://localhost:5000/managemyorder')
+        fetch('https://radiant-everglades-28341.herokuapp.com/managemyorder')
         .then(res=>res.json())
         .then(data=>{
             setOrder(data)
@@ -33,7 +33,7 @@ const ManageAllorder = () => {
     const handleDecline=(id)=>{
 
         if(user.email===admin){
-            fetch(`http://localhost:5000/managemyorder/${id}`,{
+            fetch(`https://radiant-everglades-28341.herokuapp.com/managemyorder/${id}`,{
             method:'DELETE',
         })
         .then(res=>res.json())
@@ -54,20 +54,20 @@ const ManageAllorder = () => {
     }
 
     const handleUpdate =(id) =>{
-        const url =`http://localhost:5000/managemyorder/${id}`
+        const url =`https://radiant-everglades-28341.herokuapp.com/managemyorder/${id}`
         fetch(url)
             .then(res=>res.json())
             .then(data=>{
                 setSingleOrder(data)
                 console.log(data)
             })
-        fetch(`http://localhost:5000/managemyorder/updated/${id}`,{
+        fetch(`https://radiant-everglades-28341.herokuapp.com/managemyorder/updated/${id}`,{
             method:"PUT",
             headers:{"content-type":"application/json"},
             body:JSON.stringify(singleOrder)
         })
 
-        fetch('http://localhost:5000/managemyorder/updated')
+        fetch('https://radiant-everglades-28341.herokuapp.com/managemyorder/updated')
         .then(res=>res.json())
         .then(data=>{
             setOrder(data)
