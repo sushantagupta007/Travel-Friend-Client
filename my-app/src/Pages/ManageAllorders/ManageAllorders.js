@@ -14,6 +14,8 @@ const ManageAllorder = () => {
     const {user} = useAuth(); 
     const [orders,setOrder] = useState([]); 
     const admin = 'sushanta.gupta007@gmail.com'
+    const [singleOrder,setSingleOrder]= useState([]); 
+    
     
     const modalShow = () =>{
         handleShow(); 
@@ -21,7 +23,7 @@ const ManageAllorder = () => {
 
     let i=1; 
     useEffect(()=>{
-        fetch('http://localhost:5000/managemyorder?')
+        fetch('http://localhost:5000/managemyorder')
         .then(res=>res.json())
         .then(data=>{
             setOrder(data)
@@ -51,6 +53,32 @@ const ManageAllorder = () => {
         }
     }
 
+    const handleUpdate =(id) =>{
+        const url =`http://localhost:5000/managemyorder/${id}`
+        fetch(url)
+            .then(res=>res.json())
+            .then(data=>{
+                setSingleOrder(data)
+                console.log(data)
+            })
+        fetch(`http://localhost:5000/managemyorder/updated/${id}`,{
+            method:"PUT",
+            headers:{"content-type":"application/json"},
+            body:JSON.stringify(singleOrder)
+        })
+
+        fetch('http://localhost:5000/managemyorder/updated')
+        .then(res=>res.json())
+        .then(data=>{
+            setOrder(data)
+            console.log(data)
+            
+        })
+        
+    }
+        
+      
+    
     return (        
     <div className="border w-75 mx-auto mt-4 bg-light p-4"> 
         <Modal show={show} onHide={handleClose}>
@@ -66,7 +94,7 @@ const ManageAllorder = () => {
         </Modal>
         <h2 className="text-center border-bottom"> Manage Order</h2>
 
-        <table className="table table-striped">
+        <table className="table">
         <thead>
             <tr>
                 <th scope="col">#</th>
@@ -74,6 +102,8 @@ const ManageAllorder = () => {
                 <th scope="col">User Name</th>
                 <th scope="col">User Email</th>
                 <th scope="col">User Date</th>
+                <th scope="col">Status</th>
+                <th scopt="col">Update Status </th>
                 <th scope="col">Delete</th>
             </tr>
         </thead>
@@ -85,6 +115,8 @@ const ManageAllorder = () => {
                         <td>{order.UserName}</td>
                         <td>{order.email}</td>
                         <td>{order.date}</td>
+                        <td>{order.status}</td>
+                        <td> <button onClick={()=>handleUpdate(order._id)}type="button" className="btn btn-info">Update</button></td>
                         <td> <button onClick={()=>handleDecline(order._id)}type="button" className="btn btn-danger">Delete</button></td>
                     </tr>)
                 }
