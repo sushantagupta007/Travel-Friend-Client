@@ -96,10 +96,10 @@ const ManageAllorder = () => {
                 <table className="table w-75 p-0">
                     <thead>
                         <tr className="w-75 fs-6">
-                            <th className="p-0 border w-50" scope="col">Service Name</th>
-                            <th className="p-0 border w-50" scope="col">User Name</th>
+                            <th className="p-0 border w-50" scope="col">Service</th>
+                            <th className="p-0 border w-50" scope="col">Name</th>
                             <th className="p-0 border w-50" scope="col">Status</th>
-                            <th className="p-0 border w-50" scopt="col">Update Status </th>
+                            <th className="p-0 border w-50" scopt="col">Status </th>
                             <th className="p-0 border w-50" scope="col">Delete</th>
                         </tr>
                     </thead>
