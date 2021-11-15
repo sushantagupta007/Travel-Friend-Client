@@ -6,7 +6,7 @@ import React from 'react';
 import OwlCarousel from 'react-owl-carousel';  
 import 'owl.carousel/dist/assets/owl.carousel.css';  
 import 'owl.carousel/dist/assets/owl.theme.default.css';  
-import './ClientFeed.js'
+
 import { Card} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
@@ -63,61 +63,36 @@ const ClientFeed = () => {
                 </div>      
                 </div>  
             </div>  
-        <div className='container-fluid' >            
-        <OwlCarousel items={3}  
-          className="owl-theme"  
-          loop  
-          nav  
-          margin={8} >  
-          {clients.map((client)=>
-            <Card key={client._id} style={{ width: '25rem' }}>
-            <Card.Img  className="img"variant="top" src={client.img} />
-            <Card.Body>
-              <Card.Title>{client.name}</Card.Title>
-              <Card.Text>
-                {client.quote}
-              </Card.Text>
-                 
-                  {Array.from(Array(client.rating).keys()).map((item)=>
-                  <div key={item.key}className="d-inline-block text-warning"><FontAwesomeIcon icon={faStar}></FontAwesomeIcon> </div>)}
-            
-            </Card.Body>
-          </Card> 
-            )}
-        </OwlCarousel>  
-      </div>  
-  
-      </div>  
-          )  
+        <div className='container-fluid' >  
+        <OwlCarousel className='owl-theme container' loop margin={10} nav>
+            {
+                clients.map((client)=>
+                <div>
+                <Card style={{ width: '18rem' }}>
+                    <Card.Img variant="top" src={client.img} />
+                    <Card.Body>
+                    <Card.Title>{client.name}</Card.Title>
+                        <Card.Text>
+                            {client.quote}
+                        </Card.Text>
+                        <Card.Text>
 
-
-
-
-        //   <Container>
-        //     <h2 className="text-center my-3 text-primary"> Our Client's Feedback </h2>
-        //     <Row>
-        //         <Col lg={6} xs={12} md={6} sm={6}>
-        //             <Image style={{width:'100%', height:'100%'}} rounded src={Tourist} />
-        //         </Col>
-        //         <Col lg={6} xs={12} md={6} sm={6} className=" text-white bg-dark d-flex align-items-center">
-        //             <cite className="text-white text-center "> 
-        //                 Eextra ounce of customer feedback. The added insights that sharpen competitive advantage and ensure they remain as relevant as possible in a changing world. The good news is that there are many ways of getting hold of customer feedback. And you can use it to improve your products, tune-up customer service operations, boost marketing and train staff.  
-        //             </cite> <br/>
-        //         </Col>
-        //     </Row>
-        //     <Row>
-        //         <Col lg={6} xs={12} md={6} sm={6}>
-        //             <cite className="text-white text-center "> 
-        //                 Eextra ounce of customer feedback. The added insights that sharpen competitive advantage and ensure they remain as relevant as possible in a changing world. The good news is that there are many ways of getting hold of customer feedback. And you can use it to improve your products, tune-up customer service operations, boost marketing and train staff.  
-        //             </cite> <br/>
-        //         </Col>
-        //         <Col lg={6} xs={12} md={6} sm={6} className=" text-white  d-flex align-items-center">
-        //             <Image style={{width:'100%', height:'100%'}} rounded src={Tourist} />
-                    
-        //         </Col>
-        //     </Row>
-        // </Container>
-
-};
+                        {Array.apply(null, {length: client.rating}).map(Number.call, Number).map((number)=>
+                            <div key={number}className="p-0 m-0"style={{display:"inline-flex"}}> 
+                            <li style={{listStyleType:"none"}} className="m-0 text-center p-0"> 
+                            <FontAwesomeIcon className="text-warning " icon={faStar}></FontAwesomeIcon>
+                            </li>
+                        </div>
+                        )}
+                        </Card.Text>
+                    </Card.Body>
+                    </Card>
+                </div>)
+            }
+        </OwlCarousel>
+        </div>
+      </div>
+        )
+}
 
 export default ClientFeed;

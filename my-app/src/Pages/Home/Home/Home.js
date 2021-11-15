@@ -1,11 +1,12 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import ClientFeed from '../ClientFeedBack/ClientFeed';
+
 import Contact from '../Contact/Contact';
 import Footer from '../Footer/Footer';
 import Information from '../Information/Information';
 import Services from '../Services/Services';
 import Slider from '../Slider/Slider';
+import ClientFeed from './../ClientFeedBack/ClientFeed';
 
 
 const Home = () => {

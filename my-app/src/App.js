@@ -22,6 +22,7 @@ import ManageMyorder from './Pages/ManageMyOrder/ManageMyOrder';
 import Placeorder from './Pages/Placeorder/Placeorder';
 import Addnewservice from './Pages/Addnewservice/Addnewservice';
 import ManageAllorders from './Pages/ManageAllorders/ManageAllorders';
+import ClientFeed from './Pages/Home/ClientFeedBack/ClientFeed';
 
 function App() {
   return (
@@ -34,6 +35,9 @@ function App() {
       </Route>
       <Route path="/blog">
         <Blog />
+      </Route>
+      <Route path="/clientfeedback">
+        <ClientFeed></ClientFeed>
       </Route>
       <Route path="/services"> 
         <Services></Services>
