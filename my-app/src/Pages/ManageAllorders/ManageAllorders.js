@@ -13,7 +13,7 @@ const ManageAllorder = () => {
 
     const {user} = useAuth(); 
     const [orders,setOrder] = useState([]); 
-    const admin = 'admin@gmail.com'
+    const admin = 'admin@admin.com'
     const [singleOrder,setSingleOrder]= useState([]); 
     
     
