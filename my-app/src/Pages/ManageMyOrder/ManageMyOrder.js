@@ -10,7 +10,7 @@ const ManageMyorder = () => {
     const [myorder,setmyorder] = useState([]); 
     let i=1; 
     useEffect(()=>{
-        fetch('https://radiant-everglades-28341.herokuapp.com/managemyorder')
+        fetch('https://radiant-everglades-28341.herokuapp.com/users/managemyorder')
         .then(res=>res.json())
         .then(data=>{
             setOrder(data)
@@ -19,7 +19,7 @@ const ManageMyorder = () => {
             
             
         })
-    },[])
+    },[user.email])
     
     const handleDecline=(id)=>{
         const permission = prompt("Do you want to delte")

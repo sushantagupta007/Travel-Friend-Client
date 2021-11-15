@@ -1,10 +1,10 @@
 import React from 'react';
 import { Card, Col,Button } from 'react-bootstrap';
-import { Link, useHistory } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 
 const Service = (props) => {
-    const history = useHistory(); 
+    
     
     // const handleClick =(id)=>{
     //     console.log(id)

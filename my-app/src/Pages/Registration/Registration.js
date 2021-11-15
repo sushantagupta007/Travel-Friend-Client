@@ -2,15 +2,40 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 
 import './Registration.css'
+import useAuth from './../../Hooks/useAuth';
+import { useHistory, useLocation } from 'react-router';
+import { useState } from 'react';
 
 
 const Registration = () => {
-    const { register, handleSubmit, } = useForm();
-    const onSubmit = data => console.log(data);
+    const [response,setResponse] = useState({})
+    const {registerEmail} = useAuth(); 
+    const { register, handleSubmit, reset } = useForm();
 
-    const handleNewsletter = () =>{
-        console.log("clicked")
+    const history = useHistory();
+    const location = useLocation(); 
+
+
+
+    const onSubmit = data => {
+        console.log(data)
+        registerEmail(data.name, data.password, data.email,history,location); 
+        
+        fetch('https://radiant-everglades-28341.herokuapp.com/registeruser',{
+            method:"POST",
+            headers:{"content-type":"application/json"},
+            body:JSON.stringify(data)
+        })
+        .then(res=> {
+            setResponse(res)
+            console.log(res)
+            if(response.status===200){
+                alert("Successfully Registered") 
+                reset(); 
+            }
+        })
     }
+   
  
     
     return (
@@ -20,11 +45,12 @@ const Registration = () => {
                 <h1 className="text-center"> Registration </h1>
                 <div className="container">
                 <form onSubmit={handleSubmit(onSubmit)} className=" w-50 mx-auto d-flex flex-column">
-                        <input type="text"className="my-4 p-2 "placeholder="Your Full Name" {...register("FullName", { required: true, pattern: /^[A-Za-z]+$/i, maxLength: 20 })} />
-                        <input type="email" className="my-4 p-2"placeholder="Your Email" {...register("Email", { required:true})} />
-                        <input type="text" className="my-4 p-2 "placeholder="Your Address" {...register("Address", { required: true, maxLength: 50 })} />               
+                        <input type="text"className="my-2 p-2 "placeholder="Your Full Name" {...register("name", { required: true, pattern: /^[A-Za-z]+$/i, maxLength: 20 })} />
+                        <input type="email" className="my-2 p-2"placeholder="Your Email" {...register("email", { required:true})} />
+                        <input type="password" className="my-2 p-2"placeholder="Password" {...register("password", { required:true})} />
+                        <input type="text" className="my-2 p-2 "placeholder="Your Address" {...register("Address", { required: true, maxLength: 50 })} />               
                         <label >Your Preferabel Place</label>
-                        <select placeholder="" className="my-4 p-2" {...register("Favourite Place")}>
+                        <select placeholder="" className="my-2 p-2" {...register("Favourite Place")}>
                             <option value="Europe">Europe</option>
                             <option value="USA">United States</option>
                             <option value="UK">United Kingdom</option>
@@ -34,20 +60,20 @@ const Registration = () => {
                             <option value="Switzerland">Switzerland</option>
                         </select>
                         <label >Your Preferabel Time</label>
-                        <select className="my-4 p-2" {...register("Preferable Time")}>
+                        <select className="my-2 p-2" {...register("Preferable Time")}>
                             <option value="Summer">Summer</option>
                             <option value="Winter">Winter</option>
                             <option value="Spring">Spring</option>
                         </select>
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
-                            <label class="form-check-label" for="defaultCheck1">
+                        <input className="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
+                            <label className="form-check-label" for="defaultCheck1">
                                 Do You Need Any Visa Help? 
                             </label>
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
-                            <label class="form-check-label" for="defaultCheck1">
+                        <input className="form-check-input" type="checkbox" value="" id="defaultCheck2"/>
+                            <label className="form-check-label" for="defaultCheck1">
                                 Subscription for newletter ?  
                             </label>
-                        <input type="submit" />
+                        <input type="submit" value="Register"/>
                 </form>
                 </div>
             </div>
@@ -140,7 +166,7 @@ const Registration = () => {
                 <div className="row mt-2 border p-3">
                     <h4> Subscribe to Our Newsletter</h4>
                     <input type="email" placeholder="Your email"/>
-                    <button className="btn btn-danger w-25 mt-4"onClick={handleNewsletter}>Subscribe</button>
+                    <button className="btn btn-danger w-25 mt-4">Subscribe</button>
                 </div>
             </div>
         </div>
