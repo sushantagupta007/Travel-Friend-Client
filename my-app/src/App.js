@@ -23,6 +23,7 @@ import Placeorder from './Pages/Placeorder/Placeorder';
 import Addnewservice from './Pages/Addnewservice/Addnewservice';
 import ManageAllorders from './Pages/ManageAllorders/ManageAllorders';
 import ClientFeed from './Pages/Home/ClientFeedBack/ClientFeed';
+import Registration from './Pages/Registration/Registration';
 
 function App() {
   return (
@@ -41,6 +42,9 @@ function App() {
       </Route>
       <Route path="/services"> 
         <Services></Services>
+      </Route>
+      <Route path="/registration">
+        <Registration></Registration>
       </Route>
       <PrivateRoute path="/manageallorders">
         <ManageAllorders></ManageAllorders>
