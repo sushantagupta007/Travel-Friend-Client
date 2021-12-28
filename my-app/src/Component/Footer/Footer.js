@@ -37,12 +37,12 @@ const Footer = () => {
     return (
     <Container  sx={{ bgcolor: '#FFA902',color:"white",padding:"" }}>
         <Grid container spacing={2} sx={{padding:"10px"}}>
-            <Grid item xs={4} >
+            <Grid item xs={12} sm={4} md={4} lg={4}  sx={{display:"flex",justifyContent:{xs:'center',sm:'flex-start', md:'flex-start',lg:'flex-start'},alignItems:{md:'flex-start'}}} >
                 <Typography sx={{textAlign:"center"}} >
                     &copy; 2020 Travel Friend All Rights Reserved 
                 </Typography>
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={12} sm={4} md={4} lg={4} sx={{display:"flex", justifyContent:{xs:'center',sm:'center', md:'center',lg:'center'}}}>
                 <a className={classes.customLink}  href="https://web.facebook.com/">
                  Contact
                 </a>
@@ -56,7 +56,7 @@ const Footer = () => {
                  About
                 </a>
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={12} sm={4} md={4} lg={4} sx={{display:"flex",justifyContent:{xs:'center', sm:'flex-end', md:'center',lg:'flex-end'}}}>
                 <Stack direction="row" spacing={2}>
                     <a  href="https://web.facebook.com/"> 
                         <Avatar   sx={{ width: 30, height: 30 }}  className={avatarClass.customAvatar} >
