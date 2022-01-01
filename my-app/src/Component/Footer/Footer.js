@@ -1,4 +1,4 @@
-import { Avatar, Container, Grid, Typography} from '@mui/material';
+import { Avatar, Container, Grid, Typography, Box } from '@mui/material';
 import React from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -35,7 +35,7 @@ const Footer = () => {
     const classes= useStyles()
     const avatarClass = customStyle(); 
     return (
-    <Container  sx={{ bgcolor: '#FFA902',color:"white",padding:"" }}>
+    <Box  fixed  sx={{ bgcolor: '#FFA902',color:"white",paddingTop:"1rem" }}>
         <Grid container spacing={2} sx={{padding:"10px"}}>
             <Grid item xs={12} sm={4} md={4} lg={4}  sx={{display:"flex",justifyContent:{xs:'center',sm:'flex-start', md:'flex-start',lg:'flex-start'},alignItems:{md:'flex-start'}}} >
                 <Typography sx={{textAlign:"center"}} >
@@ -83,7 +83,7 @@ const Footer = () => {
             </Grid>
         </Grid>
     
-    </Container>    
+    </Box>    
     )    
 }
 

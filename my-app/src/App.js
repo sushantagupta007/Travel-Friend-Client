@@ -11,8 +11,12 @@ import {
 } from "react-router-dom";
 
 
-import PrimarySearchAppBar from './Component/Header/Header';
-import Footer from './Component/Footer/Footer';
+
+import HomePage from './Pages/HomePage/HomePage';
+import Explore from './Component/Explore/Explore';
+
+
+
 
 
 
@@ -22,8 +26,8 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/nav">
-          <Footer></Footer>
+        <Route path="/home">
+        <Explore></Explore>
         </Route>
       </Switch>
     </Router>    
