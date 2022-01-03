@@ -2,7 +2,7 @@
 import './App.css';
 
 
-import Navbar from './Component/Nav/Nav';
+
 
 import {
   BrowserRouter as Router,
@@ -10,10 +10,14 @@ import {
   Route,
 } from "react-router-dom";
 
-
-
 import HomePage from './Pages/HomePage/HomePage';
-import Explore from './Component/Explore/Explore';
+import CategoryBlock from './Component/Category/CategoryBlock';
+
+
+
+
+
+
 
 
 
@@ -27,7 +31,7 @@ function App() {
     <Router>
       <Switch>
         <Route path="/home">
-        <Explore></Explore>
+        <HomePage></HomePage>
         </Route>
       </Switch>
     </Router>    

@@ -1,15 +1,34 @@
 import React from "react";
 import SwiperCore, { EffectCoverflow, Pagination } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
+
 import "swiper/swiper-bundle.min.css";
-import "swiper/swiper.min.css";
+// import "swiper/swiper.min.css";
 import "./FollowMe.css";
 import FollowMeCard from './../FollowMeCard/FollowMeCard';
+import { Box, createTheme, Typography } from '@mui/material';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+
+const theme = createTheme();
+
+theme.typography.h3 = {
+  fontSize: '1.2rem',
+  '@media (min-width:600px)': {
+    fontSize: '1.5rem',
+  },
+  [theme.breakpoints.up('md')]: {
+    fontSize: '2rem',
+  },
+  
+};
 
 SwiperCore.use([EffectCoverflow, Pagination]);
 const FollowMe = () => {
     return (
-        <div>
+        <Box sx={{width:'75%',mx:'auto'}}>
+          <Typography theme={theme} sx={{xs:{fontSize:'1rem'}}} variant="h3" align="Center">
+            Choose Category 
+          </Typography>
           <Swiper
             effect={"coverflow"}
             grabCursor={true}
@@ -54,7 +73,7 @@ const FollowMe = () => {
             </SwiperSlide>
             
           </Swiper>
-        </div>
+        </Box>
       );
     };
 export default FollowMe;

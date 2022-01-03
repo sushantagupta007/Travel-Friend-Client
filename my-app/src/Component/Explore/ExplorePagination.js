@@ -1,8 +1,5 @@
 import React from 'react';
 import Pagination from '@mui/material/Pagination';
-
-import Explore from './Explore';
-import { useLocation, Link, MemoryRouter, Route, Switch } from 'react-router-dom';
 import { Stack } from '@mui/material';
 
 

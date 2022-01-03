@@ -42,17 +42,17 @@ const ExploreCard = (props) => {
     
     return (
     <ThemeProvider theme={theme} sx={{mx:'auto'}}>
-    <Card sx={{ maxWidth: 290,p:1, m:1,boxShadow: 3 }}>
+    <Card sx={{ maxWidth: 280,p:1, m:1,boxShadow: 3 }}>
       <CardMedia
         component="img"
         height="200"
         image={props.img}
         alt="green iguana"
-        sx={{borderRadius: 1,width:280,mx:'auto'}}
+        sx={{borderRadius: 1,xs:{width:260},mx:'auto'}}
         className={classes.customTransform}
       />
       <CardContent>
-        <Typography gutterBottom variant="h7" component="div" className={classes.root}>
+        <Typography gutterBottom variant="h7" className={classes.root}>
         {props.name}
         </Typography>
         <Typography variant="body2" color="text.secondary">

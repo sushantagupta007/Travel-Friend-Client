@@ -40,3 +40,7 @@
 .customFont{
   font-family: 'Poppins', sans-serif;
 }
+
+body{
+  margin:0
+}

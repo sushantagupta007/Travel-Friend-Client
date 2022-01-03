@@ -35,7 +35,7 @@ const Footer = () => {
     const classes= useStyles()
     const avatarClass = customStyle(); 
     return (
-    <Box  fixed  sx={{ bgcolor: '#FFA902',color:"white",paddingTop:"1rem" }}>
+    <Container  maxWidth="false" fluid sx={{width:1, bgcolor: '#FFA902',color:"white", paddingTop:"1rem" }}>
         <Grid container spacing={2} sx={{padding:"10px"}}>
             <Grid item xs={12} sm={4} md={4} lg={4}  sx={{display:"flex",justifyContent:{xs:'center',sm:'flex-start', md:'flex-start',lg:'flex-start'},alignItems:{md:'flex-start'}}} >
                 <Typography sx={{textAlign:"center"}} >
@@ -83,7 +83,7 @@ const Footer = () => {
             </Grid>
         </Grid>
     
-    </Box>    
+    </Container>    
     )    
 }
 
