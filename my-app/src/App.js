@@ -12,6 +12,7 @@ import {
 
 import HomePage from './Pages/HomePage/HomePage';
 import CategoryBlock from './Component/Category/CategoryBlock';
+import Blog from './Component/Blog/Blog';
 
 
 

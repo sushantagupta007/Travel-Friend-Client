@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from 'react';
 
-import { Grid, Typography, Box, createTheme } from '@mui/material';
+import { Grid, Typography, Box, createTheme, Container } from '@mui/material';
 import ExploreCard from './ExploreCard';
 
 import { Pagination } from '@mui/material';
@@ -54,11 +54,11 @@ const Explore = () => {
       
     console.log(currentPage)
     return (
-    <Box sx={{fontFamily:'Poppins',marginTop:'1rem',marginBottom:'1rem'}}>
+    <Container sx={{fontFamily:'Poppins',marginTop:'1rem',marginBottom:'1rem'}}>
         <Typography theme={theme} sx={{xs:{fontSize:'1rem'}}} variant="h3" align="Center">
             Explore Places
         </Typography>
-        <Grid container spacing={2} sx={{ mx: "auto",width:'75%'}}> 
+        <Grid container spacing={2} sx={{ mx: "auto",width:{xs:'100%',lg:'75%'}}}> 
             {currentArray.map((item)=>
             <Grid lg={4} xs={12} item sx={{display: 'flex', justifyContent: 'center'}}>
                 <ExploreCard  
@@ -81,10 +81,9 @@ const Explore = () => {
                     onChange={handleChange}>
                 </Pagination>
             </Stack>
-            
         </Box>
         
-    </Box>
+    </Container>
       
 
     );

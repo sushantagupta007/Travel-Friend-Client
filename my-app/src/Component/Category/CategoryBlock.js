@@ -6,7 +6,7 @@ import 'react-multi-carousel/lib/styles.css';
 
 import { makeStyles } from '@material-ui/core/styles';
 import CategoryCard from './CategoryCard';
-import { Box, createTheme, Typography } from '@mui/material';
+import { Box, createTheme, Typography, Container } from '@mui/material';
 
 import SoloTravel from '../../Image/1.jpg'
 import MountTravel from '../../Image/2.jpg'
@@ -58,9 +58,9 @@ theme.typography.h3 = {
 const CategoryBlock = () => {
     const classes= useStyles()
     return (
-    <Box sx={{width:"75%",mx:'auto',fontFamily:'Poppins'}} >
+    <Container sx={{fontFamily:'Poppins',flexGrow: 1}} >
       <Typography theme={theme} sx={{xs:{fontSize:'1rem'}}} variant="h3" align="Center">
-            Choose Category
+            Choose Category 
         </Typography>
       <Carousel responsive={responsive} >
         <div className={classes.root}> <CategoryCard img={SoloTravel} des="Solo Travel"> fsfdfdf </CategoryCard> </div>
@@ -70,7 +70,7 @@ const CategoryBlock = () => {
         <div className={classes.root}> <CategoryCard img={JungleTravel} des="Jungle Travel"> hello</CategoryCard> </div>
         <div className={classes.root}> <CategoryCard img={OceanTravel} des="Ocean Trvel" >hello</CategoryCard> </div>
     </Carousel>
-    </Box>
+    </Container>
     )
 };
 
