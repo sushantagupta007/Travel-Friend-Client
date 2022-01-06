@@ -1,0 +1,273 @@
+{
+    "features":[
+     {
+       "type": "Feature",
+       "properties": {
+         "PARK_ID": 901,
+         "NAME": "Sundarban",
+         "ADDRESS": "Khulna",
+         "DESCRIPTIO": "A mangrove area in the delta formed by the confluence of the Ganges, Brahmaputra and Meghna Rivers in the Bay of Bengal.",
+         "img":"./Map/Sundarban.jpg"
+       },
+       "geometry": {
+         "type": "Point",
+         "coordinates": [89.2,  22.0]
+       }
+       
+     },
+     {
+       "type": "Feature",
+       "properties": {
+         "PARK_ID": 902,
+         "NAME": "St. Martin's Island",
+         "Address": "Chittagong",
+         "DESCRIPTIO": " A  small island (area only 3 km2) in the northeastern part of the Bay of Bengal, about 9 km south of the tip of the Cox's Bazar-Teknaf peninsula, and forming the southernmost part of Bangladesh",
+         "img":"./Map/Saint.jpg"
+       },
+       "geometry": {
+         "type": "Point",
+         "coordinates": [92.326667, 20.613056]
+       }
+     },
+     {
+       "type": "Feature",
+       "properties": {
+         "PARK_ID": 903,
+         "NAME": "Jaflong",
+         "BRANCH": "Sylhet",
+         "DESCRIPTIO": "Mangrove Forest"
+         
+       },
+       "geometry": {
+         "type": "Point",
+         "coordinates": [91.891667, 25.103333]
+       }
+     },
+     {
+       "type": "Feature",
+       "properties": {
+         "PARK_ID": 904,
+         "NAME": "Ahasan Manjil",
+         "BRANCH": "Dhaka",
+         "DESCRIPTIO": "Ahsan Manzil is the erstwhile official residential palace and seat of the Nawab of Dhaka",
+         "img":"./Map/Ahasan Manjil.jpg"
+       },
+       "geometry": {
+         "type": "Point",
+         "coordinates": [ 90.406058, 23.708597]
+       }
+     },
+     {
+       "type": "Feature",
+       "properties": {
+         "PARK_ID": 905,
+         "NAME": "Ratargul",
+         "BRANCH": "Sylhet",
+         "DESCRIPTIO": "Ratargul Swamp Forest is a freshwater swamp forest located in Gowain River, Fatehpur Union, Gowainghat, Sylhet, Bangladesh.",
+         "img":"./Map/Ratargul.jpg"
+       },
+       "geometry": {
+         "type": "Point",
+         "coordinates": [91.9317, 25.0176]
+       }
+     },
+     {
+       "type": "Feature",
+       "properties": {
+         "PARK_ID": 906,
+         "NAME": "Lalbag Fort",
+         "BRANCH": "Rangpur Branch",
+         "DESCRIPTIO": "Lalbagh Fort is an incomplete 17th-century Mughal fort complex that stands before the Buriganga River in the southwestern part of Dhaka, Bangladesh.",
+         "img":"./Map/Lalbag.jpg"
+       },
+       "geometry": {
+         "type": "Point",
+         "coordinates": [90.38819, 23.71897]
+       }
+     },
+     {
+       "type": "Feature",
+       "properties": {
+         "PARK_ID": 907,
+         "NAME": "Sompur Bihar",
+         "BRANCH": "Naogaon,Rajshahi",
+         "DESCRIPTIO": "Somapura Mahavihara in Paharpur, Badalgachhi, Naogaon, Bangladesh is among the best known Buddhist viharas, monasteries, in the Indian Subcontinent and is one of the most important archaeological sites in the country.",
+         "img":"./Map/Sompur.jpg"
+       },
+       "geometry": {
+         "type": "Point",
+         "coordinates": [88.9773, 25.0311]
+       }
+     },
+     {
+       "type": "Feature",
+       "properties": {
+         "PARK_ID": 908,
+         "NAME": "Sompur Bihar",
+         "BRANCH": "Naogaon,Rajshahi",
+         "DESCRIPTIO": "Somapura Mahavihara in Paharpur, Badalgachhi, Naogaon, Bangladesh is among the best known Buddhist viharas, monasteries, in the Indian Subcontinent and is one of the most important archaeological sites in the country.",
+         "img":"./Map/Sompur.jpg"
+       },
+       "geometry": {
+         "type": "Point",
+         "coordinates": [88.9773, 25.0311]
+       }
+     },
+     {
+       "type": "Feature",
+       "properties": {
+         "PARK_ID": 909,
+         "NAME": "Jatiyo Sansad",
+         "BRANCH": "Dhaka",
+         "DESCRIPTIO": "Jatiya Sangsad Bhaban or National Parliament House is the house of the Parliament of Bangladesh, located at Sher-e-Bangla Nagar in the Bangladeshi capital of Dhaka.",
+         "img":"./Map/National.jpg"
+       },
+       "geometry": {
+         "type": "Point",
+         "coordinates": [90.37858, 23.76233]
+       }
+     },
+     {
+       "type": "Feature",
+       "properties": {
+         "PARK_ID": 910,
+         "NAME": "Kua Kata",
+         "BRANCH": "Dhaka",
+         "DESCRIPTIO": "Kuakata is a town in southern Bangladesh known for its panoramic sea beach. Kuakata beach is a sandy expanse 18 kilometres (11 mi) long and 3 kilometres (1.9 mi) wide.",
+         "img":"./Map/Kuakata.jpg"
+       },
+       "geometry": {
+         "type": "Point",
+         "coordinates": [90.1809, 21.8029]
+       }
+     },
+     {
+       "type": "Feature",
+       "properties": {
+         "PARK_ID": 911,
+         "NAME": "Dhakeshawari Mandir",
+         "BRANCH": "Dhaka",
+         "DESCRIPTIO": "Dhakeshwari National Temple is a Hindu temple in Dhaka, Bangladesh.",
+         "img":"./Map/Mandir.jpg"
+       },
+       "geometry": {
+         "type": "Point",
+         "coordinates": [90.389722, 23.723056]
+       }
+     },
+     {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 912,
+        "NAME": "Sath Gambuj Masjid",
+        "BRANCH": "Bagerhat",
+        "DESCRIPTIO": "The Sixty Dome Mosque more commonly known as Shait Gambuj Mosque or Saith Gunbad Masjid, is a mosque in Bagerhat, Bangladesh.",
+        "img":"./Map/Sixty.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [89.741944, 22.674444]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 913,
+        "NAME": "Boga Lake",
+        "BRANCH": "Bandarban",
+        "DESCRIPTIO": "Bogakain Lake, also called Baga Lake or Boga Lake, is a lake located in Ruma Upazila in the hill district Bandarban, Bangladesh.It is a natural sweet and deep water lake. Its height from sea level is nearly 1,246 feet (380 m).",
+        "img":"./Map/Boga Lake.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [92.404444, 22.041667]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 914,
+        "NAME": "Lawachara Forest",
+        "BRANCH": "Kamalganj, Sylhet",
+        "DESCRIPTIO": "Lawachara National Park is a major national park and nature reserve in Bangladesh. The park is located at Kamalganj Upazila, Moulvibazar District in the northeastern region of the country.",
+        "img":"./Map/Lawachara.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [91.783611, 24.319722]
+      }
+    }, 
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 915,
+        "NAME": "Chimbuk Hill",
+        "BRANCH": "Thanchi Road, Bandarban",
+        "DESCRIPTIO": "The Chimbuk hills Or Pahar of Bandarban, known as Darjeeling in Bengal. Chimbuk is the third largest mountain in Bangladesh.",
+        "img":"./Map/Chimbuk.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [92.272373197795, 22.05715285266987]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 916,
+        "NAME": "Golden Temple",
+        "BRANCH": "Bandarban",
+        "DESCRIPTIO": "The Buddha Dhatu Jadi is known as the Bandarban Golden Temple, which is 4 Km away from the Bandorban town.",
+        "img":"./Map/Golden.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [92.19753917372778, 22.22325185559087]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 917,
+        "NAME": "Kanta Ji Temple",
+        "BRANCH": "Dinajpur",
+        "DESCRIPTIO": "Kantanagar Temple, commonly known as Kantaji Temple or Kantajew Temple at Kantanagar,is a late-medieval Hindu temple in Dinajpur, Bangladesh.",
+        "img":"./Map/Kantaji.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [88.666667, 25.790556]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 918,
+        "NAME": "Sapno puri",
+        "BRANCH": "Dinajpur",
+        "DESCRIPTIO": "Sapnapuri is a phony redirection park arranged in Aftabganj in Nawabganj upazila of Rangpur division of Bangladesh.",
+        "img":"./Map/Sapnapuri.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [89.06220251222196, 25.505594848219967]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 919,
+        "NAME": "Tajhat Jamidar",
+        "BRANCH": "Ranjpur",
+        "DESCRIPTIO": "Tajhat Palace is a historic palace of Bangladesh, located in Tajhat, Rangpur.",
+        "img":"./Map/Tajhat.jfif"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [25.72544716170878,  89.2799140257188]
+      }
+    }
+  ]
+}  
+
+

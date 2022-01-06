@@ -2,7 +2,7 @@ import { Typography, Box, createTheme, Grid, Container } from '@mui/material';
 
 import React from 'react';
 
-import Park from '../../Image/7.jpg'
+
 import { makeStyles } from '@material-ui/core/styles';
 import { Button } from '@mui/material';
 const theme = createTheme();
@@ -29,11 +29,11 @@ const useStyles = makeStyles({
         color:"#868383"
     }
 })
-const BlogCard = ({key,title,author,img,date,des,comment}) => {
+const BlogCard = ({title,author,img,date,des,comment})=> {
     const classes = useStyles(); 
     return (
             <Container sx={{ flexGrow: 1,my:1}}>
-                 <Grid container spacing={2}>
+                    <Grid container spacing={2}>
                         <Grid item lg={6} md={6} xs={12} sx={{p:0}}>
                         <Box
                             component="img"
@@ -50,6 +50,7 @@ const BlogCard = ({key,title,author,img,date,des,comment}) => {
                             <Typography sx={{fontFamily:'Poppins',fontWeight: 'medium'}} variant="h6" theme={theme}>{title}</Typography>
                             <Box sx={{mt:1}}> 
                                 <Typography 
+                                    component="div"
                                     sx={{fontFamily:'Poppins',fontWeight: 'medium'}} 
                                     variant="h7" 
                                     theme={theme}>
@@ -61,7 +62,9 @@ const BlogCard = ({key,title,author,img,date,des,comment}) => {
                                     sx={{fontFamily:'Poppins',fontWeight: 'medium'}} 
                                     component="p"
                                     theme={theme}>
-                                    <span className={classes.root2}> {date} </span> <span className={classes.root1}> -- </span>  <span className={classes.root}> {Comment}</span>
+                                    <span className={classes.root2}> {date} </span> 
+                                    <span className={classes.root1}> -- </span>  
+                                    <span className={classes.root}> {comment}</span>
                                 </Typography>
                             </Box>
                             <Box sx={{mt:1}}> 
@@ -77,7 +80,7 @@ const BlogCard = ({key,title,author,img,date,des,comment}) => {
                         </Grid>
                     </Grid>
             </Container>
-    );
+    )
 };
 
 export default BlogCard;

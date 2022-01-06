@@ -2,10 +2,10 @@ import React from "react";
 import SwiperCore, { EffectCoverflow, Pagination } from "swiper";
 
 import "swiper/swiper-bundle.min.css";
-// import "swiper/swiper.min.css";
+
 import "./FollowMe.css";
 import FollowMeCard from './../FollowMeCard/FollowMeCard';
-import { Box, createTheme, Typography, Container } from '@mui/material';
+import {createTheme, Typography, Container } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 
@@ -26,7 +26,7 @@ SwiperCore.use([EffectCoverflow, Pagination]);
 const FollowMe = () => {
     return (
         <Container sx={{ flexGrow: 1}}>
-          <Typography  theme={theme} sx={{fontFamily:'Poppins'}} variant="h3" align="Center">
+          <Typography  theme={theme} sx={{fontFamily:'Poppins'}} variant="h3" textAlign="Center">
            Follow Me 
           </Typography>
           <Swiper

@@ -7,8 +7,8 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { createTheme } from '@mui/material';
 
-import { fontFamily, ThemeProvider } from '@mui/system';
-import { useHistory } from 'react-router-dom';
+import {ThemeProvider } from '@mui/system';
+
 import { makeStyles } from '@material-ui/core/styles';
 
 const theme = createTheme({
@@ -41,7 +41,7 @@ const ExploreCard = (props) => {
     }
     
     return (
-    <ThemeProvider theme={theme} sx={{mx:'auto'}}>
+    <ThemeProvider theme={theme}>
     <Card sx={{ maxWidth: 280,p:1, m:1,boxShadow: 3 }}>
       <CardMedia
         component="img"

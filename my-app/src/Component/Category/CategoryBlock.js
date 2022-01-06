@@ -6,7 +6,7 @@ import 'react-multi-carousel/lib/styles.css';
 
 import { makeStyles } from '@material-ui/core/styles';
 import CategoryCard from './CategoryCard';
-import { Box, createTheme, Typography, Container } from '@mui/material';
+import {createTheme, Typography, Container } from '@mui/material';
 
 import SoloTravel from '../../Image/1.jpg'
 import MountTravel from '../../Image/2.jpg'
@@ -59,7 +59,7 @@ const CategoryBlock = () => {
     const classes= useStyles()
     return (
     <Container sx={{fontFamily:'Poppins',flexGrow: 1}} >
-      <Typography theme={theme} sx={{xs:{fontSize:'1rem'}}} variant="h3" align="Center">
+      <Typography theme={theme} sx={{xs:{fontSize:'1rem'}}} variant="h3" textAlign="center">
             Choose Category 
         </Typography>
       <Carousel responsive={responsive} >

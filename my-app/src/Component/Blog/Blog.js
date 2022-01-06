@@ -2,7 +2,6 @@ import { Typography, Box, createTheme, Grid, Container,  Avatar, Paper, TextFiel
 
 import React,{useEffect, useRef, useState} from 'react';
 
-
 import Tower from '../../Image/8.jpg'
 import { styled } from '@mui/material/styles';
 import { makeStyles } from '@material-ui/core/styles';
@@ -91,27 +90,30 @@ const BootstrapButton = styled(Button)({
     },
   });
 
-const nameRef = useRef();
-const emailRef = useRef(); 
-const handleClick =() =>{
-    const name = nameRef.current.value; 
-    const email = emailRef.current.value; 
-    console.log(name,email)
-}
 
 
 //Component
 const Blog = () => {
+
+    const nameRef = useRef();
+    const emailRef = useRef(); 
+
+    const handleClick =() =>{
+    const name = nameRef.current; 
+    const email = emailRef.current; 
+    console.log(name,email)
+}
+
     const [blogData,setBlogData] = useState([]);
     const [currentPage,setCurrentPage] = useState(1);
-    const [blogperpage,setBlogPerPage] = useState(5); 
+    const [blogperpage] = useState(5); 
 
     const indexofLastDataInEachPage = currentPage*blogperpage; //
     const indexofFirstDataInEachPage = indexofLastDataInEachPage-blogperpage; 
     const currentArray = blogData.slice(indexofFirstDataInEachPage,indexofLastDataInEachPage)
     const pageCount = blogData.length/blogperpage    
 
-    const handleChange = (event, value) => {
+    const handleChange = (value) => {
         setCurrentPage(value);
       };
 
@@ -131,11 +133,11 @@ const Blog = () => {
     const avatarClass = customStyle(); 
     return (
         <Container sx={{ flexGrow: 1,fontFamily:'Poppins'}}>
-            <Typography sx={{fontFamily:'Poppins'}} theme={theme} align="center" variant="h3">
+            <Typography sx={{fontFamily:'Poppins'}} theme={theme} textAlign="center" variant="h3">
                 My Latest Blog
             </Typography>
             <Grid container spacing={2} sx={{pt:2}}>
-                <Grid  lg={8} md={8} xs={12} sx={{my:1}} > 
+                <Grid item lg={8} md={8} xs={12} sx={{my:1}} > 
                     <Box> 
                         {
                             currentArray.map((item)=>
@@ -147,12 +149,11 @@ const Blog = () => {
                                     author={item.author}
                                     comment="50 Comments"
                                     des={item.des}
-                                ></BlogCard>
+                                />
                             )
                         }
                         <Box sx={{display: 'flex',justifyContent: 'center'}}>
                         <Stack spacing={2}>
-                
                             <Pagination  
                                 onChange={handleChange}
                                 count={pageCount}
@@ -185,13 +186,13 @@ const Blog = () => {
                             </Box>
                             {/* First */}
                             <Grid container spacing={1} sx={{my:1}}>
-                                <Grid lg={4} md={4} xs={4} sx={{px:2}} >
+                                <Grid item lg={4} md={4} xs={4} sx={{px:2}} >
                                 <Box component="img"
                                     sx={{height: '100%', width:"100%",borderRadius:'5px'} }
                                     alt="The house from the offer."
                                     src={Tower}/>
                                 </Grid>
-                                <Grid lg={8} md={8} xs={8}>
+                                <Grid item lg={8} md={8} xs={8}>
                                     <Typography  component="p"  sx={{fontFamily:'Poppins',fontWeight: 'medium',fontSize:'0.9rem'}} >    
                                         13 Thing I Would Tell You New Traveller
                                     </Typography>
@@ -215,13 +216,13 @@ const Blog = () => {
                             </Grid>
                             {/* Second */}
                             <Grid container spacing={1} sx={{my:1}}>
-                                <Grid lg={4} md={4} xs={4} sx={{px:2}} >
+                                <Grid item lg={4} md={4} xs={4} sx={{px:2}} >
                                 <Box component="img"
                                     sx={{height: '100%', width:"100%",borderRadius:'5px'} }
                                     alt="The house from the offer."
                                     src={Tower}/>
                                 </Grid>
-                                <Grid lg={8} md={8} xs={8}>
+                                <Grid item lg={8} md={8} xs={8}>
                                     <Typography  component="p"  sx={{fontFamily:'Poppins',fontWeight: 'medium',fontSize:'0.9rem'}} >    
                                         13 Thing I Would Tell You New Traveller
                                     </Typography>
@@ -245,13 +246,13 @@ const Blog = () => {
                             </Grid>
                             {/* Third */}
                             <Grid container spacing={1} sx={{my:1}}>
-                                <Grid lg={4} md={4} xs={4} sx={{px:2}} >
+                                <Grid item lg={4} md={4} xs={4} sx={{px:2}} >
                                 <Box component="img"
                                     sx={{height: '100%', width:"100%",borderRadius:'5px'} }
                                     alt="The house from the offer."
                                     src={Tower}/>
                                 </Grid>
-                                <Grid lg={8} md={8} xs={8}>
+                                <Grid item lg={8} md={8} xs={8}>
                                     <Typography  component="p"  sx={{fontFamily:'Poppins',fontWeight: 'medium',fontSize:'0.9rem'}} >    
                                         13 Thing I Would Tell You New Traveller
                                     </Typography>
@@ -275,13 +276,13 @@ const Blog = () => {
                             </Grid>
                             {/* Fourth */}
                             <Grid container spacing={1} sx={{my:1}}>
-                                <Grid lg={4} md={4} xs={4} sx={{px:2}} >
+                                <Grid item lg={4} md={4} xs={4} sx={{px:2}} >
                                 <Box component="img"
                                     sx={{height: '100%', width:"100%",borderRadius:'5px'} }
                                     alt="The house from the offer."
                                     src={Tower}/>
                                 </Grid>
-                                <Grid lg={8} md={8} xs={8}>
+                                <Grid item lg={8} md={8} xs={8}>
                                     <Typography  component="p"  sx={{fontFamily:'Poppins',fontWeight: 'medium',fontSize:'0.9rem'}} >    
                                         13 Thing I Would Tell You New Traveller
                                     </Typography>
@@ -350,7 +351,7 @@ const Blog = () => {
                                     <Checkbox {...label} /> <span> You Agree To Our Company Privacy Policy</span>
                                 </Stack>
                                 
-                                <BootstrapButton sx={{width:"100%",bgcolor:"#FFFFFF", color:'rgb(255, 170, 0)'}}onClick={handleClick} variant="contained" disableRipple> 
+                                <BootstrapButton onClick={handleClick} sx={{width:"100%",bgcolor:"#FFFFFF", color:'rgb(255, 170, 0)'}} variant="contained" disableRipple> 
                                    Subscribe
                                 </BootstrapButton>
                             </div>    
@@ -360,7 +361,7 @@ const Blog = () => {
                 </Grid>
             </Grid>
         </Container>
-    );
+    )
 };
 
 export default Blog;

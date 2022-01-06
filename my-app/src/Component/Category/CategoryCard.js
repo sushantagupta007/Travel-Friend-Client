@@ -1,9 +1,9 @@
-import {Typography, Box,Card } from '@mui/material';
+
 import React,{Fragment} from 'react';
 
 import './CatergoryCard.css'
 import { styled } from '@mui/material/styles';
-import { createTheme, ThemeProvider, useTheme, theme } from '@mui/system';
+import { createTheme, ThemeProvider } from '@mui/system';
 
 import { makeStyles } from '@material-ui/core/styles';
 

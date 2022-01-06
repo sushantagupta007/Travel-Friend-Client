@@ -11,8 +11,8 @@ import {
 } from "react-router-dom";
 
 import HomePage from './Pages/HomePage/HomePage';
-import CategoryBlock from './Component/Category/CategoryBlock';
-import Blog from './Component/Blog/Blog';
+import Map from './Component/Map/Map';
+
 
 
 
@@ -32,7 +32,7 @@ function App() {
     <Router>
       <Switch>
         <Route path="/home">
-        <HomePage></HomePage>
+        <Map></Map>
         </Route>
       </Switch>
     </Router>    
