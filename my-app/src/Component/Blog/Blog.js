@@ -107,28 +107,37 @@ const Blog = () => {
     const [blogData,setBlogData] = useState([]);
     const [currentPage,setCurrentPage] = useState(1);
     const [blogperpage] = useState(5); 
+    const [loading,setLoading] = useState(false);
 
+     //Data Fetch From JSON
+     useEffect(()=>{
+        setLoading(true)
+        fetch('/blogData.json')
+        .then(res=>res.json())
+        .then(data=>
+            {
+                setBlogData(data)
+                console.log(data)
+                setLoading(false)
+            }
+                )
+    },[])
+    
     const indexofLastDataInEachPage = currentPage*blogperpage; //
     const indexofFirstDataInEachPage = indexofLastDataInEachPage-blogperpage; 
     const currentArray = blogData.slice(indexofFirstDataInEachPage,indexofLastDataInEachPage)
     const pageCount = blogData.length/blogperpage    
 
-    const handleChange = (value) => {
+    //If I don't use event in handleChange function , then the pagination does not function
+    //well
+    const handleChange = (event,value) => {
         setCurrentPage(value);
       };
 
     console.log(pageCount)
 
     
-    //Data Fetch From JSON
-    useEffect(()=>{
-        fetch('/blogData.json')
-        .then(res=>res.json())
-        .then(data=>
-            {
-                setBlogData(data)
-                console.log(data)})
-    },[])
+   
     const classes = useStyles(); 
     const avatarClass = customStyle(); 
     return (
@@ -152,6 +161,7 @@ const Blog = () => {
                                 />
                             )
                         }
+                    </Box>
                         <Box sx={{display: 'flex',justifyContent: 'center'}}>
                         <Stack spacing={2}>
                             <Pagination  
@@ -160,8 +170,8 @@ const Blog = () => {
                                 >
                             </Pagination>
                         </Stack>
-                    </Box>
-                    </Box>  
+                        </Box>
+                 
                 </Grid>
               
                 <Grid item lg={4} md={4} xs={12} sx={{my:1}}>

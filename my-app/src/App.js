@@ -10,8 +10,13 @@ import {
   Route,
 } from "react-router-dom";
 
+
+
+
 import HomePage from './Pages/HomePage/HomePage';
-import Map from './Component/Map/Map';
+
+import Nav from './Component/Nav/Nav';
+
 
 
 
@@ -32,7 +37,13 @@ function App() {
     <Router>
       <Switch>
         <Route path="/home">
-        <Map></Map>
+        <HomePage></HomePage>
+        </Route>
+        <Route path="/header">
+          <Nav></Nav>
+        </Route>
+        <Route exact path="/">
+          <HomePage></HomePage>
         </Route>
       </Switch>
     </Router>    

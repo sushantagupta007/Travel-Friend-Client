@@ -1,0 +1,28 @@
+#mapContainer{
+    position: relative;
+    height: 180px;
+    width: 600px;
+}
+
+#map {
+    position: relative;
+    height: inherit;
+    width: inherit;
+}
+
+@media only screen and (max-width: 320px) {
+    #mapContainer{
+        position: relative;
+        height: 180px;
+        width: 320px;
+    }
+    
+}
+@media only screen and (min-width:321px) and (max-width: 375px) {
+    #mapContainer{
+        position: relative;
+        height: 180px;
+        width: 350px;
+    }
+    
+}

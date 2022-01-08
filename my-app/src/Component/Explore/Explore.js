@@ -60,8 +60,9 @@ const Explore = () => {
         </Typography>
         <Grid container spacing={2} sx={{ mx: "auto",width:{xs:'100%',lg:'75%'}}}> 
             {currentArray.map((item)=>
-            <Grid   key={item.id} lg={4} sm={4} xs={12} item sx={{display: 'flex', justifyContent: 'center'}}>
+            <Grid   key={item.id}lg={4} sm={4} xs={12} item sx={{display: 'flex', justifyContent: 'center'}}>
                 <ExploreCard  
+                   
                     loading={loading}
                     name={item.name} 
                     img={item.img} 
