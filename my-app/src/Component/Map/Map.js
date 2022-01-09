@@ -36,7 +36,7 @@ const Map = () => {
           .then(data=>{setData(data.features) 
             console.log(data.features)})
         const listenr =(e)=>{
-            if(e.key=='Escape'){
+            if(e.key==='Escape'){
                 setPark(null)
             }
         }

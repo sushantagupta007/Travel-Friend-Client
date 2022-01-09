@@ -17,6 +17,9 @@ import HomePage from './Pages/HomePage/HomePage';
 
 import Nav from './Component/Nav/Nav';
 
+import AboutMe from './Pages/AboutMe/AboutMe';
+import AboutComp from './Pages/AboutMe/AboutMe';
+
 
 
 
@@ -41,6 +44,9 @@ function App() {
         </Route>
         <Route path="/header">
           <Nav></Nav>
+        </Route>
+        <Route path="/about">
+          <AboutComp></AboutComp>
         </Route>
         <Route exact path="/">
           <HomePage></HomePage>

@@ -1,17 +1,16 @@
-import { Typography, Box, createTheme, Grid, Container,  Avatar, Paper, TextField, Checkbox } from '@mui/material';
+import { Typography, Box, createTheme, Grid, Container,  Avatar, Paper} from '@mui/material';
 
 import React,{useEffect, useRef, useState} from 'react';
 
 import Tower from '../../Image/8.jpg'
-import { styled } from '@mui/material/styles';
 import { makeStyles } from '@material-ui/core/styles';
-import { Button } from '@mui/material';
 import BlogCard from './BlogCard';
 import { Pagination,Stack } from '@mui/material';
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faFacebookF, faInstagram, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import Subscribe from '../Subscribe/Subscribe';
 
 //Theme for Typography
 const theme = createTheme();
@@ -50,59 +49,10 @@ const customStyle = makeStyles({
     }
 })
    
-const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
-
-//Bootstrap Button
-const BootstrapButton = styled(Button)({
-    boxShadow: 'none',
-    textTransform: 'none',
-    fontSize: 16,
-    padding: '6px 12px',
-    border: '1px solid',
-    lineHeight: 1.5,
-    backgroundColor: '#0063cc',
-    borderColor: '#0063cc',
-    fontFamily: [
-      '-apple-system',
-      'BlinkMacSystemFont',
-      '"Segoe UI"',
-      'Roboto',
-      '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(','),
-    '&:hover': {
-      backgroundColor: 'rgb(255, 160, 5)',
-      borderColor: 'rgb(255, 160, 5)',
-      boxShadow: 'none',
-      color:'white'
-    },
-    '&:active': {
-      boxShadow: 'none',
-      backgroundColor: '#0062cc',
-      borderColor: '#005cbf',
-    },
-    '&:focus': {
-      boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
-    },
-  });
-
 
 
 //Component
 const Blog = () => {
-
-    const nameRef = useRef();
-    const emailRef = useRef(); 
-
-    const handleClick =() =>{
-    const name = nameRef.current; 
-    const email = emailRef.current; 
-    console.log(name,email)
-}
 
     const [blogData,setBlogData] = useState([]);
     const [currentPage,setCurrentPage] = useState(1);
@@ -347,26 +297,7 @@ const Blog = () => {
                         </Paper>
 
                         {/* Subscribe Form */}
-                        <Paper elevation={2} sx={{borderRadius:1,p:2,bgcolor:"#FFA902",color:"#FFFFFF"}}>
-                            <Typography variant="h6" sx={{fontWeight:'medium',mb:2}}>Subscribe Today </Typography>
-                            <Typography variant="body1" gutterBottom sx={{textAlign:'justify',lineHeight: 2}}>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-                                blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur,
-                            </Typography>
-
-                            <div sx={{display:'flex', flexDirection: 'column'}}> 
-                                <TextField ref={nameRef} type="text" fullWidth label="Full Name" id="fullWidth" sx={{my:1,bgcolor:"white",borderRadius:1}}/>
-                                <TextField ref={emailRef} type="email" fullWidth label="Email" id="fullWidth" sx={{bgcolor:"white"}}/>
-                                <Stack direction="row" sx={{display:'flex', alignItems:'center'}}>
-                                    <Checkbox {...label} /> <span> You Agree To Our Company Privacy Policy</span>
-                                </Stack>
-                                
-                                <BootstrapButton onClick={handleClick} sx={{width:"100%",bgcolor:"#FFFFFF", color:'rgb(255, 170, 0)'}} variant="contained" disableRipple> 
-                                   Subscribe
-                                </BootstrapButton>
-                            </div>    
-                            
-                        </Paper>
+                        <Subscribe></Subscribe>
                     </Box>
                 </Grid>
             </Grid>
