@@ -1,25 +1,10 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-import Paper from '@mui/material/Paper';
+
 import Masonry from '@mui/lab/Masonry';
-import { styled } from '@mui/material/styles';
-
-import m1 from '../../Image/8.jpg'; 
-import m2 from '../../Image/9.jpg'; 
-import m3 from '../../Image/10.jpg'; 
-
-const heights = [315, 666, 271, 223];
 
 
-const Item = styled(Paper)(({ theme }) => ({
-    ...theme.typography.body2,
-    color: theme.palette.text.secondary,
-    border: '1px solid black',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }));
 
 export default function ImageMasonry() {
   return (

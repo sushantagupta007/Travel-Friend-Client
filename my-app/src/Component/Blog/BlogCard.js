@@ -15,7 +15,6 @@ theme.typography.h3 = {
   [theme.breakpoints.up('md')]: {
     fontSize: '2rem',
   },
-  
 };
 
 const useStyles = makeStyles({
@@ -29,15 +28,16 @@ const useStyles = makeStyles({
         color:"#868383"
     }
 })
-const BlogCard = ({title,author,img,date,des,comment})=> {
+const BlogCard = ({title,author,img,date,des,comment,r,d})=> {
     const classes = useStyles(); 
     return (
-            <Container sx={{ flexGrow: 1,my:1}}>
-                    <Grid container spacing={2}>
-                        <Grid item lg={6} md={6} xs={12} sx={{p:0}}>
+            <Container sx={{ flexGrow: 1,my:1,pl:{xs: 0, md: 0}}}>
+                    <Grid container spacing={{ xs: 1, md: 2 }}>
+                        <Grid item lg={r} md={6} xs={12} sx={{p:0}}>
                         <Box
                             component="img"
                             sx={{
+                              
                             height: '100%',
                             width:"100%",
                             borderRadius:'5px'
@@ -46,7 +46,7 @@ const BlogCard = ({title,author,img,date,des,comment})=> {
                                 src={img}
                             />
                         </Grid>
-                        <Grid item lg={6}  md={6} xs={12}>
+                        <Grid item lg={r}  md={6} xs={12}>
                             <Typography sx={{fontFamily:'Poppins',fontWeight: 'medium'}} variant="h6" theme={theme}>{title}</Typography>
                             <Box sx={{mt:1}}> 
                                 <Typography 
@@ -69,14 +69,15 @@ const BlogCard = ({title,author,img,date,des,comment})=> {
                             </Box>
                             <Box sx={{mt:1}}> 
                                 <Typography 
+                                    theme={theme}
                                     sx={{fontFamily:'Poppins',fontWeight: 'medium',fontSize:'0.9rem'}} 
                                     className={classes.root1}
                                     component="p"
                                     >
-                                        {des}
+                                        {d ? des : "" }
                                 </Typography>
                             </Box>
-                            <Button sx={{p:0}}variant="text"><span className={classes.root}>Read More </span></Button>
+                                {d? <Button sx={{p:0}}variant="text"><span className={classes.root}>Read More </span></Button> :""}
                         </Grid>
                     </Grid>
             </Container>

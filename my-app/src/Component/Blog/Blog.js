@@ -1,16 +1,17 @@
-import { Typography, Box, createTheme, Grid, Container,  Avatar, Paper} from '@mui/material';
+import { Typography, Box, createTheme, Grid, Container,  } from '@mui/material';
 
-import React,{useEffect, useRef, useState} from 'react';
+import React,{useEffect,useState} from 'react';
 
-import Tower from '../../Image/8.jpg'
-import { makeStyles } from '@material-ui/core/styles';
+
+
 import BlogCard from './BlogCard';
 import { Pagination,Stack } from '@mui/material';
 
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faFacebookF, faInstagram, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+
 import Subscribe from '../Subscribe/Subscribe';
+import PopularPost from './../PopularPost/PopularPost';
+import FollowMeCamp from '../FollowMeComp/FollowMeCamp';
 
 //Theme for Typography
 const theme = createTheme();
@@ -26,28 +27,7 @@ theme.typography.h3 = {
   
 };
 
-//Custom Style
-const useStyles = makeStyles({
-    root:{
-        color:"#FFA902"
-    },
-    root1:{
-        color:"rgba(105, 105, 105, 0.6)"
-    },
-    root2:{
-        color:"#868383"
-    }
-})
 
-const customStyle = makeStyles({
-    customAvatar:{
-        backgroundColor:"white",
-        color:"#868383",
-        '&:hover':{
-            color:"#FFA902",
-        }
-    }
-})
    
 
 
@@ -76,7 +56,8 @@ const Blog = () => {
     const indexofLastDataInEachPage = currentPage*blogperpage; //
     const indexofFirstDataInEachPage = indexofLastDataInEachPage-blogperpage; 
     const currentArray = blogData.slice(indexofFirstDataInEachPage,indexofLastDataInEachPage)
-    const pageCount = blogData.length/blogperpage    
+    const pageCount = blogData.length/blogperpage
+    const pageRound = Math.floor(pageCount); 
 
     //If I don't use event in handleChange function , then the pagination does not function
     //well
@@ -84,12 +65,12 @@ const Blog = () => {
         setCurrentPage(value);
       };
 
-    console.log(pageCount)
+   
+
+    console.log(loading)
+   
 
     
-   
-    const classes = useStyles(); 
-    const avatarClass = customStyle(); 
     return (
         <Container sx={{ flexGrow: 1,fontFamily:'Poppins'}}>
             <Typography sx={{fontFamily:'Poppins'}} theme={theme} textAlign="center" variant="h3">
@@ -101,6 +82,8 @@ const Blog = () => {
                         {
                             currentArray.map((item)=>
                                 <BlogCard 
+                                    d = {true}
+                                    r={6}
                                     key={item.id}
                                     title={`${item.count} Things I Would Tell Any New Traveller`}
                                     img={item.img}
@@ -116,7 +99,7 @@ const Blog = () => {
                         <Stack spacing={2}>
                             <Pagination  
                                 onChange={handleChange}
-                                count={pageCount}
+                                count={pageRound}
                                 >
                             </Pagination>
                         </Stack>
@@ -125,6 +108,7 @@ const Blog = () => {
                 </Grid>
               
                 <Grid item lg={4} md={4} xs={12} sx={{my:1}}>
+                    
                     <Box
                         sx={{
                             display: 'flex',
@@ -138,167 +122,13 @@ const Blog = () => {
                             },
                         }}
                         >
-                        {/* Popular Post */}
-                        
-                        <Paper elevation={2} sx={{borderRadius:1,p:1}} > 
-                            <Box>
-                                <Typography  component="div" variant="subtitle1" gutterBottom sx={{fontWeight:'medium',mb:2}}>Popular Post </Typography>
-                            </Box>
-                            {/* First */}
-                            <Grid container spacing={1} sx={{my:1}}>
-                                <Grid item lg={4} md={4} xs={4} sx={{px:2}} >
-                                <Box component="img"
-                                    sx={{height: '100%', width:"100%",borderRadius:'5px'} }
-                                    alt="The house from the offer."
-                                    src={Tower}/>
-                                </Grid>
-                                <Grid item lg={8} md={8} xs={8}>
-                                    <Typography  component="p"  sx={{fontFamily:'Poppins',fontWeight: 'medium',fontSize:'0.9rem'}} >    
-                                        13 Thing I Would Tell You New Traveller
-                                    </Typography>
-                                    <Box> 
-                                        <Typography 
-                                            sx={{fontFamily:'Poppins',fontWeight: 'medium',fontSize:'0.8rem'}} 
-                                            component="p" 
-                                            theme={theme}>
-                                            <span className={classes.root}> Post </span> <span className={classes.root1}> By </span>  sffd
-                                        </Typography>
-                                    </Box>
-                                    <Box > 
-                                        <Typography 
-                                            sx={{fontFamily:'Poppins',fontWeight: 'medium',fontSize:'0.8rem'}} 
-                                            component="p"
-                                            theme={theme}>
-                                            <span className={classes.root2}> dfdff </span> <span className={classes.root1}> -- </span>  <span className={classes.root}> sdfdf</span>
-                                        </Typography>
-                                    </Box>
-                                </Grid>
-                            </Grid>
-                            {/* Second */}
-                            <Grid container spacing={1} sx={{my:1}}>
-                                <Grid item lg={4} md={4} xs={4} sx={{px:2}} >
-                                <Box component="img"
-                                    sx={{height: '100%', width:"100%",borderRadius:'5px'} }
-                                    alt="The house from the offer."
-                                    src={Tower}/>
-                                </Grid>
-                                <Grid item lg={8} md={8} xs={8}>
-                                    <Typography  component="p"  sx={{fontFamily:'Poppins',fontWeight: 'medium',fontSize:'0.9rem'}} >    
-                                        13 Thing I Would Tell You New Traveller
-                                    </Typography>
-                                    <Box> 
-                                        <Typography 
-                                            sx={{fontFamily:'Poppins',fontWeight: 'medium',fontSize:'0.8rem'}} 
-                                            component="p" 
-                                            theme={theme}>
-                                            <span className={classes.root}> Post </span> <span className={classes.root1}> By </span>  sffd
-                                        </Typography>
-                                    </Box>
-                                    <Box> 
-                                        <Typography 
-                                            sx={{fontFamily:'Poppins',fontWeight: 'medium',fontSize:'0.8rem'}} 
-                                            component="p"
-                                            theme={theme}>
-                                            <span className={classes.root2}> dfdff </span> <span className={classes.root1}> -- </span>  <span className={classes.root}> sdfdf</span>
-                                        </Typography>
-                                    </Box>
-                                </Grid>
-                            </Grid>
-                            {/* Third */}
-                            <Grid container spacing={1} sx={{my:1}}>
-                                <Grid item lg={4} md={4} xs={4} sx={{px:2}} >
-                                <Box component="img"
-                                    sx={{height: '100%', width:"100%",borderRadius:'5px'} }
-                                    alt="The house from the offer."
-                                    src={Tower}/>
-                                </Grid>
-                                <Grid item lg={8} md={8} xs={8}>
-                                    <Typography  component="p"  sx={{fontFamily:'Poppins',fontWeight: 'medium',fontSize:'0.9rem'}} >    
-                                        13 Thing I Would Tell You New Traveller
-                                    </Typography>
-                                    <Box> 
-                                        <Typography 
-                                            sx={{fontFamily:'Poppins',fontWeight: 'medium',fontSize:'0.8rem'}} 
-                                            component="p" 
-                                            theme={theme}>
-                                            <span className={classes.root}> Post </span> <span className={classes.root1}> By </span>  sffd
-                                        </Typography>
-                                    </Box>
-                                    <Box > 
-                                        <Typography 
-                                            sx={{fontFamily:'Poppins',fontWeight: 'medium',fontSize:'0.8rem'}} 
-                                            component="p"
-                                            theme={theme}>
-                                            <span className={classes.root2}> dfdff </span> <span className={classes.root1}> -- </span>  <span className={classes.root}> sdfdf</span>
-                                        </Typography>
-                                    </Box>
-                                </Grid>
-                            </Grid>
-                            {/* Fourth */}
-                            <Grid container spacing={1} sx={{my:1}}>
-                                <Grid item lg={4} md={4} xs={4} sx={{px:2}} >
-                                <Box component="img"
-                                    sx={{height: '100%', width:"100%",borderRadius:'5px'} }
-                                    alt="The house from the offer."
-                                    src={Tower}/>
-                                </Grid>
-                                <Grid item lg={8} md={8} xs={8}>
-                                    <Typography  component="p"  sx={{fontFamily:'Poppins',fontWeight: 'medium',fontSize:'0.9rem'}} >    
-                                        13 Thing I Would Tell You New Traveller
-                                    </Typography>
-                                    <Box> 
-                                        <Typography 
-                                            sx={{fontFamily:'Poppins',fontWeight: 'medium',fontSize:'0.8rem'}} 
-                                            component="p" 
-                                            theme={theme}>
-                                            <span className={classes.root}> Post </span> <span className={classes.root1}> By </span>  sffd
-                                        </Typography>
-                                    </Box>
-                                    <Box> 
-                                        <Typography 
-                                            sx={{fontFamily:'Poppins',fontWeight: 'medium',fontSize:'0.8rem'}} 
-                                            component="p"
-                                            theme={theme}>
-                                            <span className={classes.root2}> dfdff </span> <span className={classes.root1}> -- </span>  <span className={classes.root}> sdfdf</span>
-                                        </Typography>
-                                    </Box>
-                                </Grid>
-                            </Grid>
-                        </Paper>
-                        
+                        <PopularPost></PopularPost>
                         {/* Follow Me */}
-                        <Paper elevation={2} sx={{borderRadius:1,p:1}}>
-                            <Typography variant="h6" sx={{fontWeight:'medium',mb:2}}>Follow Me </Typography>
-                            <Box>
-                            <Stack direction="row" spacing={2}>
-                                <a  href="https://web.facebook.com/"> 
-                                    <Avatar   sx={{bgcolor:"#FFA902", width: 30, height: 30, }}  className={avatarClass.customAvatar} >
-                                        <FontAwesomeIcon style={{width:"15px",height:"15px",color:"white",}}  icon={faFacebookF}></FontAwesomeIcon>
-                                    </Avatar>
-                                </a>
-                                <a  href="https://web.facebook.com/"> 
-                                    <Avatar   sx={{bgcolor:"#FFFFFF", width: 30, height: 30,boxShadow: 3,borderColor: 'grey.500' }}  className={avatarClass.customAvatar} >
-                                        <FontAwesomeIcon style={{width:"15px",height:"15px",color:"#696969",}}  icon={faTwitter}></FontAwesomeIcon>
-                                    </Avatar>
-                                </a>
-                                <a  href="https://web.facebook.com/"> 
-                                    <Avatar   sx={{bgcolor:"#FFFFFF", width: 30, height: 30 ,boxShadow:3,borderColor: 'grey.500'}}  className={avatarClass.customAvatar} >
-                                        <FontAwesomeIcon style={{width:"15px",height:"15px",color:"#696969"}}  icon={faInstagram}></FontAwesomeIcon>
-                                    </Avatar>
-                                </a>
-                                <a  href="https://web.facebook.com/"> 
-                                    <Avatar   sx={{bgcolor:"#FFFFFF", width: 30, height: 30 ,boxShadow:3,borderColor: 'grey.500'}}   className={avatarClass.customAvatar} >
-                                        <FontAwesomeIcon style={{width:"15px",height:"15px",color:"#696969"}}  icon={faYoutube}></FontAwesomeIcon>
-                                    </Avatar>
-                                </a>
-                            </Stack>
-                            </Box>
-                           
-                        </Paper>
+                        <FollowMeCamp></FollowMeCamp>
 
                         {/* Subscribe Form */}
                         <Subscribe></Subscribe>
-                    </Box>
+                    </Box> 
                 </Grid>
             </Grid>
         </Container>

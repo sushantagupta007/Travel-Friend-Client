@@ -1,5 +1,5 @@
 
-import { Container, createTheme, Paper, TextField } from '@mui/material';
+import { Container, createTheme, TextField } from '@mui/material';
 
 import React from 'react';
 
@@ -61,23 +61,13 @@ const BootstrapButton = styled(Button)({
   });
 
 const Subscribe = () => {
-    // const nameRef = useRef();
-    // const emailRef = useRef(); 
-
-    // const handleSubmit =(e) =>{
-    //     e.preventDefault(); 
-    // const name = nameRef.current.value; 
-    // const email = emailRef.current.value; 
-    // console.log("Name  is:",name)
-    // console.log("Email is:",email)
-
-    const { handleSubmit, control, reset } = useForm()
+    const { handleSubmit, control, } = useForm()
       
 
     
     const onSubmit = data => console.log(data);
     return (
-        <Container elevation={2} sx={{borderRadius:1,p:2,mt:2,bgcolor:"#FFA902",color:"#FFFFFF",width:'100%'}}>
+        <Container elevation={2} sx={{borderRadius:1,p:3,mt:2, bgcolor:"#FFA902",color:"#FFFFFF",width:'100%'}}>
         <Typography variant="h6" sx={{fontWeight:'medium',mb:2}}>Subscribe Today </Typography>
         <Typography variant="body1" gutterBottom sx={{textAlign:'justify',lineHeight: 2}}>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos

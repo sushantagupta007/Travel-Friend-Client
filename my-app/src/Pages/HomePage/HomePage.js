@@ -13,11 +13,12 @@ import Blog from '../../Component/Blog/Blog';
 import Map from '../../Component/Map/Map';
 import Nav from './../../Component/Nav/Nav';
 
+import homeBG from '../../Image/homeBG.jfif'
 
 const HomePage = () => {
     return (
         <Fragment>
-            <Nav></Nav>
+            <Nav img={homeBG} textcolor="white"></Nav>
             <CategoryBlock></CategoryBlock>
             <Explore></Explore>
             <Blog></Blog>

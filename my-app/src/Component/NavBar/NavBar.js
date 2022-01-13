@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
+import { useState, useEffect } from 'react';
 
 import Button from '@mui/material/Button';
 
@@ -15,7 +16,8 @@ import { makeStyles } from '@material-ui/core/styles';
 
 
 import { FaArrowCircleDown} from 'react-icons/fa'
-const pages = ['Home', 'About Me', 'Category','Blog','Contact Me'];
+import { Link, useHistory } from 'react-router-dom';
+const pages = ['home', 'about', 'category','Blog','contact'];
 
 
 const useStyles = makeStyles({
@@ -28,26 +30,33 @@ const useStyles = makeStyles({
 const NavBar = () => {
     const classes=useStyles(); 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  // const handleOpenUserMenu = (event) => {
-  //   setAnchorElUser(event.currentTarget);
-  // };
+
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
 
 
- 
-     
+  const history = useHistory(); 
+  const blogPath = history.location.pathname 
+  console.log(blogPath)
+  const [blog,setBlog] = useState(true); 
+
+  useEffect(()=>{
+    if(blogPath!=='/Blog'){
+      setBlog(false)
+    }
+    else{
+      setBlog(true)
+    }
+   
+  },[blogPath])
   return (
 <Container>
     <AppBar position="static" sx={{bgcolor:"transparent",boxShadow:0}} >
@@ -94,9 +103,11 @@ const NavBar = () => {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' },justifyContent:{sm:'center'} }}>
             {pages.map((page) => (
               <Button
+                component={Link}
+                to={`/${page}`}
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: blog ? "black": "white", display: 'block'}}
               >
                 <Typography className={classes.root}> {page} <FaArrowCircleDown sx={{width:"4px"}}></FaArrowCircleDown> </Typography>
                 
