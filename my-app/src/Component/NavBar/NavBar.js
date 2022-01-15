@@ -46,14 +46,14 @@ const NavBar = () => {
   const history = useHistory(); 
   const blogPath = history.location.pathname 
   console.log(blogPath)
-  const [blog,setBlog] = useState(true); 
+  const [blog,setBlog] = useState(false); 
 
   useEffect(()=>{
-    if(blogPath!=='/Blog'){
-      setBlog(false)
+    if(blogPath=='/Blog'||blogPath=='/Author'){
+      setBlog(true)
     }
     else{
-      setBlog(true)
+      setBlog(false)
     }
    
   },[blogPath])
@@ -63,7 +63,7 @@ const NavBar = () => {
       <Container maxWidth="xl" >
         <Toolbar disableGutters >
        
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' }}}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }}}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -71,6 +71,7 @@ const NavBar = () => {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               color="inherit"
+              sx={{  color: blog ? "black": "white"}}
             >
               <MenuIcon />
             </IconButton>
@@ -94,7 +95,8 @@ const NavBar = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Link to={`/${page}`}> <Typography textAlign="center">{page}</Typography> </Link>
+                 
                 </MenuItem>
               ))}
             </Menu>
@@ -114,8 +116,6 @@ const NavBar = () => {
               </Button>
             ))}
           </Box>
-
-          
         </Toolbar>
       </Container>
     </AppBar>

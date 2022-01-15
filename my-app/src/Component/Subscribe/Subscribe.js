@@ -67,7 +67,7 @@ const Subscribe = () => {
     
     const onSubmit = data => console.log(data);
     return (
-        <Container elevation={2} sx={{borderRadius:1,p:3,mt:2, bgcolor:"#FFA902",color:"#FFFFFF",width:'100%'}}>
+        <Container elevation={2} sx={{borderRadius:1,p:{xs:1, lg:3},mt:2, bgcolor:"#FFA902",color:"#FFFFFF",width:'100%',display:'flex',flexDirection:'column'}}>
         <Typography variant="h6" sx={{fontWeight:'medium',mb:2}}>Subscribe Today </Typography>
         <Typography variant="body1" gutterBottom sx={{textAlign:'justify',lineHeight: 2}}>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos

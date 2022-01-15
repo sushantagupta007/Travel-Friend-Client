@@ -16,7 +16,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 
-import './TopHeader.css'; 
+import './TopHeader.css';
 
 
 
@@ -84,40 +84,40 @@ const TopHeader = () => {
     return (
         <Container>
             <Box >
-                <Grid spacing={3} container sx={{display:'flex',flexDirection:{xs:'column',sm:'row'}}} >
-                    <Grid item sm={4} xs={12} sx={{ display: 'flex', justifyContent:'center'}}>
+                <Grid spacing={3} container sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' } }} >
+                    <Grid item sm={4} xs={12} sx={{ display: 'flex', justifyContent: 'center' }}>
                         <Button onClick={handleClick}>
-                            <span style={{ color: 'orange',fontSize:"1.5rem",fontWeight:'medium' }}>Travel</span>
-                            <span style={{fontSize:"1.5rem",fontWeight:'medium'}}>Friend</span>
+                            <span style={{ color: 'orange', fontSize: "1.5rem", fontWeight: 'medium' }}>Travel</span>
+                            <span style={{ fontSize: "1.5rem", fontWeight: 'medium' }}>Friend</span>
                         </Button>
                     </Grid>
-                    <Grid item sm={4} xs={12} sx={{ display: 'flex', justifyContent: 'center',marginBottom:{xs:6,sm:0}}}>     
+                    <Grid item sm={4} xs={12} sx={{ display: 'flex', justifyContent: 'center', marginBottom: { xs: 6, sm: 0 } }}>
                         <form id="search-form">
                             <div className="search">
                                 <input placeholder="&#xF002" type="text" name="search" className="round" />
                             </div>
                         </form>
                     </Grid>
-                    <Grid item sm={4} xs={12} sx={{ display: 'flex', justifyContent: 'center',}}>
+                    <Grid item sm={4} xs={12} sx={{ display: 'flex', justifyContent: 'center', }}>
                         <Stack direction="row" spacing={2}>
                             <a href="https://web.facebook.com/">
-                                <Avatar sx={{ bgcolor: "#FFA902", width: 30, height: 30, }} className={avatarClass.customAvatar} >
-                                    <FontAwesomeIcon style={{ width: "15px", height: "15px", color: "white", }} icon={faFacebookF}></FontAwesomeIcon>
+                                <Avatar sx={{ width: 30, height: 30, border: 1, bgcolor: '#FFA902' }}  >
+                                    <FontAwesomeIcon style={{ width: "15px", height: "15px", color: "white" }} icon={faFacebookF}></FontAwesomeIcon>
                                 </Avatar>
                             </a>
                             <a href="https://web.facebook.com/">
-                                <Avatar sx={{ bgcolor: "#FFFFFF", width: 30, height: 30, boxShadow: 3, borderColor: 'grey.500' }} className={avatarClass.customAvatar} >
-                                    <FontAwesomeIcon style={{ width: "15px", height: "15px", color: "#696969", }} icon={faTwitter}></FontAwesomeIcon>
+                                <Avatar sx={{ width: 30, height: 30, border: 1 }} className={avatarClass.customAvatar} >
+                                    <FontAwesomeIcon style={{ width: "15px", height: "15px" }} icon={faTwitter}></FontAwesomeIcon>
                                 </Avatar>
                             </a>
                             <a href="https://web.facebook.com/">
-                                <Avatar sx={{ bgcolor: "#FFFFFF", width: 30, height: 30, boxShadow: 3, borderColor: 'grey.500' }} className={avatarClass.customAvatar} >
-                                    <FontAwesomeIcon style={{ width: "15px", height: "15px", color: "#696969" }} icon={faInstagram}></FontAwesomeIcon>
+                                <Avatar sx={{ width: 30, height: 30, border: 1 }} className={avatarClass.customAvatar} >
+                                    <FontAwesomeIcon style={{ width: "15px", height: "15px" }} icon={faInstagram}></FontAwesomeIcon>
                                 </Avatar>
                             </a>
                             <a href="https://web.facebook.com/">
-                                <Avatar sx={{ bgcolor: "#FFFFFF", width: 30, height: 30, boxShadow: 3, borderColor: 'grey.500' }} className={avatarClass.customAvatar} >
-                                    <FontAwesomeIcon style={{ width: "15px", height: "15px", color: "#696969" }} icon={faYoutube}></FontAwesomeIcon>
+                                <Avatar sx={{ width: 30, height: 30, border: 1 }} className={avatarClass.customAvatar} >
+                                    <FontAwesomeIcon style={{ width: "15px", height: "15px" }} icon={faYoutube}></FontAwesomeIcon>
                                 </Avatar>
                             </a>
                         </Stack>

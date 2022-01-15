@@ -7,11 +7,13 @@ import Comment from '../../Component/Comment/Comment';
 import CommentBox from './../../Component/CommentBox/CommentBox';
 import TotalComment from '../../Component/TotalComment/TotalComment';
 import CategoryBlock from '../../Component/Category/CategoryBlock';
+import BlogDoc from './../../Component/BlogDoc/BlogDoc';
 
 const Post = () => {
     return (
         <>
-        <Nav></Nav>
+        <Nav height="100%" padding="5px"></Nav>
+        <BlogDoc></BlogDoc>
         <CategoryBlock></CategoryBlock>
         <TotalComment></TotalComment>       
         <FollowMe></FollowMe>

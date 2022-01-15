@@ -22,6 +22,7 @@ import AboutComp from './Pages/AboutMe/AboutMe';
 import Contact from './Pages/Contact/Contact';
 import Category from './Pages/Category/Category';
 import Post from './Pages/Post/Post';
+import Author from './Component/Author/Author';
 
 
 
@@ -59,6 +60,9 @@ function App() {
         </Route>
         <Route path="/blog">
           <Post></Post>
+        </Route>
+        <Route path="/author">
+          <Author></Author>
         </Route>
         
         <Route exact path="/">

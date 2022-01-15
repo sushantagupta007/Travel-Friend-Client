@@ -78,7 +78,6 @@ const Footer = () => {
                             <FontAwesomeIcon style={{width:"15px",height:"15px"}}  icon={faYoutube}></FontAwesomeIcon>
                         </Avatar>
                     </a>
-                    
                 </Stack>
             </Grid>
         </Grid>

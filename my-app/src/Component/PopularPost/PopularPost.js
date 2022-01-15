@@ -38,13 +38,13 @@ const PopularPost = () => {
             </Box>
             
             <Grid container spacing={1} sx={{my:1}}>
-                <Grid item lg={4} md={4} xs={4} sx={{px:2}} >
+                <Grid item lg={4} md={4} xs={12} sx={{px:2}} >
                 <Box component="img"
                     sx={{height: '100%', width:"100%",borderRadius:'5px'} }
                     alt="The house from the offer."
                     src={Tower}/>
                 </Grid>
-                <Grid item lg={8} md={8} xs={8}>
+                <Grid item lg={8} md={8} xs={12}>
                     <Typography  component="p"  sx={{fontFamily:'Poppins',fontWeight: 'medium',fontSize:'0.9rem'}} >    
                         13 Thing I Would Tell You New Traveller
                     </Typography>
@@ -68,13 +68,13 @@ const PopularPost = () => {
             </Grid>
             
             <Grid container spacing={1} sx={{my:1}}>
-                <Grid item lg={4} md={4} xs={4} sx={{px:2}} >
+                <Grid item lg={4} md={4} xs={12} sx={{px:2}} >
                 <Box component="img"
                     sx={{height: '100%', width:"100%",borderRadius:'5px'} }
                     alt="The house from the offer."
                     src={Tower}/>
                 </Grid>
-                <Grid item lg={8} md={8} xs={8}>
+                <Grid item lg={8} md={8} xs={12}>
                     <Typography  component="p"  sx={{fontFamily:'Poppins',fontWeight: 'medium',fontSize:'0.9rem'}} >    
                         13 Thing I Would Tell You New Traveller
                     </Typography>
@@ -98,13 +98,13 @@ const PopularPost = () => {
             </Grid>
             
             <Grid container spacing={1} sx={{my:1}}>
-                <Grid item lg={4} md={4} xs={4} sx={{px:2}} >
+                <Grid item lg={4} md={4} xs={12} sx={{px:2}} >
                 <Box component="img"
                     sx={{height: '100%', width:"100%",borderRadius:'5px'} }
                     alt="The house from the offer."
                     src={Tower}/>
                 </Grid>
-                <Grid item lg={8} md={8} xs={8}>
+                <Grid item lg={8} md={8} xs={12}>
                     <Typography  component="p"  sx={{fontFamily:'Poppins',fontWeight: 'medium',fontSize:'0.9rem'}} >    
                         13 Thing I Would Tell You New Traveller
                     </Typography>
@@ -128,13 +128,13 @@ const PopularPost = () => {
             </Grid>
             
             <Grid container spacing={1} sx={{my:1}}>
-                <Grid item lg={4} md={4} xs={4} sx={{px:2}} >
+                <Grid item lg={4} md={4} xs={12} sx={{px:2}} >
                 <Box component="img"
                     sx={{height: '100%', width:"100%",borderRadius:'5px'} }
                     alt="The house from the offer."
                     src={Tower}/>
                 </Grid>
-                <Grid item lg={8} md={8} xs={8}>
+                <Grid item lg={8} md={8} xs={12}>
                     <Typography  component="p"  sx={{fontFamily:'Poppins',fontWeight: 'medium',fontSize:'0.9rem'}} >    
                         13 Thing I Would Tell You New Traveller
                     </Typography>
