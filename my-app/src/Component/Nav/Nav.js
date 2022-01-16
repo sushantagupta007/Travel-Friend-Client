@@ -38,27 +38,29 @@ export default function Nav({ img, text, textcolor,height }) {
   const blogPath = history.location.pathname 
 
   console.log(blogPath)
-  const [blog,setBlog] = useState(true); 
+  const [blog,setBlog] = useState(false); 
+
 
   useEffect(()=>{
-    if(blogPath!=='/Blog'){
-      setBlog(false)
-    }
-    else{
+    if((blogPath==='/Blog') || (blogPath==='/Author')){
       setBlog(true)
+    }
+   
+    else{
+      setBlog(false)
     }
    
   },[blogPath])
 
 
   const UI = () =>{
-    if(blogPath==='/Blog'){
+    if(blogPath==='/Blog'||blogPath==='/Author'){
       return 
     }
     else {
       return (
-        <>
-          <Typography theme={theme} sx={{ fontFamily: 'Poppins', textAlign: 'center', p: blog? { lg: 0, xs: 1 }:{ lg: 10, xs: 1 }, height: "100%" }} component="div">
+        <Box sx={{p: blog? { lg: 0, xs: 1 }:{ lg: 10, xs: 1 }, height: "100%"}}>
+          <Typography theme={theme} sx={{ fontFamily: 'Poppins', textAlign: 'center' }}>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
             when an unknown printer took a galley of type and scrambled it to make a type specimen book.
@@ -66,7 +68,7 @@ export default function Nav({ img, text, textcolor,height }) {
           <Typography theme={theme} sx={{ fontFamily: 'Poppins', textAlign: 'center', color: 'orange', fontWeight: 'bold', marginTop: { lg: '10px', xs: '0px' }, }} variant="h5">
             Lets go..
           </Typography>
-        </>
+        </Box>
       )
     }
   }

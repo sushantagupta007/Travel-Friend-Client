@@ -101,7 +101,6 @@ const NavBar = () => {
               ))}
             </Menu>
           </Box>
-         
           <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' },justifyContent:{sm:'center'} }}>
             {pages.map((page) => (
               <Button
@@ -112,7 +111,6 @@ const NavBar = () => {
                 sx={{ my: 2, color: blog ? "black": "white", display: 'block'}}
               >
                 <Typography className={classes.root}> {page} <FaArrowCircleDown sx={{width:"4px"}}></FaArrowCircleDown> </Typography>
-                
               </Button>
             ))}
           </Box>

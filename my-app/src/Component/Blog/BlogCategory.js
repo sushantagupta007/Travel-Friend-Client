@@ -65,30 +65,29 @@ const BlogCategory = () => {
 
     return (
         <Container sx={{ flexGrow: 1 }}>
-            <Box>
+            <Box >
                 <Grid container spacing={{ xs: 1, md: 2 }} sx={{ pl: { xs: 0 } }}>
                     <Grid item lg={8} >
-                        <Box sx={{ display: 'flex', flexWrap: 'wrap', my: 7,borderRadius:"25px" }}>
+                        <Box sx={{ display: 'flex', flexWrap: 'wrap', mt:7, mb: 9, borderRadius:"25px" }}>
                             <Grid spacing={0} container rowSpacing={10} columnSpacing={{ xs: 0 }}>
-                                <Grid item lg={6} xs={12} sx={{width:{lg:'375px'},height:{lg:'369px'}}}>
+                                <Grid item lg={6} xs={12} sx={{width:{lg:'340px'},height:{lg:'369px'}}}>
                                     <CategoryCard image={sand}></CategoryCard>
                                 </Grid>
-                                <Grid item lg={6} xs={12} sx={{width:{lg:'375px'},height:{lg:'369px'}}}>
+                                <Grid item lg={6} xs={12} sx={{width:{lg:'340px'},height:{lg:'369px'}}}>
                                     <CategoryCard image={night}></CategoryCard>
                                 </Grid>
-                                <Grid item lg={6} xs={12} sx={{width:{lg:'375px'},height:{lg:'369px'}}}>
+                                <Grid item lg={6} xs={12} sx={{width:{lg:'340px'},height:{lg:'369px'}}}>
                                     <CategoryCard image={forest}></CategoryCard>
                                 </Grid>
-                                <Grid item lg={6} xs={12} sx={{width:{lg:'375px'},height:{lg:'369px'}}}>
+                                <Grid item lg={6} xs={12} sx={{width:{lg:'340px'},height:{lg:'369px'}}}>
                                     <CategoryCard image={sky}></CategoryCard>
                                 </Grid>
                             </Grid>
                         </Box>
                       
-                        <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
+                        <Box sx={{ display: 'flex', flexWrap: 'wrap', my:2, }}>
                             {currentArray.map((item) =>
-                                <Grid item lg={6}>
-                                    
+                                <Grid item lg={6} sx={{p:0,m:0}}>
                                     <BlogCard
                                         
                                         d={false}
@@ -100,6 +99,7 @@ const BlogCategory = () => {
                                         author={item.author}
                                         comment="50 Comments"
                                         des={item.des}
+                                       
                                     ></BlogCard>
                                 </Grid>
                             )}

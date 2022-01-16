@@ -58,7 +58,7 @@ const CategoryCard = ({ image }) => {
         <Box sx={{ m: 1 }} component="div" className={classes.demowrap}>
             <Box component="div" className={classes.demoContent} >
                 <Box component="div" sx={{width:'100%'}}>
-                    <Typography sx={{ fontFamily: 'Poppins', color: "black",fontWeight:'bold' }} theme={theme} textAlign="center" variant="h7">
+                    <Typography sx={{ fontFamily: 'Poppins', color: "black",fontWeight:'bold',pl:2 }} theme={theme} textAlign="center" variant="h7">
                         14 Things To See and Do in Bangladesh
                     </Typography>
                     <Grid container spacing={1} sx={{my:1,color:'white'}}>

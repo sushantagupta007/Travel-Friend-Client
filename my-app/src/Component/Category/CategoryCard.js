@@ -92,9 +92,6 @@ import { makeStyles } from '@material-ui/core/styles';
             transition: mytheme.before.transition,
             opacity: mytheme.before.opacity,
         },
-        
-        
-        
     }));
 
     //UseStyles is to make classes. 
