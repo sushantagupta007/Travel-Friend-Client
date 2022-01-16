@@ -1,7 +1,5 @@
 import { Container, Grid, Avatar, Box } from '@mui/material';
 
-
-import Avatar1 from '../../Image/Project.jpg'; 
 import SingleComment from '../SingleComment/SingleComment';
 
 const CommentBox = ({name,image,storecomment}) => {

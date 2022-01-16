@@ -3,7 +3,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 
 const Comment = () => {
-    const { register, handleSubmit,reset} = useForm();
+    const { register, handleSubmit} = useForm();
     const onSubmit = data => console.log(data);
     return (
         <Container>

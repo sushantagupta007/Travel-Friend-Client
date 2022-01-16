@@ -82,9 +82,6 @@ export default function Nav({ img, text, textcolor,height }) {
             {text}
           </Typography>
           {UI()}
-          
-
-
         </Box>
       </MyComponent>
     </>

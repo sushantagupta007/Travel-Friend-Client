@@ -3,12 +3,16 @@ import React, { useState, useEffect } from 'react';
 
 import FollowMeCamp from '../FollowMeComp/FollowMeCamp';
 import PopularPost from '../PopularPost/PopularPost';
-import Subscribe from '../Subscribe/Subscribe';
+
 import BlogCard from './BlogCard';
 
 
 import CategoryCard from './../CategoryCard/CategoryCard';
 import CategoriesCount from '../CategorieCount/CategoriesCount';
+import { useHistory } from 'react-router-dom';
+import AuthorCard from './../AuthorCard/AuthorCard';
+import ShortContact from '../ShortContact/ShortContact';
+import Subscribe from './../Subscribe/Subscribe';
 
 
 const sky = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFkijiEfzoDNYj5RUv5YLR6HHTLTeYooJ8Eg&usqp=CAU'; 
@@ -31,6 +35,23 @@ theme.typography.h3 = {
 
 };
 const BlogCategory = () => {
+    const history = useHistory(); 
+    
+    const pathName = history.location.pathname
+    console.log(pathName)
+
+    const [authorCompoent,setauthorComponent] = useState(true)
+
+    useEffect(()=>{
+        if(pathName==='/Author'){
+            setauthorComponent(true)
+        }
+        else{
+            setauthorComponent(false)
+        }
+       
+    },[authorCompoent])
+
     const [blogData, setBlogData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [blogperpage] = useState(4);
@@ -47,7 +68,7 @@ const BlogCategory = () => {
                 setLoading(false)
             }
             )
-    }, [])
+    }, [pathName])
 
     const indexofLastDataInEachPage = currentPage * blogperpage; //
     const indexofFirstDataInEachPage = indexofLastDataInEachPage - blogperpage;
@@ -67,10 +88,10 @@ const BlogCategory = () => {
         <Container sx={{ flexGrow: 1 }}>
             <Box >
                 <Grid container spacing={{ xs: 1, md: 2 }} sx={{ pl: { xs: 0 } }}>
-                    <Grid item lg={8} >
-                        <Box sx={{ display: 'flex', flexWrap: 'wrap', mt:7, mb: 9, borderRadius:"25px" }}>
+                    <Grid item lg={8}>
+                        <Box sx={{ display: 'flex', flexWrap: 'wrap',mb: 9, borderRadius:"25px" }}>
                             <Grid spacing={0} container rowSpacing={10} columnSpacing={{ xs: 0 }}>
-                                <Grid item lg={6} xs={12} sx={{width:{lg:'340px'},height:{lg:'369px'}}}>
+                                <Grid item lg={6} xs={12} sx={{width:{lg:'340px'},height:{lg:'369px'},}}>
                                     <CategoryCard image={sand}></CategoryCard>
                                 </Grid>
                                 <Grid item lg={6} xs={12} sx={{width:{lg:'340px'},height:{lg:'369px'}}}>
@@ -87,7 +108,7 @@ const BlogCategory = () => {
                       
                         <Box sx={{ display: 'flex', flexWrap: 'wrap', my:2, }}>
                             {currentArray.map((item) =>
-                                <Grid item lg={6} sx={{p:0,m:0}}>
+                                <Grid item lg={6} >
                                     <BlogCard
                                         
                                         d={false}
@@ -114,15 +135,26 @@ const BlogCategory = () => {
                             </Stack>
                         </Box>
                     </Grid>
-
+                                
                     <Grid item lg={4}>
-                        <Box sx={{my:7}}>
-                            <CategoriesCount></CategoriesCount>
-                            <PopularPost></PopularPost>
-                            <FollowMeCamp></FollowMeCamp>
-                            <Subscribe></Subscribe>
+                        <Box >
+                            {
+                                authorCompoent ? 
+                                
+                                <> 
+                                  <AuthorCard></AuthorCard>  
+                                  <ShortContact></ShortContact>
+                                  <Subscribe></Subscribe>
+                                </>
+                                :
+                                <>
+                                    <CategoriesCount></CategoriesCount>
+                                    <PopularPost></PopularPost>
+                                    <FollowMeCamp></FollowMeCamp>
+                                    <Subscribe></Subscribe>
+                                </>
+                            }
                         </Box>
-
                     </Grid>
                 </Grid>
             </Box>

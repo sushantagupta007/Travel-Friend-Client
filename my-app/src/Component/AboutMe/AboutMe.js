@@ -1,4 +1,4 @@
-import { createTheme, Grid, Paper, Typography, Stack } from '@mui/material';
+import { createTheme, Grid, Typography } from '@mui/material';
 import React from 'react';
 import Subscribe from '../Subscribe/Subscribe';
 import AboutMeCard from './AboutMeCard';
@@ -8,6 +8,7 @@ import { Box } from '@mui/material';
 import './AboutMe.css'
 
 import MasonaryComp from '../Masonry/Masonary';
+import ShortContact from '../ShortContact/ShortContact';
 
 const theme = createTheme();
 
@@ -68,21 +69,7 @@ const AboutMe = () => {
                         }}
                     >
                 <AboutMeCard></AboutMeCard>
-                <Paper elevation={2} sx={{p:1, my:2}}>
-                    <Typography theme={theme} sx={{fontSize:{xs:'1rem'},fontFamily:'Poppins'}} variant="h3" textAlign="left">
-                        Contact Me
-                    </Typography>
-                    <Stack direction="row" sx={{fontFamily:'Poppins' , fontWeight:'normal',color:"#696969", my:2}} >
-                        <i className="fas fa-map-marker-alt">  Phulbari, Dinajpur </i> 
-                    </Stack>
-                    <Stack direction="row" sx={{fontFamily:'Poppins' , fontWeight:'normal',color:"#696969", my:2}} >
-                        <i className="fas fa-envelope">  sushanta.sust@gmail.com</i> 
-                    </Stack>
-                    <Stack direction="row" sx={{fontFamily:'Poppins' , fontWeight:'normal',color:"#696969", my:2}} >
-                        <i class="fas fa-mobile-alt"> 01737558258</i> 
-                    </Stack>
-                    
-                </Paper>
+                <ShortContact></ShortContact>
                 <Subscribe></Subscribe>
                 </Box>
             </Grid>

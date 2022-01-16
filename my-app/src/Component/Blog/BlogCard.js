@@ -1,4 +1,4 @@
-import { Typography, Box, createTheme, Grid, Container } from '@mui/material';
+import { Typography, Box, createTheme, Container } from '@mui/material';
 
 import React from 'react';
 

@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 import { Box, Typography, createTheme, Grid } from '@mui/material';
 
 
@@ -24,6 +24,7 @@ const CategoryCard = ({ image }) => {
 
     const useStyles = makeStyles({
         demowrap: {
+            paddingTop:'0px',
             position: 'relative',
             height: '350px',
             borderRadius: "50px",
@@ -57,29 +58,29 @@ const CategoryCard = ({ image }) => {
     return (
         <Box sx={{ m: 1 }} component="div" className={classes.demowrap}>
             <Box component="div" className={classes.demoContent} >
-                <Box component="div" sx={{width:'100%'}}>
-                    <Typography sx={{ fontFamily: 'Poppins', color: "black",fontWeight:'bold',pl:2 }} theme={theme} textAlign="center" variant="h7">
+                <Box component="div" sx={{ width: '100%' }}>
+                    <Typography sx={{ fontFamily: 'Poppins', color: "black", fontWeight: 'bold', pl: 2,pt:0 }} theme={theme} textAlign="center" variant="h7">
                         14 Things To See and Do in Bangladesh
                     </Typography>
-                    <Grid container spacing={1} sx={{my:1,color:'white'}}>
-                        <Grid item xs={4} sx={{display:'flex',justifyContent:'center'}}>
-                            <Typography sx={{ fontFamily: 'Poppins',fontSize:'12px'}} textAlign="center" variant="p">
-                                <i className="fas fa-clock"> 30 Minutes Ago</i>
+                    <Grid container spacing={1} sx={{ my: 1, color: 'black',pl:2 }}>
+                        <Grid item xs={3} sx={{ display: 'flex', justifyContent: 'flex-start' }}>
+                            <Typography sx={{ fontFamily: 'Poppins', fontSize: '12px', }} variant="p">
+                                <i className="fas fa-clock" style={{ color: "#141414" }}></i>  30 Minutes Ago
+                            </Typography>
+                        </Grid>
+                        <Grid item xs={3} sx={{ display: 'flex', justifyContent: 'flex-start' }}>
+                            <Typography sx={{ fontFamily: 'Poppins', fontSize: '12px' }} variant="p">
+                                <i className="fas fa-folder" style={{ color: "#141414" }}>  </i> Solo Travel
+                            </Typography>
+                        </Grid>
+                        <Grid item xs={3} sx={{ display: 'flex', justifyContent: 'flex-start' }}>
+                            <Typography sx={{ fontFamily: 'Poppins', fontSize: '12px' }} variant="p">
+                                <i className="fas fa-user" style={{ color: "#141414" }}> </i> Adam Smith
                             </Typography>
                         </Grid>
                         <Grid item xs={3}>
-                            <Typography sx={{ fontFamily: 'Poppins',fontSize:'12px'}} textAlign="center" variant="p">
-                            <i className="fas fa-folder"> Solo Travel </i> 
-                            </Typography>
-                        </Grid>
-                        <Grid item xs={3}>
-                            <Typography sx={{ fontFamily: 'Poppins',fontSize:'12px'}} textAlign="center" variant="p">
-                            <i className="fas fa-user"> Adam Smith</i>
-                            </Typography>
-                        </Grid>
-                        <Grid item xs={2}>
-                            <Typography sx={{ fontFamily: 'Poppins',fontSize:'12px'}} textAlign="center" variant="p">
-                                hello
+                            <Typography sx={{ fontFamily: 'Poppins', fontSize: '12px' }} variant="p">
+                                <i class="fas fa-comment" style={{ color: "#141414" }}> </i> 502
                             </Typography>
                         </Grid>
                     </Grid>

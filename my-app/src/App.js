@@ -23,6 +23,7 @@ import Contact from './Pages/Contact/Contact';
 import Category from './Pages/Category/Category';
 import Post from './Pages/Post/Post';
 import Author from './Component/Author/Author';
+import SearchPage from './Pages/SearchPage/SearchPage';
 
 
 
@@ -64,7 +65,9 @@ function App() {
         <Route path="/author">
           <Author></Author>
         </Route>
-        
+        <Route path='/search'>
+          <SearchPage></SearchPage>
+        </Route>
         <Route exact path="/">
           <HomePage></HomePage>
         </Route>

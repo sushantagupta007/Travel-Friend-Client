@@ -1,5 +1,5 @@
 import React from 'react';
-import { Breadcrumbs, Grid, Container, Box, Typography, Stack, Avatar, Paper } from '@mui/material';
+import { Breadcrumbs, Grid, Container, Box, Typography, Stack, Avatar} from '@mui/material';
 import { Link } from 'react-router-dom';
 import BlogDocImage from '../../Image/BlogDoc.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

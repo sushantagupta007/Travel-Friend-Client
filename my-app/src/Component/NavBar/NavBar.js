@@ -49,7 +49,7 @@ const NavBar = () => {
   const [blog,setBlog] = useState(false); 
 
   useEffect(()=>{
-    if(blogPath=='/Blog'||blogPath=='/Author'){
+    if(blogPath==='/Blog'||blogPath==='/Author'){
       setBlog(true)
     }
     else{
@@ -108,7 +108,7 @@ const NavBar = () => {
                 to={`/${page}`}
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: blog ? "black": "white", display: 'block'}}
+                sx={{ mt:2 , color: blog ? "black": "white", display: 'block'}}
               >
                 <Typography className={classes.root}> {page} <FaArrowCircleDown sx={{width:"4px"}}></FaArrowCircleDown> </Typography>
               </Button>

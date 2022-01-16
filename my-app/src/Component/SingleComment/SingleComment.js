@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState} from 'react';
 import { Stack, Button, Grid, Box } from '@mui/material';
 
 import Accordion from '@mui/material/Accordion';
@@ -12,13 +12,12 @@ import './SingleComment.css';
 
 const SingleComment = ({name,storecomment}) => {
     const { register, handleSubmit } = useForm();
-    let i =1; 
+ 
     
     
     let existingArray = []
     const [comments,setComments] = useState(existingArray)
-    
-    const [localArray,setlocalArray] = useState([])   
+      
 
     const onSubmit = data => {
         console.log(data.reply)
@@ -27,13 +26,7 @@ const SingleComment = ({name,storecomment}) => {
         setComments(newReplyArray)  
         localStorage.setItem("comment",JSON.stringify(newReplyArray))  
     }
-
-    // useEffect(()=>{
-    //     const storedArray = JSON.parse(localStorage.getItem("comment")) //At the time of retrieval need to use JSON.parse() JSON.parse((localStorage.getItem('myDataStorage')))
-    //     setComments(storedArray)
-    //     console.log(storedArray)
-    // },[])
-  
+ 
   
     const handleRemove =() =>{
 

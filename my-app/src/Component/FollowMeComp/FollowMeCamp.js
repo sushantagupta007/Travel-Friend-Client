@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
-import { Paper, Stack, Avatar, Typography, Box, Grid } from '@mui/material';
+import { Paper, Avatar, Typography, Grid } from '@mui/material';
 import { makeStyles } from '@material-ui/core/styles';
 
 
@@ -52,32 +52,6 @@ const FollowMeCamp = () => {
                     </a>
                 </Grid>
             </Grid>
-            
-            {/* <Box>
-                <Stack direction="row" spacing={2}>
-                    <a href="https://web.facebook.com/">
-                        <Avatar sx={{ width: 30, height: 30, border: 1, bgcolor: '#FFA902' }}  >
-                            <FontAwesomeIcon style={{ width: "15px", height: "15px", color: "white" }} icon={faFacebookF}></FontAwesomeIcon>
-                        </Avatar>
-                    </a>
-                    <a href="https://web.facebook.com/">
-                        <Avatar sx={{ width: 30, height: 30, border: 1 }} className={avatarClass.customAvatar} >
-                            <FontAwesomeIcon style={{ width: "15px", height: "15px" }} icon={faTwitter}></FontAwesomeIcon>
-                        </Avatar>
-                    </a>
-                    <a href="https://web.facebook.com/">
-                        <Avatar sx={{ width: 30, height: 30, border: 1 }} className={avatarClass.customAvatar} >
-                            <FontAwesomeIcon style={{ width: "15px", height: "15px" }} icon={faInstagram}></FontAwesomeIcon>
-                        </Avatar>
-                    </a>
-                    <a href="https://web.facebook.com/">
-                        <Avatar sx={{ width: 30, height: 30, border: 1 }} className={avatarClass.customAvatar} >
-                            <FontAwesomeIcon style={{ width: "15px", height: "15px" }} icon={faYoutube}></FontAwesomeIcon>
-                        </Avatar>
-                    </a>
-                </Stack>
-            </Box> */}
-
         </Paper>
     );
 };
