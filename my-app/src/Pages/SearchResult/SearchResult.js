@@ -6,6 +6,6 @@ const SearchResult = () => {
             
         </div>
     );
-};
+}; 
 
 export default SearchResult;
