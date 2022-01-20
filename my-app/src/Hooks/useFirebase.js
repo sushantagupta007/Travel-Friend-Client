@@ -43,10 +43,6 @@ const useFirebase = () => {
                 onAuthStateChanged(auth, (user) => {
                     if (user) {
                         setUser(user)
-                        if(user){
-                           
-                        }
-
                     } else {
                         setError(errors)
                     }
@@ -61,9 +57,11 @@ const useFirebase = () => {
         const auth = getAuth();
         signOut(auth).then(() => {
             setUser({})
+
         }).catch((error) => {
             setError(error)
         });
+        history.replace('/home')
     }
 
     const verifyEmail = () => {

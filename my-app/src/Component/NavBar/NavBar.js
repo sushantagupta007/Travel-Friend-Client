@@ -31,6 +31,7 @@ const useStyles = makeStyles({
 })
 
 const NavBar = () => {
+  const history = useHistory(); 
   const classes = useStyles();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const {logOut,user} = useAuth();
@@ -46,7 +47,7 @@ const NavBar = () => {
 
 
 
-  const history = useHistory();
+  
   const blogPath = history.location.pathname
  
   const [blog, setBlog] = useState(false);
@@ -127,7 +128,7 @@ const NavBar = () => {
             <Box sx={{display:'flex',flexDirection:{xs:'column', md:'row'},alignItems:'center'}}>
               <Typography sx={{ fontFamily: "Poppins", me: 2 }}> Mr. {user.displayName} </Typography>
               {user.email ?
-                <Button sx={{width:''}}onClick={handleLogout} variant="outlined">Logout</Button> :
+                <Button sx={{width:''}}onClick={()=>handleLogout(history)} variant="outlined">Logout</Button> :
                 <Button component={Link} to="/signin" sx={{ mr: 1 }} variant="outlined">Login</Button>
               }
             </Box>
