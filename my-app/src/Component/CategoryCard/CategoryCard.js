@@ -1,10 +1,11 @@
 import React from 'react';
-import { Box, Typography, createTheme, Grid } from '@mui/material';
+import { Box, Typography, createTheme, Grid, Button,CardContent } from '@mui/material';
 
 
 
 
 import { makeStyles } from '@material-ui/core/styles';
+
 
 
 const theme = createTheme();
@@ -24,7 +25,7 @@ const CategoryCard = ({ image }) => {
 
     const useStyles = makeStyles({
         demowrap: {
-            paddingTop:'0px',
+            paddingTop: '0px',
             position: 'relative',
             height: '350px',
             borderRadius: "50px",
@@ -56,13 +57,13 @@ const CategoryCard = ({ image }) => {
     const classes = useStyles();
 
     return (
-        <Box sx={{ m: 1 }} component="div" className={classes.demowrap}>
+        <Box id="customCard" sx={{ m: 1 }} component="div" className={classes.demowrap}>
             <Box component="div" className={classes.demoContent} >
-                <Box component="div" sx={{ width: '100%' }}>
-                    <Typography sx={{ fontFamily: 'Poppins', color: "black", fontWeight: 'bold', pl: 2,pt:0 }} theme={theme} textAlign="center" variant="h7">
+                <Box id="cardInfo" component="div" sx={{ width: '100%' }}>
+                    <Typography sx={{ fontFamily: 'Poppins', color: "black", fontWeight: 'bold', pl: 2, pt: 0 }} theme={theme} textAlign="center" variant="h7">
                         14 Things To See and Do in Bangladesh
                     </Typography>
-                    <Grid container spacing={1} sx={{ my: 1, color: 'black',pl:2 }}>
+                    <Grid container spacing={1} sx={{ my: 1, color: 'black', pl: 2 }}>
                         <Grid item xs={3} sx={{ display: 'flex', justifyContent: 'flex-start' }}>
                             <Typography sx={{ fontFamily: 'Poppins', fontSize: '12px', }} variant="p">
                                 <i className="fas fa-clock" style={{ color: "#141414" }}></i>  30 Minutes Ago
@@ -84,7 +85,11 @@ const CategoryCard = ({ image }) => {
                             </Typography>
                         </Grid>
                     </Grid>
+                    <CardContent id="cardInfo">
+                        <Button id="cardButon" size="small">Know More</Button>
+                    </CardContent>
                 </Box>
+
             </Box>
         </Box>
     )

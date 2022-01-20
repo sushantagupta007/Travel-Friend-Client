@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-import { Container, Grid, Stack, Typography,Box } from '@mui/material';
+import { Container, Grid, Stack,Box } from '@mui/material';
 import { Button } from '@mui/material';
 import { useHistory } from 'react-router-dom';
 import { Avatar } from '@mui/material';

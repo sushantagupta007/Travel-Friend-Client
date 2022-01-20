@@ -19,7 +19,7 @@ import { FaArrowCircleDown } from 'react-icons/fa'
 import { Link, useHistory } from 'react-router-dom';
 
 import useAuth from './../../Hooks/useAuth';
-const pages = ['home', 'about', 'category', 'Blog', 'contact'];
+const pages = ['home', 'about', 'category', 'Blog', 'contact','signin'];
 
 
 const useStyles = makeStyles({
@@ -33,7 +33,7 @@ const useStyles = makeStyles({
 const NavBar = () => {
   const classes = useStyles();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const {googleSign, logOut,user} = useAuth();
+  const {logOut,user} = useAuth();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -48,7 +48,7 @@ const NavBar = () => {
 
   const history = useHistory();
   const blogPath = history.location.pathname
-  console.log(blogPath)
+ 
   const [blog, setBlog] = useState(false);
 
   useEffect(() => {
@@ -61,13 +61,12 @@ const NavBar = () => {
 
   }, [blogPath])
 
-  const handleLogin = () => {
-    googleSign()
-  }
+  
 
   const handleLogout = () => {
     logOut()
   }
+
   return (
     <Container>
 
@@ -127,9 +126,9 @@ const NavBar = () => {
             </Box>
             <Box sx={{display:'flex',flexDirection:{xs:'column', md:'row'},alignItems:'center'}}>
               <Typography sx={{ fontFamily: "Poppins", me: 2 }}> Mr. {user.displayName} </Typography>
-              {user.displayName ?
-                <Button onClick={handleLogout} variant="outlined">Logout</Button> :
-                <Button onClick={handleLogin} sx={{ mr: 1 }} variant="outlined">Login</Button>
+              {user.email ?
+                <Button sx={{width:''}}onClick={handleLogout} variant="outlined">Logout</Button> :
+                <Button component={Link} to="/signin" sx={{ mr: 1 }} variant="outlined">Login</Button>
               }
             </Box>
           </Toolbar>

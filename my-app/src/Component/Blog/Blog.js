@@ -39,6 +39,7 @@ const Blog = () => {
     const [blogperpage] = useState(5); 
     const [loading,setLoading] = useState(false);
 
+    
      //Data Fetch From JSON
      useEffect(()=>{
         setLoading(true)
@@ -47,7 +48,7 @@ const Blog = () => {
         .then(data=>
             {
                 setBlogData(data)
-                console.log(data)
+               
                 setLoading(false)
             }
                 )
@@ -67,7 +68,7 @@ const Blog = () => {
 
    
 
-    console.log(loading)
+    
    
 
     

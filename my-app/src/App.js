@@ -25,6 +25,9 @@ import Post from './Pages/Post/Post';
 import Author from './Component/Author/Author';
 import SearchPage from './Pages/SearchPage/SearchPage';
 import AuthProvider from './Hooks/AuthProvider';
+import SignUp from './Component/SignUP/SignUp';
+import SignIn from './Component/SignIn/SignIn';
+import ForgotPass from './Component/ForgotPass/ForgotPass';
 
 
 
@@ -69,6 +72,15 @@ function App() {
           </Route>
           <Route path='/search'>
             <SearchPage></SearchPage>
+          </Route>
+          <Route path="/signup">
+            <SignUp></SignUp>
+          </Route>
+          <Route path="/signin">
+            <SignIn></SignIn>
+          </Route>
+          <Route path="/forgotpass">
+            <ForgotPass></ForgotPass>
           </Route>
           <Route exact path="/">
             <HomePage></HomePage>

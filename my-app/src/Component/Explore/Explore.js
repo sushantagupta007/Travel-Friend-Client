@@ -28,7 +28,7 @@ const Explore = () => {
     const indexofFirstDataInEachPage = indexofLastDataInEachPage-postperpage; 
     const currentArray = exploreData.slice(indexofFirstDataInEachPage,indexofLastDataInEachPage)
     const pageCount = exploreData.length/postperpage    
-    console.log(pageCount)
+    
 
     //Here currentpost means the current page actually. But Difference is that
     //currentPost is an array and currentpage is the number which contains that array page. 
@@ -52,7 +52,7 @@ const Explore = () => {
         
       };
       
-    console.log(currentPage)
+    
     return (
     <Container sx={{fontFamily:'Poppins',marginTop:'1rem',marginBottom:'1rem'}}>
         <Typography theme={theme} sx={{xs:{fontSize:'1rem'}}} variant="h3" textAlign="center">

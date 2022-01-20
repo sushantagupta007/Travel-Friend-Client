@@ -1,8 +1,4 @@
-#mapContainer{
-    position: relative;
-    height: 180px;
-    width: 600px;
-}
+
 
 #map {
     position: relative;
@@ -13,16 +9,31 @@
 @media only screen and (max-width: 320px) {
     #mapContainer{
         position: relative;
-        height: 180px;
-        width: 320px;
+        height: 320px;
+        width: 280px;
     }
     
 }
 @media only screen and (min-width:321px) and (max-width: 375px) {
     #mapContainer{
         position: relative;
-        height: 180px;
+        height: 320px;
+        width: 320px;
+    }
+}
+
+@media only screen and (min-width:376px) and (max-width: 425px) {
+    #mapContainer{
+        position: relative;
+        height: 320px;
         width: 350px;
+    }
+    
+}
+@media only screen and (min-width: 426px) {
+    #mapContainer{
+        position: relative;
+        height: auto;
     }
     
 }

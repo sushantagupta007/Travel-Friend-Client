@@ -14,6 +14,8 @@ import RoadTravel from '../../Image/3.jpg'
 import OldCiry from '../../Image/4.jfif'
 import JungleTravel from '../../Image/5.jfif'
 import OceanTravel from '../../Image/6.jpg'
+import FollowMe from './../FollowMe/FollowMe';
+import FollowMeCard from './../FollowMeCard/FollowMeCard';
 
 const responsive = {
     superLargeDesktop: {
@@ -63,12 +65,12 @@ const CategoryBlock = () => {
             Choose Category 
         </Typography>
       <Carousel responsive={responsive} >
-        <div className={classes.root}> <CategoryCard img={SoloTravel} des="Solo Travel"> fsfdfdf </CategoryCard> </div>
-        <div className={classes.root}> <CategoryCard img={MountTravel} des="Mount Travel"> hello</CategoryCard> </div>
-        <div className={classes.root}> <CategoryCard img={RoadTravel} des="Road Travel"> hello</CategoryCard> </div>
-        <div className={classes.root}> <CategoryCard img={OldCiry} des="Old City Travel"> hello</CategoryCard> </div>
-        <div className={classes.root}> <CategoryCard img={JungleTravel} des="Jungle Travel"> hello</CategoryCard> </div>
-        <div className={classes.root}> <CategoryCard img={OceanTravel} des="Ocean Trvel" >hello</CategoryCard> </div>
+        <div className={classes.root}> <FollowMeCard img={SoloTravel} des="Solo Travel"> fsfdfdf </FollowMeCard> </div>
+        <div className={classes.root}> <FollowMeCard img={MountTravel} des="Mount Travel"> hello</FollowMeCard> </div>
+        <div className={classes.root}> <FollowMeCard img={RoadTravel} des="Road Travel"> hello</FollowMeCard> </div>
+        <div className={classes.root}> <FollowMeCard img={OldCiry} des="Old City Travel"> hello</FollowMeCard> </div>
+        <div className={classes.root}> <FollowMeCard img={JungleTravel} des="Jungle Travel"> hello</FollowMeCard> </div>
+        <div className={classes.root}> <FollowMeCard img={OceanTravel} des="Ocean Trvel" >hello</FollowMeCard> </div>
     </Carousel>
     </Container>
     )

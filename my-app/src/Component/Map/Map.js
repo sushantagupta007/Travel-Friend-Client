@@ -34,7 +34,7 @@ const Map = () => {
           fetch('./touristPlace.json')
           .then(res=>res.json())
           .then(data=>{setData(data.features) 
-            console.log(data.features)})
+            })
         const listenr =(e)=>{
             if(e.key==='Escape'){
                 setPark(null)
@@ -58,7 +58,7 @@ const Map = () => {
   
   
     return (
-        <Container id="#mapContainer" sx={{ flexGrow: 1, display: { xs: 'flex', md: 'block' },flexDirection:{xs: 'column', md: 'row'} }} >
+        <Container id="mapContainer" sx={{ flexGrow: 1, display: { xs: 'flex', md: 'block' },flexDirection:{xs: 'column', md: 'row'} }} >
             <Typography  theme={theme} sx={{fontFamily:'Poppins'}} variant="h3" textAlign="Center">
                 Tourist Place of Bangladesh 
             </Typography>

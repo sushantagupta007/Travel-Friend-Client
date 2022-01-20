@@ -37,7 +37,7 @@ export default function Nav({ img, text, textcolor,height }) {
   const history = useHistory(); 
   const blogPath = history.location.pathname 
 
-  console.log(blogPath)
+  
   const [blog,setBlog] = useState(false); 
 
 

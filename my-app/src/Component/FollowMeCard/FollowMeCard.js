@@ -9,18 +9,21 @@ import Button from '@mui/material/Button';
 
 import './FollowMeCard.css'
 
-export default function FollowMeCard(props) {
-  const img = props.img
+export default function FollowMeCard({img,width=270,des}) {
+
+  const handleClick=()=>{
+    console.log("Clicked")
+  }
   return (
-    <Card id="customCard" sx={{ width:270 }}>
+    <Card id="customCard" sx={{ width:`%${width}` }}>
       <CardMedia
         component="img"
         height="300"
         image={img}
         alt="green iguana"
       />
-      <CardContent id="cardInfo">
-        <Button id="cardButon" size="small">Know More</Button>
+      <CardContent id="cardInfo" sx={{display:'flex', justifyContent:'center'}}>
+        <Button onClick={handleClick} id="cardButon" size="small">Know More {des}</Button>
       </CardContent>
    
     </Card>
