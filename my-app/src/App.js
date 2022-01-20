@@ -28,6 +28,8 @@ import AuthProvider from './Hooks/AuthProvider';
 import SignUp from './Component/SignUP/SignUp';
 import SignIn from './Component/SignIn/SignIn';
 import ForgotPass from './Component/ForgotPass/ForgotPass';
+import CategoryDetails from './Component/CategoryDetails/CategoryDetails';
+import PrivateRoute from './Hooks/PrivateRoute';
 
 
 
@@ -82,6 +84,9 @@ function App() {
           <Route path="/forgotpass">
             <ForgotPass></ForgotPass>
           </Route>
+          <PrivateRoute path="/cdetails">
+            <CategoryDetails></CategoryDetails>
+          </PrivateRoute>
           <Route exact path="/">
             <HomePage></HomePage>
           </Route>

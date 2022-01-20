@@ -8,11 +8,13 @@ import Button from '@mui/material/Button';
 
 
 import './FollowMeCard.css'
+import { useHistory } from 'react-router-dom';
 
 export default function FollowMeCard({img,width=270,des}) {
+  const history = useHistory(); 
 
   const handleClick=()=>{
-    console.log("Clicked")
+    history.replace('/cdetails')
   }
   return (
     <Card id="customCard" sx={{ width:`%${width}` }}>
