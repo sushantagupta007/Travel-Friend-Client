@@ -21,55 +21,18 @@ import './SignIn.css'
 const SignIn = () => {
     const history = useHistory();
     const { register, handleSubmit, reset } = useForm();
-    const { googleSign, signInUser, user, updatePass, facebookSign} = useAuth();
+    const { googleSign, signInUser,updatePass, facebookSign} = useAuth();
     const [newpassword, setnewpassword] = useState(null);
-    const [phoneUser,setPhoneUser] = useState({}); 
+    const [phoneUser] = useState({}); 
 
 
-    // const setUpRecaptcha = () => {
-    //     const auth = getAuth();
-    //     window.recaptchaVerifier = new RecaptchaVerifier('loginBtn', {
-    //         'size': 'invisible',
-    //         'callback': (response) => {
-    //             console.log("Captcha Resolved")
-    //             onSubmit();
-    //         }
-    //     }, auth);
-    //     return window.recaptchaVerifier
-    // };
-
-    // const numberCollection =() =>{
-    //     const phone = prompt("Enter Phone Number")
-    //     return phone
-    // }
+    
 
     const onSubmit = data => {
         const email = data.email
         const password = data.password
-        signInUser(email, password, history)
-        
-        // const appVerifier = setUpRecaptcha();
-        // console.log(appVerifier)
-        // const phoneNumber = numberCollection(); 
-        reset()
-
-        // signInWithPhoneNumber(auth, phoneNumber, appVerifier)
-        //     .then((confirmationResult) => {
-        //         const code = prompt("Enter OTP");
-        //         window.confirmationResult = confirmationResult;
-        //         confirmationResult.confirm(code).then((result) => {
-        //             // User signed in successfully.
-        //             const user = result.user;
-        //             setPhoneUser(user)
-        //           }).catch((error) => {
-        //             // User couldn't sign in (bad verification code?)
-        //             // ...
-        //           });
-        //     }).catch((error) => {
-        //         // Error; SMS not sent
-        //         // ...
-        //     });
-        
+        signInUser(email, password, history) 
+        reset() 
     };
 
     console.log(phoneUser)

@@ -1,11 +1,11 @@
 import { Avatar, Container, Typography,Box } from '@mui/material';
 import React from 'react';
+import useAuth from './../../Hooks/useAuth';
 
 
 
-const MyTour = ({username}) => {
-    
-    
+const MyTour = () => {
+    const {user} = useAuth();
     return (
         <Container>
             <Box component="div" 
@@ -22,8 +22,7 @@ const MyTour = ({username}) => {
                     src=""
                     sx={{ width: 56, height: 56 }}
                 />
-                <Typography>{username}</Typography>
-                
+                <Typography>{user && user.displayName}</Typography>
             </Box>
         </Container>
     );

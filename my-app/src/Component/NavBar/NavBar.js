@@ -126,7 +126,7 @@ const NavBar = () => {
                 </Button>
               ))}
                {user.email?
-              <Button component={Link} to="/mytravel" sx={{ mt: 2, color: blog ? "black" : "white", display: 'block' }} to="/mytravel"> 
+              <Button component={Link}  sx={{ mt: 2, color: blog ? "black" : "white", display: 'block' }} to="/mytravel"> 
                 MyTravel   <FaArrowCircleDown sx={{ width: "4px" }}></FaArrowCircleDown> 
               </Button>:"" 
               }

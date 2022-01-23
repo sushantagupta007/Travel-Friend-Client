@@ -1,5 +1,5 @@
 import { Typography, Container, Box, Button, Grid } from '@mui/material';
-import React, { useRef } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import './SignUp.css'
 import { Link, useHistory } from 'react-router-dom';
@@ -12,10 +12,10 @@ const SignUp = () => {
 
     const history = useHistory();
     const { register, handleSubmit, reset } = useForm();
-    const {googleSign,userCreate,user } = useAuth();
+    const {googleSign,userCreate} = useAuth();
     
    
-    const idRef = useRef(); 
+
     const onSubmit = data => {
         const email = data.email
         const password = data.password

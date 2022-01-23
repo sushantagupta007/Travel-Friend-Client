@@ -50,7 +50,7 @@ const BlogCategory = () => {
             setauthorComponent(false)
         }
        
-    },[authorCompoent])
+    },[pathName])
 
     const [blogData, setBlogData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);

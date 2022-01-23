@@ -61,27 +61,26 @@ const useFirebase = () => {
 
             })
     }
-
- 
     useEffect(()=>{
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user)
             } else {
-                setError(errors)
+           
             }
         });
-    },[user])
+    },[])
+
     const userCreate = (name, email, password, phone, history) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 //User Create after registration
                 const newUser = { email, displayName: name, phoneNumber: phone };
-                const uid = auth.currentUser.uid
+                
                 verifyEmail();
           
                 updateProfile(auth.currentUser, {
-                    displayName: name,
+                    displayName: newUser.displayName,
                 })
                     .then(() => {
                         console.log()
@@ -148,6 +147,7 @@ const useFirebase = () => {
         signInUser,
         updatePass,
         user,
+        errors
 
     })
 

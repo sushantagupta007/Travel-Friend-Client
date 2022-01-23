@@ -5,7 +5,7 @@ import 'react-multi-carousel/lib/styles.css';
 
 
 import { makeStyles } from '@material-ui/core/styles';
-import CategoryCard from './CategoryCard';
+
 import {createTheme, Typography, Container } from '@mui/material';
 
 import SoloTravel from '../../Image/1.jpg'
@@ -14,7 +14,7 @@ import RoadTravel from '../../Image/3.jpg'
 import OldCiry from '../../Image/4.jfif'
 import JungleTravel from '../../Image/5.jfif'
 import OceanTravel from '../../Image/6.jpg'
-import FollowMe from './../FollowMe/FollowMe';
+
 import FollowMeCard from './../FollowMeCard/FollowMeCard';
 
 const responsive = {

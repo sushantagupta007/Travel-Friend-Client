@@ -31,6 +31,7 @@ import ForgotPass from './Component/ForgotPass/ForgotPass';
 import CategoryDetails from './Component/CategoryDetails/CategoryDetails';
 import PrivateRoute from './Hooks/PrivateRoute';
 import MyTravel from './Component/MyTravel/MyTravel';
+import MyTour from './Component/MyOrder/MyOrder';
 
 
 
@@ -91,7 +92,9 @@ function App() {
           <Route path="/mytravel">
             <MyTravel></MyTravel>
           </Route>
-          
+          <Route path="/mytour">
+            <MyTour></MyTour>
+          </Route>
           <Route exact path="/">
             <HomePage></HomePage>
           </Route>

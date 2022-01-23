@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -151,13 +151,13 @@ console.log(user)
                         <ListItemIcon>
                             <TourIcon />
                         </ListItemIcon>
-                        <RouterLink to="/mytour"> MyTour </RouterLink>
+                        <RouterLink to="/mytravel/mytour"> MyTour </RouterLink>
                     </ListItem>
                     <ListItem>
                         <ListItemIcon>
                             <ManageAccountsIcon />
                         </ListItemIcon>
-                        <RouterLink to="/managetour"> ManageTours</RouterLink>
+                        <RouterLink to="/mytravel/managetour"> ManageTours</RouterLink>
                     </ListItem>
 
                 </List>
@@ -199,10 +199,10 @@ console.log(user)
             <Main open={open}>
                 <DrawerHeader />
                     <Switch>
-                        <Route path="/mytour">
-                            <MyTour username={user} ></MyTour>
+                        <Route path="/mytravel/mytour">
+                            <MyTour></MyTour>
                         </Route>
-                        <Route exact path="/managetour">
+                        <Route exact path="/mytravel/managetour">
                             <ManageTour />
                         </Route>
                     </Switch>
