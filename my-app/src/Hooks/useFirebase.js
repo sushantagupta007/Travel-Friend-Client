@@ -4,7 +4,7 @@ import {
     signInWithEmailAndPassword, sendPasswordResetEmail, 
 } from "firebase/auth";
 import firebaseInitialization from './../Firebase/firebase.init';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 
@@ -24,40 +24,30 @@ const useFirebase = () => {
     const googleSign = (history) => {
         signInWithPopup(auth, googleProvider)
             .then((result) => {
-                onAuthStateChanged(auth, (user) => {
-                    if (user) {
-                        setUser(user)
-                    } else {
-                        setError(errors)
-                    }
-                });
+                if(result){
+                    history.replace('/home')
+                }
             }).catch((error) => {
                 setError(error)
             });
-            history.replace('/home')
+           
     }
 
     const facebookSign = (history) => {
         signInWithPopup(auth, facebookprovider)
             .then((result) => {
-                onAuthStateChanged(auth, (user) => {
-                    if (user) {
-                        setUser(user)
-                    } else {
-                        setError(errors)
-                    }
-                });
-                history.replace('/home')
+                if(result){
+                    history.replace('/home')
+                }
             })
             .catch((error) => {
                 setError(error)
             });
     }
-    const logOut = () => {
+    const logOut = (history) => {
         const auth = getAuth();
         signOut(auth).then(() => {
             setUser({})
-
         }).catch((error) => {
             setError(error)
         });
@@ -73,6 +63,15 @@ const useFirebase = () => {
     }
 
  
+    useEffect(()=>{
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setUser(user)
+            } else {
+                setError(errors)
+            }
+        });
+    },[user])
     const userCreate = (name, email, password, phone, history) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
@@ -148,7 +147,6 @@ const useFirebase = () => {
         resetPassword,
         signInUser,
         updatePass,
-      
         user,
 
     })

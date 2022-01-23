@@ -65,7 +65,7 @@ const NavBar = () => {
   
 
   const handleLogout = () => {
-    logOut()
+    logOut(history)
   }
 
   return (
@@ -110,6 +110,7 @@ const NavBar = () => {
 
                   </MenuItem>
                 ))}
+               
               </Menu>
             </Box>
             <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' }, justifyContent: { sm: 'center' } }}>
@@ -124,11 +125,17 @@ const NavBar = () => {
                   <Typography className={classes.root}> {page} <FaArrowCircleDown sx={{ width: "4px" }}></FaArrowCircleDown> </Typography>
                 </Button>
               ))}
+               {user.email?
+              <Button component={Link} to="/mytravel" sx={{ mt: 2, color: blog ? "black" : "white", display: 'block' }} to="/mytravel"> 
+                MyTravel   <FaArrowCircleDown sx={{ width: "4px" }}></FaArrowCircleDown> 
+              </Button>:"" 
+              }
             </Box>
             <Box sx={{display:'flex',flexDirection:{xs:'column', md:'row'},alignItems:'center'}}>
               <Typography sx={{ fontFamily: "Poppins", me: 2 }}> Mr. {user.displayName} </Typography>
+              
               {user.email ?
-                <Button sx={{width:''}}onClick={()=>handleLogout(history)} variant="outlined">Logout</Button> :
+                <Button sx={{width:''}}onClick={handleLogout} variant="outlined">Logout</Button> :
                 <Button component={Link} to="/signin" sx={{ mr: 1 }} variant="outlined">Login</Button>
               }
             </Box>

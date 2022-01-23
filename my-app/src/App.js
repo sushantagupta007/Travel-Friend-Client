@@ -30,6 +30,7 @@ import SignIn from './Component/SignIn/SignIn';
 import ForgotPass from './Component/ForgotPass/ForgotPass';
 import CategoryDetails from './Component/CategoryDetails/CategoryDetails';
 import PrivateRoute from './Hooks/PrivateRoute';
+import MyTravel from './Component/MyTravel/MyTravel';
 
 
 
@@ -87,6 +88,10 @@ function App() {
           <PrivateRoute path="/cdetails">
             <CategoryDetails></CategoryDetails>
           </PrivateRoute>
+          <Route path="/mytravel">
+            <MyTravel></MyTravel>
+          </Route>
+          
           <Route exact path="/">
             <HomePage></HomePage>
           </Route>
