@@ -1,4 +1,4 @@
-import React from 'react';
+import React  from 'react';
 
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
@@ -57,20 +57,25 @@ theme.typography.h3 = {
   },
   
 };
+
 const CategoryBlock = () => {
+
     const classes= useStyles()
+
+  
+
     return (
     <Container sx={{fontFamily:'Poppins',flexGrow: 1}} >
       <Typography theme={theme} sx={{xs:{fontSize:'1rem'}}} variant="h3" textAlign="center">
             Choose Category 
         </Typography>
       <Carousel responsive={responsive} >
-        <div className={classes.root}> <FollowMeCard img={SoloTravel} des="Solo Travel"> fsfdfdf </FollowMeCard> </div>
-        <div className={classes.root}> <FollowMeCard img={MountTravel} des="Mount Travel"> hello</FollowMeCard> </div>
-        <div className={classes.root}> <FollowMeCard img={RoadTravel} des="Road Travel"> hello</FollowMeCard> </div>
-        <div className={classes.root}> <FollowMeCard img={OldCiry} des="Old City Travel"> hello</FollowMeCard> </div>
-        <div className={classes.root}> <FollowMeCard img={JungleTravel} des="Jungle Travel"> hello</FollowMeCard> </div>
-        <div className={classes.root}> <FollowMeCard img={OceanTravel} des="Ocean Trvel" >hello</FollowMeCard> </div>
+        <div className={classes.root}> <FollowMeCard source="category" country="India"      img={SoloTravel} des="Solo Travel"> Solo Travel </FollowMeCard> </div>
+        <div className={classes.root}> <FollowMeCard source="category" country="Bangladesh" img={MountTravel} des="Mount Travel"> Mount Travel</FollowMeCard> </div>
+        <div className={classes.root}> <FollowMeCard source="category" country="Srilanka"   img={RoadTravel} des="Road Travel"> Road Travel </FollowMeCard> </div>
+        <div className={classes.root}> <FollowMeCard source="category" country="Singapore"  img={OldCiry} des="Old City Travel"> Old City Travel </FollowMeCard> </div>
+        <div className={classes.root}> <FollowMeCard source="category" country="Malaysia"   img={JungleTravel} des="Jungle Travel"> Jungle Travel </FollowMeCard> </div>
+        <div className={classes.root}> <FollowMeCard source="category" country="Indonesia"  img={OceanTravel} des="Ocean Trvel"> Ocean Travel </FollowMeCard> </div>
     </Carousel>
     </Container>
     )

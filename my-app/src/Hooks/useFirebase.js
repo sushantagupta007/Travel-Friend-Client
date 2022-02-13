@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react';
 
 
 
+
 firebaseInitialization();
 const auth = getAuth();
 
@@ -18,8 +19,10 @@ const facebookprovider = new FacebookAuthProvider();
 
 const useFirebase = () => {
     const [user, setUser] = useState({})
+    
     const [errors, setError] = useState("")
 
+    const [loading,setIsLoading] = useState(true); 
 
     const googleSign = (history) => {
         signInWithPopup(auth, googleProvider)
@@ -34,15 +37,18 @@ const useFirebase = () => {
     }
 
     const facebookSign = (history) => {
+        setIsLoading(true)
         signInWithPopup(auth, facebookprovider)
             .then((result) => {
+              
                 if(result){
                     history.replace('/home')
                 }
             })
             .catch((error) => {
                 setError(error)
-            });
+            })
+            .finally(()=>setIsLoading(false))
     }
     const logOut = (history) => {
         const auth = getAuth();
@@ -68,8 +74,9 @@ const useFirebase = () => {
             } else {
            
             }
+            setIsLoading(false)
         });
-    },[])
+    },[user])
 
     const userCreate = (name, email, password, phone, history) => {
         createUserWithEmailAndPassword(auth, email, password)
@@ -147,7 +154,8 @@ const useFirebase = () => {
         signInUser,
         updatePass,
         user,
-        errors
+        errors,
+        loading
 
     })
 

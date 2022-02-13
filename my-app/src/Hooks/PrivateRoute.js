@@ -1,9 +1,13 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import useAuth from './useAuth';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const PrivateRoute = ({children,...rest}) => {
-    let {user} = useAuth();
+    let {user,loading} = useAuth();
+    if(loading){
+      return   <CircularProgress />
+    }
   return (
     <Route
       {...rest}

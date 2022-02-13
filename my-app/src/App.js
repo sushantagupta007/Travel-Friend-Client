@@ -92,9 +92,6 @@ function App() {
           <Route path="/mytravel">
             <MyTravel></MyTravel>
           </Route>
-          <Route path="/mytour">
-            <MyTour></MyTour>
-          </Route>
           <Route exact path="/">
             <HomePage></HomePage>
           </Route>

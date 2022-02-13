@@ -18,7 +18,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 
 import useAuth from './../../Hooks/useAuth';
 
-import MyTour from './../MyOrder/MyOrder';
+
 
 import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
@@ -31,6 +31,7 @@ import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import TourIcon from '@mui/icons-material/Tour';
 import ManageTour from '../ManageTour/ManageTour';
 import { Button } from '@mui/material';
+import MyTour from './../ManageTour/MyTour';
 
 
 
@@ -108,6 +109,7 @@ const {user}= useAuth();
 console.log(user)
     return (
     <Router>
+        <h1> lfkjsflk </h1>
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
             <AppBar position="fixed" open={open}>
@@ -151,7 +153,7 @@ console.log(user)
                         <ListItemIcon>
                             <TourIcon />
                         </ListItemIcon>
-                        <RouterLink to="/mytravel/mytour"> MyTour </RouterLink>
+                        <RouterLink to="/mytravel/mytour"> MyTour</RouterLink>
                     </ListItem>
                     <ListItem>
                         <ListItemIcon>
@@ -168,25 +170,25 @@ console.log(user)
                         <ListItemIcon>
                             <HomeIcon />
                         </ListItemIcon>
-                        <RouterLink to="/"> Home </RouterLink>
+                        <a href="/home"> Home </a>
                     </ListItem>
                     <ListItem button  >
                         <ListItemIcon>
                             <InfoIcon />
                         </ListItemIcon>
-                        <RouterLink to="/"> About </RouterLink>
+                        <a href="/about"> About </a>
                     </ListItem>
                     <ListItem button  >
                         <ListItemIcon>
                             <NoteIcon />
                         </ListItemIcon>
-                        <RouterLink to="/"> Blog </RouterLink>
+                        <a href="/blog"> Blog </a>
                     </ListItem>
                     <ListItem button  >
                         <ListItemIcon>
                             <ContactsIcon />
                         </ListItemIcon>
-                        <RouterLink to="/"> Contact </RouterLink>
+                        <a href="/contact"> Contact </a>
                     </ListItem>
                     <ListItem button  >
                         <ListItemIcon>
@@ -199,8 +201,8 @@ console.log(user)
             <Main open={open}>
                 <DrawerHeader />
                     <Switch>
-                        <Route path="/mytravel/mytour">
-                            <MyTour></MyTour>
+                        <Route exact path="/mytravel/mytour">
+                            <MyTour />
                         </Route>
                         <Route exact path="/mytravel/managetour">
                             <ManageTour />

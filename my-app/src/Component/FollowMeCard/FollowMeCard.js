@@ -9,12 +9,33 @@ import Button from '@mui/material/Button';
 
 import './FollowMeCard.css'
 import { useHistory } from 'react-router-dom';
+import useAuth from './../../Hooks/useAuth';
 
-export default function FollowMeCard({img,width=270,des}) {
+const FollowMeCard = (props)=> {
   const history = useHistory(); 
 
+  const {img,des,width,source,country} = props
+  const {user}= useAuth()
+console.log(user)
+  
   const handleClick=()=>{
-    history.replace('/cdetails')
+    if(source==='category') {
+      history.push({ 
+        pathname: '/cdetails',
+        state: {
+          img:img,
+          des:des,
+          user:user.displayName,
+          email:user.email,
+          country:country
+          
+        }
+       });
+    }
+    else{
+      history.replace('/blog')
+    }
+  
   }
   return (
     <Card id="customCard" sx={{ width:`%${width}` }}>
@@ -29,5 +50,7 @@ export default function FollowMeCard({img,width=270,des}) {
       </CardContent>
    
     </Card>
-  );
+  )
 }
+
+export default FollowMeCard; 

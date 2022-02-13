@@ -5,6 +5,9 @@ const ManageTour = () => {
     return (
         <Container>
             <Typography sx={{color:"black"}}> Hello </Typography>
+            <Typography sx={{color:"black"}}> Hello </Typography>
+            <Typography sx={{color:"black"}}> Hello </Typography>
+            <Typography sx={{color:"black"}}> Hello </Typography>
         </Container>
     );
 };

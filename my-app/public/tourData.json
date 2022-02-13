@@ -1,0 +1,23 @@
+[
+    {
+      "id": "T01",
+      "category": "Solo Travel",
+      "email": "sushanta.sust@gmail.com",
+      "place": "Sirajganj",
+      "date":"January,2020"
+    },
+    {
+        "id": "T02",
+        "category": "Solo Travel",
+        "email": "sushanta.sust@gmail.com",
+        "place": "Sirajganj",
+        "date":"January,2020"
+    },
+    {
+        "id": "T03",
+        "category": "Solo Travel",
+        "email": "sushanta.sust@gmail.com",
+        "place": "Sirajganj",
+        "date":"January,2020"
+    }
+  ]

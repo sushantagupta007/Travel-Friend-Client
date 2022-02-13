@@ -22,7 +22,7 @@ const HomePage = () => {
             <CategoryBlock></CategoryBlock>
             <Explore></Explore>
             <Blog></Blog>
-            <Map></Map>
+            {/* <Map></Map> */}
             <FollowMe></FollowMe>
             <Footer></Footer>
         </Fragment>
