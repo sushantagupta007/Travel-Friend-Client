@@ -32,6 +32,7 @@ import CategoryDetails from './Component/CategoryDetails/CategoryDetails';
 import PrivateRoute from './Hooks/PrivateRoute';
 import MyTravel from './Component/MyTravel/MyTravel';
 import MyTour from './Component/MyOrder/MyOrder';
+import ManageTour from './Component/ManageTour/ManageTour';
 
 
 
@@ -92,6 +93,13 @@ function App() {
           <Route path="/mytravel">
             <MyTravel></MyTravel>
           </Route>
+          <Route path="/mytravel/mytour">
+            <MyTour></MyTour>
+          </Route>
+          <Route path="/mytravel/managetour">
+            <ManageTour></ManageTour>
+          </Route>
+
           <Route exact path="/">
             <HomePage></HomePage>
           </Route>
