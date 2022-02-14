@@ -53,18 +53,29 @@ const CategoryDetails = () => {
     const [date, setDate] = React.useState(tourDetails);
     const [dataArray, setdataArray] = useState([])
 
-        //Function for receiving Data from Table by Click
+    const [localData,setLocalData] = useState([])
+    
+    useEffect(()=>{
+        const existingData = localStorage.getItem("data")
+        setdataArray(JSON.parse(existingData))
+
+    },[])
+    //Function for receiving Data from Table by Click
     const handleOnCellClick = (e) => {
         if (dataArray.indexOf(e.row) === -1) {
             dataArray.push(e.row)
+            localStorage.setItem("data",JSON.stringify(dataArray))
         }
         else {
             return
         }
+
+        
+     
         //Next I have used time to filter data from Table. So I have taken time here. 
         const dateString = e.row.Time
         const dateFormat = Date.parse(dateString)
-        setTourDetails(dateFormat)
+        setTourDetails(dateFormat) 
     }
 
     //This function for showing Date in the Calender component. 
@@ -85,6 +96,7 @@ const CategoryDetails = () => {
     const dateRef = useRef()
 
     console.log(countryRef)
+
     const myobject = [
         {
             id: 1,
@@ -108,8 +120,7 @@ const CategoryDetails = () => {
             setdataArray(updatedArray)
         }
         else {
-            const updatedArray = []
-            setdataArray(updatedArray)
+            setdataArray([])
         }
     }
     const useStyles = makeStyles({
@@ -207,7 +218,7 @@ const CategoryDetails = () => {
                                             <td ref={countryRef} style={{ border: "1px solid black", padding: "5px", borderRadius: "5px" }}> {item.Country} </td>
                                             <td style={{ padding: "5px", borderRadius: "5px" }}>
                                                 <Link to={{
-                                                    pathname: '/mytour',
+                                                    pathname: '/mytravel/mytour',
                                                     state:  JSON.stringify(myobject) //JSON.stringify() to convert it into a string.
                                                 }}> MyTour</Link>
 

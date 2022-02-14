@@ -7,9 +7,9 @@ import { CalendarPicker } from '@mui/lab';
 
 
 const MyCalender = (props) => {
-    // const [value, setValue] = React.useState(props.timdD);
-    // // const [date, setDate] = React.useState(new Date());
-    // console.log(value)
+    const [value, setValue] = React.useState(props.timdD);
+    const [date, setDate] = React.useState(new Date());
+    console.log(value)
 
     return (
         <LocalizationProvider dateAdapter={AdapterDateFns}>
