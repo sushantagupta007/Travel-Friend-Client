@@ -70,8 +70,6 @@ const CategoryDetails = () => {
             return
         }
 
-        
-     
         //Next I have used time to filter data from Table. So I have taken time here. 
         const dateString = e.row.Time
         const dateFormat = Date.parse(dateString)

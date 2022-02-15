@@ -16,7 +16,7 @@ const FollowMeCard = (props)=> {
 
   const {img,des,width,source,country} = props
   const {user}= useAuth()
-console.log(user)
+
   
   const handleClick=()=>{
     if(source==='category') {

@@ -1,5 +1,6 @@
 {
   "name": "tourism-planner",
+  "homepage": "https://romantic-mestorf-f3b7c9.netlify.app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
