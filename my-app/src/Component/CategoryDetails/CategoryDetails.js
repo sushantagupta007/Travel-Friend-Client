@@ -215,10 +215,14 @@ const CategoryDetails = () => {
                                             <td ref={dateRef} style={{ border: "1px solid black", padding: "5px", borderRadius: "5px" }}> {item.Time} </td>
                                             <td ref={countryRef} style={{ border: "1px solid black", padding: "5px", borderRadius: "5px" }}> {item.Country} </td>
                                             <td style={{ padding: "5px", borderRadius: "5px" }}>
+                                                <Button variant="outlined"> 
                                                 <Link to={{
                                                     pathname: '/mytravel/mytour',
                                                     state:  JSON.stringify(myobject) //JSON.stringify() to convert it into a string.
                                                 }}> MyTour</Link>
+
+                                                </Button>
+                                                
 
                                             </td>
                                             <td style={{ padding: "5px", borderRadius: "5px" }}>
