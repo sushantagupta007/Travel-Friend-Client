@@ -55,16 +55,16 @@ const CategoryDetails = () => {
 
     const [localData,setLocalData] = useState([])
     
-    useEffect(()=>{
-        const existingData = localStorage.getItem("data")
-        setdataArray(JSON.parse(existingData))
+    // useEffect(()=>{
+    //     const existingData = localStorage.getItem("data")
+    //     setdataArray(JSON.parse(existingData))
 
-    },[])
+    // },[])
     //Function for receiving Data from Table by Click
     const handleOnCellClick = (e) => {
         if (dataArray.indexOf(e.row) === -1) {
             dataArray.push(e.row)
-            localStorage.setItem("data",JSON.stringify(dataArray))
+            // localStorage.setItem("data",JSON.stringify(dataArray))
         }
         else {
             return
