@@ -48,7 +48,7 @@ const TopHeader = () => {
                     <Grid item sm={4} xs={12} sx={{ display: 'flex', justifyContent: 'center', marginBottom: { xs: 6, sm: 0 } }}>
                         <form id="search-form">
                             <div className="search">
-                                <input placeholder="&#xF002" type="text" name="search" className="round" />
+                                <input placeholder="&#xF002;" type="text" name="search" className="round" />
                             </div>
                         </form>
                     </Grid>

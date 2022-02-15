@@ -43,6 +43,7 @@ const rows = [
 
 const CategoryDetails = () => {
     const history = useHistory()
+    console.log(history)
     const categoryData = history.location.state
     const user = categoryData.user
     const email = categoryData.email
@@ -95,18 +96,7 @@ const CategoryDetails = () => {
 
     console.log(countryRef)
 
-    const myobject = [
-        {
-            id: 1,
-            name: "sushanta"
-        },
-        {
-            id: 2,
-            name: "sushanta"
-        },
-
-        ]
-       
+  
     
 
     const handleRemove = () => {
@@ -150,6 +140,14 @@ const CategoryDetails = () => {
 
     const classes = useStyles();
 
+    const handleSendData=()=>{
+        history.push({ 
+            pathname: '/mytravel',
+            state: {
+              data:{id:1, name:"Sushanta"}
+            }
+           });
+    }
     
 
 
@@ -215,15 +213,10 @@ const CategoryDetails = () => {
                                             <td ref={dateRef} style={{ border: "1px solid black", padding: "5px", borderRadius: "5px" }}> {item.Time} </td>
                                             <td ref={countryRef} style={{ border: "1px solid black", padding: "5px", borderRadius: "5px" }}> {item.Country} </td>
                                             <td style={{ padding: "5px", borderRadius: "5px" }}>
-                                                <Button variant="outlined"> 
-                                                <Link to={{
-                                                    pathname: '/mytravel/mytour',
-                                                    state:  JSON.stringify(myobject) //JSON.stringify() to convert it into a string.
-                                                }}> MyTour</Link>
-
+                                                <Button type="button"
+                                                    onClick={handleSendData}
+                                                    variant="outlined"> MyTour
                                                 </Button>
-                                                
-
                                             </td>
                                             <td style={{ padding: "5px", borderRadius: "5px" }}>
                                                 <Button onClick={handleRemove} variant="outlined">Remove</Button>

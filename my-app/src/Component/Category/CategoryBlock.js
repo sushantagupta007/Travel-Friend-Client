@@ -61,9 +61,6 @@ theme.typography.h3 = {
 const CategoryBlock = () => {
 
     const classes= useStyles()
-
-  
-
     return (
     <Container sx={{fontFamily:'Poppins',flexGrow: 1}} >
       <Typography theme={theme} sx={{xs:{fontSize:'1rem'}}} variant="h3" textAlign="center">
