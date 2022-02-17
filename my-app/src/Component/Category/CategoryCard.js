@@ -72,7 +72,7 @@ import { makeStyles } from '@material-ui/core/styles';
             transition: mytheme.customCard.transition, 
             boxShadow:  mytheme.customCard.box,
         '&:hover': {
-            transform: 'translateY(10px)',
+            transform: 'translateY(0px)',
             '&:info':{
                 opacity: 1,
                 transform: 'translateY(0px)'

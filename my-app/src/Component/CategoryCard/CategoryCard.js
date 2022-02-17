@@ -6,7 +6,7 @@ import { Box, Typography, createTheme, Grid, Button,CardContent } from '@mui/mat
 
 import { makeStyles } from '@material-ui/core/styles';
 
-
+import './CategoryCard.css'
 
 const theme = createTheme();
 
@@ -21,7 +21,7 @@ theme.typography.h7 = {
 
 };
 
-const CategoryCard = ({ image }) => {
+const CategoryCarD = ({ image }) => {
 
     const useStyles = makeStyles({
         demowrap: {
@@ -38,10 +38,6 @@ const CategoryCard = ({ image }) => {
                 width: '100%',
                 height: '100%',
                 opacity: 0.7,
-                backgroundImage: `url(${image})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: '50% 0',
-                backgroundSize: 'cover',
                 borderRadius: "10px",
             }
         },
@@ -50,8 +46,14 @@ const CategoryCard = ({ image }) => {
             display: 'flex',
             justifyContent: "center",
             alignItems: 'flex-end',
-            height: '100%'
-        }
+            height: '100%', 
+            backgroundImage: `url(${image})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+        },
+       
+
     })
 
     const classes = useStyles();
@@ -95,4 +97,4 @@ const CategoryCard = ({ image }) => {
     )
 };
 
-export default CategoryCard;
+export default CategoryCarD;

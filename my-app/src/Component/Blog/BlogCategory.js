@@ -7,12 +7,13 @@ import PopularPost from '../PopularPost/PopularPost';
 import BlogCard from './BlogCard';
 
 
-import CategoryCard from './../CategoryCard/CategoryCard';
+
 import CategoriesCount from '../CategorieCount/CategoriesCount';
 import { useHistory } from 'react-router-dom';
 import AuthorCard from './../AuthorCard/AuthorCard';
 import ShortContact from '../ShortContact/ShortContact';
 import Subscribe from './../Subscribe/Subscribe';
+import CategoryCarD from './../CategoryCard/CategoryCard';
 
 
 const sky = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFkijiEfzoDNYj5RUv5YLR6HHTLTeYooJ8Eg&usqp=CAU'; 
@@ -38,7 +39,7 @@ const BlogCategory = () => {
     const history = useHistory(); 
     
     const pathName = history.location.pathname
-    console.log(pathName)
+ 
 
     const [authorCompoent,setauthorComponent] = useState(true)
 
@@ -64,7 +65,7 @@ const BlogCategory = () => {
             .then(res => res.json())
             .then(data => {
                 setBlogData(data)
-                console.log(data)
+              
                 setLoading(false)
             }
             )
@@ -92,16 +93,16 @@ const BlogCategory = () => {
                         <Box sx={{ display: 'flex', flexWrap: 'wrap',mb: 9, borderRadius:"25px" }}>
                             <Grid spacing={0} container rowSpacing={10} columnSpacing={{ xs: 0 }}>
                                 <Grid item lg={6} xs={12} sx={{width:{lg:'340px'},height:{lg:'369px'},}}>
-                                    <CategoryCard image={sand}></CategoryCard>
+                                    <CategoryCarD image={sand}></CategoryCarD>
                                 </Grid>
                                 <Grid item lg={6} xs={12} sx={{width:{lg:'340px'},height:{lg:'369px'}}}>
-                                    <CategoryCard image={night}></CategoryCard>
+                                    <CategoryCarD image={night}></CategoryCarD>
                                 </Grid>
                                 <Grid item lg={6} xs={12} sx={{width:{lg:'340px'},height:{lg:'369px'}}}>
-                                    <CategoryCard image={forest}></CategoryCard>
+                                    <CategoryCarD image={forest}></CategoryCarD>
                                 </Grid>
                                 <Grid item lg={6} xs={12} sx={{width:{lg:'340px'},height:{lg:'369px'}}}>
-                                    <CategoryCard image={sky}></CategoryCard>
+                                    <CategoryCarD image={sky}></CategoryCarD>
                                 </Grid>
                             </Grid>
                         </Box>

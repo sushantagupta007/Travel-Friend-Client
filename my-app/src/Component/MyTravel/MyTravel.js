@@ -95,7 +95,7 @@ export default function MyTravel() {
 
     const history = useHistory()
     const individualTourData = history.location.state
-    console.log(indi)
+    console.log(individualTourData)
     const MyHistory = history.location.pathname
     const { logOut } = useAuth()
 

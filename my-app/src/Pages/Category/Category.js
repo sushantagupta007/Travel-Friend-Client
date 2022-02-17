@@ -8,10 +8,10 @@ import categoryBG from '../../Image/categoryBG.jfif'
 const Category = () => {
     return (
         <>
-          <Nav  img={categoryBG} text="Solo Travel Post" textcolor="white"></Nav>
+          {/* <Nav  img={categoryBG} text="Solo Travel Post" textcolor="white"></Nav> */}
           <BlogCategory></BlogCategory>
-          <FollowMe></FollowMe>
-          <Footer></Footer>
+          {/* <FollowMe></FollowMe>
+          <Footer></Footer> */}
         </>
     );
 };
