@@ -239,8 +239,8 @@ export default function MyTravel() {
                         <DrawerHeader />
                         { tourShow? "" :  
                             <Switch>
-                            <Route exact path="/mytravel/mytour">
-                                <MyTour />
+                            <Route  exact path="/mytravel/mytour">
+                                <MyTour data={individualTourData} />
                             </Route>
                             <Route exact path="/mytravel/managetour">
                                 <ManageTour />

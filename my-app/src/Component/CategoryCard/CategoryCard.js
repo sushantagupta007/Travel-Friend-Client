@@ -52,8 +52,6 @@ const CategoryCarD = ({ image }) => {
             backgroundPosition: 'center',
             backgroundSize: 'cover',
         },
-       
-
     })
 
     const classes = useStyles();
