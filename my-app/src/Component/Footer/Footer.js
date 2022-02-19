@@ -44,9 +44,9 @@ const Footer = () => {
                 </Typography>
             </Grid>
             <Grid item xs={12} sm={4} md={4} lg={4} sx={{display:"flex", justifyContent:{xs:'center',sm:'center', md:'center',lg:'center'}}}>
-                <a className={classes.customLink}  href="https://web.facebook.com/">
+                <Link to="/contact" className={classes.customLink} >
                  Contact
-                </a>
+                </Link>
                 <Link to="/privacy" className={classes.customLink}>
                  Privacy
                 </Link>
