@@ -33,6 +33,8 @@ import PrivateRoute from './Hooks/PrivateRoute';
 import MyTravel from './Component/MyTravel/MyTravel';
 import MyTour from './Component/MyOrder/MyOrder';
 import ManageTour from './Component/ManageTour/ManageTour';
+import Terms from './Component/Terms/Terms';
+import Privacy from './Component/Privacy/Privacy';
 
 
 
@@ -99,7 +101,12 @@ function App() {
           <Route path="/mytravel/managetour">
             <ManageTour></ManageTour>
           </Route>
-
+          <Route path="/terms">
+            <Terms></Terms>
+          </Route>
+          <Route path='/privacy'>
+            <Privacy></Privacy>
+          </Route>
           <Route exact path="/">
             <HomePage></HomePage>
           </Route>

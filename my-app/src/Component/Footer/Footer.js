@@ -6,6 +6,7 @@ import { Stack } from '@mui/material';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faFacebookF, faInstagram, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles({
     customLink: {
@@ -46,15 +47,15 @@ const Footer = () => {
                 <a className={classes.customLink}  href="https://web.facebook.com/">
                  Contact
                 </a>
-                <a className={classes.customLink}  href="https://web.facebook.com/">
+                <Link to="/privacy" className={classes.customLink}>
                  Privacy
-                </a>
-                <a className={classes.customLink}  href="https://web.facebook.com/">
+                </Link>
+                <Link to="/terms" className={classes.customLink} >
                  Terms 
-                </a>
-                <a className={classes.customLink}  href="https://web.facebook.com/">
+                </Link>
+                <Link className={classes.customLink}  to="/about">
                  About
-                </a>
+                </Link>
             </Grid>
             <Grid item xs={12} sm={4} md={4} lg={4} sx={{display:"flex",justifyContent:{xs:'center', sm:'flex-end', md:'center',lg:'flex-end'}}}>
                 <Stack direction="row" spacing={2}>

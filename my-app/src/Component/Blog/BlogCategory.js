@@ -40,7 +40,6 @@ const BlogCategory = () => {
     
     const pathName = history.location.pathname
  
-
     const [authorCompoent,setauthorComponent] = useState(true)
 
     useEffect(()=>{
@@ -61,7 +60,7 @@ const BlogCategory = () => {
     //Data Fetch From JSON
     useEffect(() => {
         setLoading(true)
-        fetch('/blogData.json')
+        fetch('http://localhost:5000/blogs')
             .then(res => res.json())
             .then(data => {
                 setBlogData(data)
@@ -83,7 +82,7 @@ const BlogCategory = () => {
     };
 
 
-    console.log(loading)
+
 
     return (
         <Container sx={{ flexGrow: 1 }}>
