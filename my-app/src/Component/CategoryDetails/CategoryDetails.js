@@ -1,13 +1,12 @@
-import React, { useState, useRef,useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Container, Typography, Box, Grid, Button } from '@mui/material';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 
 
 
 import { DataGrid } from '@mui/x-data-grid';
 import MyCalender from './../Calender/Calender';
-
 
 
 
@@ -25,9 +24,10 @@ function incrementeDate(any) {
     return tomorrow.toLocaleDateString()
 }
 
-console.log(incrementeDate(1))
 
-const rows = [
+
+
+const rowsSoloTravel = [
     { id: 1, Time: `${incrementeDate(0)}`, Event: 'XYZ', Country: "India", },
     { id: 2, Time: `${incrementeDate(10)}`, Event: 'XYZ', Country: "Bangladesh" },
     { id: 3, Time: `${incrementeDate(20)}`, Event: 'XYZ', Country: "Srilanka" },
@@ -36,6 +36,24 @@ const rows = [
     { id: 6, Time: `${incrementeDate(50)}`, Event: 'XYZ', Country: "Bhutan" },
     { id: 7, Time: `${incrementeDate(60)}`, Event: 'XYZ', Country: "Nepal" }
 ]
+const rowsMountTravel = [
+    { id: 1, Time: `${incrementeDate(0)}`, Event: 'XYZ', Country: "India", },
+    { id: 2, Time: `${incrementeDate(15)}`, Event: 'XYZ', Country: "Bangladesh" },
+    { id: 3, Time: `${incrementeDate(30)}`, Event: 'XYZ', Country: "Srilanka" },
+    { id: 4, Time: `${incrementeDate(45)}`, Event: 'XYZ', Country: "Indonesia" },
+    { id: 5, Time: `${incrementeDate(60)}`, Event: 'XYZ', Country: "Malaysia" },
+    { id: 6, Time: `${incrementeDate(75)}`, Event: 'XYZ', Country: "Bhutan" },
+    { id: 7, Time: `${incrementeDate(90)}`, Event: 'XYZ', Country: "Nepal" }
+]
+const rowsJungleTravel = [
+    { id: 1, Time: `${incrementeDate(0)}`, Event: 'XYZ', Country: "Sundarban", },
+    { id: 2, Time: `${incrementeDate(15)}`, Event: 'XYZ', Country: "Lawachara" },
+    { id: 3, Time: `${incrementeDate(30)}`, Event: 'XYZ', Country: "Madhupur" },
+    { id: 4, Time: `${incrementeDate(45)}`, Event: 'XYZ', Country: "Sal Forst" },
+    { id: 5, Time: `${incrementeDate(60)}`, Event: 'XYZ', Country: "Chittagong" },
+    { id: 6, Time: `${incrementeDate(75)}`, Event: 'XYZ', Country: "India" },
+    { id: 7, Time: `${incrementeDate(90)}`, Event: 'XYZ', Country: "Bhutan" }
+]
 
 
 
@@ -43,24 +61,86 @@ const rows = [
 
 const CategoryDetails = () => {
     const history = useHistory()
-    console.log(history)
+
     const categoryData = history.location.state
     const user = categoryData.user
     const email = categoryData.email
     const country = categoryData.country
     const des = categoryData.des
 
+    console.log(des)
     const [tourDetails, setTourDetails] = useState(new Date())
     const [date, setDate] = React.useState(tourDetails);
     const [dataArray, setdataArray] = useState([])
+    console.log(date)
 
-    const [localData,setLocalData] = useState([])
-    
-    // useEffect(()=>{
-    //     const existingData = localStorage.getItem("data")
-    //     setdataArray(JSON.parse(existingData))
+    //Function  for item show on condition on  Table
 
-    // },[])
+    const dataDisplayTable = () =>{
+        if(des==='Solo Travel'){
+            return (
+            <DataGrid
+            rows={rowsSoloTravel }
+            columns={columns}
+            pageSize={5}
+            rowsPerPageOptions={[5]}
+            checkboxSelection
+            onRowClick={handleOnCellClick}
+        />)}
+
+        if(des==='Mount Travel'){
+            return (
+            <DataGrid
+            rows={rowsMountTravel}
+            columns={columns}
+            pageSize={5}
+            rowsPerPageOptions={[5]}
+            checkboxSelection
+            onRowClick={handleOnCellClick}
+        />)}
+        if(des==='Road Travel'){
+            return (
+            <DataGrid
+            rows={rowsMountTravel}
+            columns={columns}
+            pageSize={5}
+            rowsPerPageOptions={[5]}
+            checkboxSelection
+            onRowClick={handleOnCellClick}
+        />)}
+        if(des==='Old City Travel'){
+            return (
+            <DataGrid
+            rows={rowsMountTravel}
+            columns={columns}
+            pageSize={5}
+            rowsPerPageOptions={[5]}
+            checkboxSelection
+            onRowClick={handleOnCellClick}
+        />)}
+        if(des==='Jungle Travel'){
+            return (
+            <DataGrid
+            rows={rowsJungleTravel}
+            columns={columns}
+            pageSize={5}
+            rowsPerPageOptions={[5]}
+            checkboxSelection
+            onRowClick={handleOnCellClick}
+        />)}
+        if(des==='Ocean Travel'){
+            return (
+            <DataGrid
+            rows={rowsMountTravel}
+            columns={columns}
+            pageSize={5}
+            rowsPerPageOptions={[5]}
+            checkboxSelection
+            onRowClick={handleOnCellClick}
+        />)}
+    }
+
+
     //Function for receiving Data from Table by Click
     const handleOnCellClick = (e) => {
         if (dataArray.indexOf(e.row) === -1) {
@@ -74,7 +154,7 @@ const CategoryDetails = () => {
         //Next I have used time to filter data from Table. So I have taken time here. 
         const dateString = e.row.Time
         const dateFormat = Date.parse(dateString)
-        setTourDetails(dateFormat) 
+        setTourDetails(dateFormat)
     }
 
     //This function for showing Date in the Calender component. 
@@ -82,22 +162,22 @@ const CategoryDetails = () => {
         setDate(tourDetails)
     }
 
-    const [touristState,settouristState] = useState([])
-    
+    const [touristState, settouristState] = useState([])
+    console.log(touristState)
 
-    useEffect(()=>{
+    useEffect(() => {
         settouristState([
 
         ])
-    },[])
+    }, [])
 
     const countryRef = useRef()
     const dateRef = useRef()
 
-    console.log(countryRef)
 
-  
-    
+
+
+
 
     const handleRemove = () => {
         console.log(countryRef.current)
@@ -140,15 +220,15 @@ const CategoryDetails = () => {
 
     const classes = useStyles();
 
-    const handleSendData=()=>{
-        history.push({ 
+    const handleSendData = () => {
+        history.push({
             pathname: '/mytravel',
             state: {
-              data:{id:1, name:"Sushanta"}
+                data: { id: 1, name: "Sushanta" }
             }
-           });
+        });
     }
-    
+
 
 
     return (
@@ -187,14 +267,8 @@ const CategoryDetails = () => {
                             }}> Tour Schedule
                         </Typography>
                         <div style={{ height: 400, width: '100%' }}>
-                            <DataGrid
-                                rows={rows}
-                                columns={columns}
-                                pageSize={5}
-                                rowsPerPageOptions={[5]}
-                                checkboxSelection
-                                onRowClick={handleOnCellClick}
-                            />
+                           {dataDisplayTable()}
+
                         </div>
                     </Grid>
                     <Grid item xs={12} md={4}>

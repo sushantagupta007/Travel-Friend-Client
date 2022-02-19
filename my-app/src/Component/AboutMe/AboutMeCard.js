@@ -5,17 +5,15 @@ import CardContent from '@mui/material/CardContent';
 
 
 import Typography from '@mui/material/Typography';
-import { createTheme, Container } from '@mui/material';
+import { createTheme } from '@mui/material';
 import { makeStyles } from '@material-ui/core/styles';
-import { Stack } from '@mui/material';
+
 import { Avatar } from '@mui/material';
 
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faInstagram, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
-
 
 import Image from '../../Image/Project.jpg';
+import FollowMeCamp from '../FollowMeComp/FollowMeCamp';
 
 const theme = createTheme();
 
@@ -48,7 +46,7 @@ const AboutMeCard = () => {
             <Avatar
                 alt="Remy Sharp"
                 src={Image}
-                sx={{ width: 190, height: 202 }}
+                sx={{ width: 150, height: 150 }}
             />
 
             <CardContent>
@@ -60,34 +58,7 @@ const AboutMeCard = () => {
                     species, ranging across all continents except Antarctica
                 </Typography>
             </CardContent>
-            <Container sx={{ display: 'flex', flexDirection: 'column', marginBottom: "1rem" }} >
-                <Typography theme={theme} sx={{ fontFamily: 'Poppins' }} variant="p">
-                    Follow Me
-                </Typography>
-                <Stack direction="row" spacing={2} >
-                    <a href="https://web.facebook.com/">
-                        <Avatar sx={{ bgcolor: "#FFA902", width: 30, height: 30, }} className={avatarClass.customAvatar} >
-                            <FontAwesomeIcon style={{ width: "15px", height: "15px", color: "white", }} icon={faFacebookF}></FontAwesomeIcon>
-                        </Avatar>
-                    </a>
-                    <a href="https://web.facebook.com/">
-                        <Avatar sx={{ bgcolor: "#FFFFFF", width: 30, height: 30, boxShadow: 3, borderColor: 'grey.500' }} className={avatarClass.customAvatar} >
-                            <FontAwesomeIcon style={{ width: "15px", height: "15px", color: "#696969", }} icon={faTwitter}></FontAwesomeIcon>
-                        </Avatar>
-                    </a>
-                    <a href="https://web.facebook.com/">
-                        <Avatar sx={{ bgcolor: "#FFFFFF", width: 30, height: 30, boxShadow: 3, borderColor: 'grey.500' }} className={avatarClass.customAvatar} >
-                            <FontAwesomeIcon style={{ width: "15px", height: "15px", color: "#696969" }} icon={faInstagram}></FontAwesomeIcon>
-                        </Avatar>
-                    </a>
-                    <a href="https://web.facebook.com/">
-                        <Avatar sx={{ bgcolor: "#FFFFFF", width: 30, height: 30, boxShadow: 3, borderColor: 'grey.500' }} className={avatarClass.customAvatar} >
-                            <FontAwesomeIcon style={{ width: "15px", height: "15px", color: "#696969" }} icon={faYoutube}></FontAwesomeIcon>
-                        </Avatar>
-                    </a>
-                </Stack>
-
-            </Container>
+            <FollowMeCamp></FollowMeCamp>
         </Card>
     )
 };

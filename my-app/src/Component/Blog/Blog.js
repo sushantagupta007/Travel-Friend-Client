@@ -43,7 +43,7 @@ const Blog = () => {
      //Data Fetch From JSON
      useEffect(()=>{
         setLoading(true)
-        fetch('/blogData.json')
+        fetch('http://localhost:5000/blogs')
         .then(res=>res.json())
         .then(data=>
             {

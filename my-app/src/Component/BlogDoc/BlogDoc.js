@@ -99,7 +99,7 @@ const BlogDoc = () => {
                                     </Grid>
                                     <Grid item xs={3}>
                                         <Typography sx={{ fontFamily: 'Poppins', fontSize: '12px' }} variant="p">
-                                            <i class="fas fa-comment" style={{ color: "#141414" }}> </i> 502
+                                            <i className="fas fa-comment" style={{ color: "#141414" }}> </i> 502
                                         </Typography>
                                     </Grid>
                                 </Grid>

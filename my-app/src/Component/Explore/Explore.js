@@ -14,9 +14,10 @@ const Explore = () => {
    const [loading,setLoading] = useState(false);
    const [postperpage] = useState(6) //Item in per page
 
+
    useEffect(()=>{
         setLoading(true)
-        fetch('exploreData.json')
+        fetch('http://localhost:5000/places')
         .then(res=>res.json())
         .then(data=>{
            setExploreData(data)

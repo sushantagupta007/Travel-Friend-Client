@@ -25,7 +25,7 @@ const ShortContact = () => {
                 <i className="fas fa-envelope">  sushanta.sust@gmail.com</i>
             </Stack>
             <Stack direction="row" sx={{ fontFamily: 'Poppins', fontWeight: 'normal', color: "#696969", my: 2 }} >
-                <i class="fas fa-mobile-alt"> 01737558258</i>
+                <i className="fas fa-mobile-alt"> 01737558258</i>
             </Stack>
         </Paper>
     );

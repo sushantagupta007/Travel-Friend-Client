@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState} from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -95,7 +95,7 @@ export default function MyTravel() {
 
     const history = useHistory()
     const individualTourData = history.location.state
-    console.log(individualTourData)
+    
     const MyHistory = history.location.pathname
     const { logOut } = useAuth()
 
