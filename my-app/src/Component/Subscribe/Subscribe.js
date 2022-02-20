@@ -67,7 +67,7 @@ const Subscribe = () => {
   const [num,setNum]= useState(0)
 
   const onSubmit = data => {
-    fetch('http://localhost:5000/subscriber', {
+    fetch('https://fathomless-brook-26757.herokuapp.com/subscriber', {
       method: "POST",
       body: JSON.stringify(data), //When Post Request Make JSON 
       headers: { "Content-type": "application/json;charset=UTF-8" }

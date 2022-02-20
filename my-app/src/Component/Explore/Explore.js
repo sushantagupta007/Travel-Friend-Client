@@ -17,7 +17,7 @@ const Explore = () => {
 
    useEffect(()=>{
         setLoading(true)
-        fetch('http://localhost:5000/places')
+        fetch('https://fathomless-brook-26757.herokuapp.com/places')
         .then(res=>res.json())
         .then(data=>{
            setExploreData(data)

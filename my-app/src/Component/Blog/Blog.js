@@ -43,7 +43,7 @@ const Blog = () => {
      //Data Fetch From JSON
      useEffect(()=>{
         setLoading(true)
-        fetch('http://localhost:5000/blogs')
+        fetch('https://fathomless-brook-26757.herokuapp.com/blogs')
         .then(res=>res.json())
         .then(data=>
             {
