@@ -17,7 +17,7 @@ theme.typography.h3 = {
 };
 
 
-const Token = `pk.eyJ1Ijoic3VzaGFudGEtZ3VwdGEiLCJhIjoiY2t4M2M4dmdxMHV3ZDJvcGh0Y2ttdXg3NSJ9.bLEusf6lzlf0bT5XBHUK4w`
+const Token = 'pk.eyJ1Ijoic3VzaGFudGEtZ3VwdGEiLCJhIjoiY2t4M2M4dmdxMHV3ZDJvcGh0Y2ttdXg3NSJ9.bLEusf6lzlf0bT5XBHUK4w'
 const Map = () => {
     const [data,setData] = useState([])
     const [park,setPark] = useState(null)
